@@ -1,0 +1,40 @@
+package controller;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+
+public class CtrlGestorEventos {
+	public static Font BarlowFont;
+	static Font BarlowFontBolt;
+
+	public static Font CargarFuente() {
+
+	private Font font = null;
+
+	
+		        String fontName = "LISSA___.ttf" ;
+		        try {
+		            //Se carga la fuente
+		            InputStream is =  getClass().getResourceAsStream(fontName);
+		            font = Font.createFont(Font.TRUETYPE_FONT, is);
+		        } catch (Exception ex) {
+		            //Si existe un error se carga fuente por defecto ARIAL
+		            System.err.println(fontName + " No se cargo la fuente");
+		            font = new Font("Arial", Font.PLAIN, 14);            
+		        }
+		  
+
+	
+
+	public Font MyFont(int estilo, float tamanio) {
+		Font tfont = font.deriveFont(estilo, tamanio);
+		return tfont;
+	}
+
+}
+
+
