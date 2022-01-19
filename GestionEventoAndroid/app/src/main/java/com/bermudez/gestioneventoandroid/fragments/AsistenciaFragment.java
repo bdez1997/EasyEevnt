@@ -22,12 +22,7 @@ public class AsistenciaFragment extends Fragment {
     RecyclerView rvHistorial;
 
     public AsistenciaFragment() {
-        // Required empty public constructor
     }
-
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

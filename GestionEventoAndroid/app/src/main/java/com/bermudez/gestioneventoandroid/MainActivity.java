@@ -17,11 +17,12 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.bermudez.gestioneventoandroid.controller.Store;
-import com.bermudez.gestioneventoandroid.fragments.AsistenciaFragment;
-import com.bermudez.gestioneventoandroid.models.Evento;
+import com.bermudez.gestioneventoandroid.controller.*;
+import com.bermudez.gestioneventoandroid.fragments.*;
+import com.bermudez.gestioneventoandroid.models.*;
 import com.google.android.material.navigation.NavigationView;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        showData();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -48,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         actionBarDrawerToggle.syncState();
 
+        openFragment(new PrincipalFragment());
+
     }
 
     private void openFragment(Fragment fragment){
@@ -56,27 +60,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.replace(R.id.container, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
-
     }
 
     private void showData(){
-        Store.asistenciaLst.add(new Evento("Mangafest"));
-        Store.asistenciaLst.add(new Evento("Ficzone"));
-
+        Store.lstAsistencia.add(new Evento("Mangafest"));
+        Store.lstAsistencia.add(new Evento("Ficzone"));
+        Store.lstEventos.add(new Evento("Ficzone", LocalDateTime.now(), LocalDateTime.now()));
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         drawerLayout.closeDrawer(GravityCompat.START);
-
         switch(item.getItemId()) {
-            //case R.id.opUsuario: openFragment(new AsistenciaFragment()); break;
-            case R.id.opHistorial:
-                openFragment(new AsistenciaFragment());
-                break;
-            case R.id.salir:
-                salir();
-                break;
+            case R.id.opPerfil: openFragment(new AsistenciaFragment()); break;
+            case R.id.opHistorial: openFragment(new AsistenciaFragment()); break;
+            case R.id.salir: salir(); break;
         }
         return false;
     }

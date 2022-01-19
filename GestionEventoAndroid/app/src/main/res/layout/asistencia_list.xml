@@ -25,12 +25,15 @@
                 android:id="@+id/imgAsistencia"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:padding="10dp"
                 app:srcCompat="@drawable/user" />
 
             <TextView
                 android:id="@+id/txtNombreAsistencia"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="10dp" />
 
         </LinearLayout>
 

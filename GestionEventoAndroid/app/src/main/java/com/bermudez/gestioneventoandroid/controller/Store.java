@@ -7,7 +7,11 @@ import java.util.List;
 
 public class Store {
 
+    //Eventos
     public static List<Evento> lstEventos = new ArrayList<Evento>();
+    public static int iEventoSelected;
+
+    //Historial asistencia
+    public static List<Evento> lstAsistencia = new ArrayList<Evento>();
     public static int iAsistenciaSelected;
-    public static List<Evento> asistenciaLst = new ArrayList<Evento>();
 }

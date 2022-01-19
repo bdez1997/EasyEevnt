@@ -5,11 +5,13 @@
         <menu>
             <item
                 android:title="Perfil"
-                android:id="@+id/opPerfil">
+                android:id="@+id/opPerfil"
+                android:icon="@drawable/user">
             </item>
             <item
                 android:title="Historial"
-                android:id="@+id/opHistorial">
+                android:id="@+id/opHistorial"
+                android:icon="@drawable/historial">
             </item>
         </menu>
     </item>
@@ -17,7 +19,8 @@
 
     <item
         android:title="SALIR"
-        android:id="@+id/salir">
+        android:id="@+id/salir"
+        android:icon="@drawable/salir">
     </item>
 
 </menu>
