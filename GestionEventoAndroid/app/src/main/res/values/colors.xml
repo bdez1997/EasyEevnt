@@ -12,4 +12,7 @@
     <color name="letraTemaOscuro">#C6C6C6</color>
     <color name="letraTemaClaro">#222222</color>
 
+    <color name="cardViewClaro">#8BCBF1</color>
+    <color name="cardViewOscuro">#0F5A9C</color>
+
 </resources>

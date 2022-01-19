@@ -20,19 +20,9 @@ public class PerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        btnGuardar.findViewById(R.id.btnGuardar);
-        btnGuardar.setVisibility(View.GONE);
-
         findViewById(R.id.btnVolver).setOnClickListener(e ->{
             onBackPressed();
         });
-
-        findViewById(R.id.btnEditar).setOnClickListener(e ->{
-            Store.boIsEditing = true;
-            btnGuardar.setVisibility(View.VISIBLE);
-        });
-
-
 
     }
 

@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.GestionEventoAndroid" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#56AFE3</item>
+        <item name="colorPrimary">#8BCBF1</item>
         <item name="colorPrimaryVariant">#166EA2</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
