@@ -1,22 +1,25 @@
 package model;
 
 import java.awt.Image;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.Objects;
 
 public class Evento {
 
 	private int idEvento;
+	
+	private String sNombreEvento;
 	private Date fechaInit;
 	private Date fechaFin;
-	private Date HoraInit;
-	private Date HoraFin;
+	private LocalTime horaInit;
+	private LocalTime horaFin;
 	private int aforo;
 	private String descripcion;
 	private Image imagen;
 	private int idUbicacion;
 
-	public Evento(int idEvento, Date fechaInit, Date fechaFin, Date horaInit, Date horaFin, int aforo,
+	public Evento(int idEvento,String sNombreEvento, Date fechaInit, Date fechaFin, LocalTime horaInit, LocalTime horaFin, int aforo,
 			String descripcion, Image imagen, int idUbicacion) {
 		
 		setIdEvento(idEvento);
@@ -39,6 +42,14 @@ public class Evento {
 			this.idEvento = idEvento;
 		}
 	}
+	
+	public String getsNombreEvento() {
+		return sNombreEvento;
+	}
+
+	public void setsNombreEvento(String sNombreEvento) {
+		if(sNombreEvento.length()<=20) {this.sNombreEvento = sNombreEvento;}
+	}
 
 	public Date getFechaInit() {
 		return fechaInit;
@@ -55,21 +66,22 @@ public class Evento {
 	public void setFechaFin(Date fechaFin) {
 		this.fechaFin = fechaFin;
 	}
+	
 
-	public Date getHoraInit() {
-		return HoraInit;
+	public LocalTime getHoraInit() {
+		return horaInit;
 	}
 
-	public void setHoraInit(Date horaInit) {
-		HoraInit = horaInit;
+	public void setHoraInit(LocalTime horaInit) {
+		this.horaInit = horaInit;
 	}
 
-	public Date getHoraFin() {
-		return HoraFin;
+	public LocalTime getHoraFin() {
+		return horaFin;
 	}
 
-	public void setHoraFin(Date horaFin) {
-		HoraFin = horaFin;
+	public void setHoraFin(LocalTime horaFin) {
+		this.horaFin = horaFin;
 	}
 
 	public int getAforo() {
@@ -127,21 +139,20 @@ public class Evento {
 		return boEquals;
 	}
 
-	@Override
 	public String toString() {
 
 		String sResultado;
 
 		sResultado = getIdEvento() + "\n";
-		sResultado = getFechaInit() + "\n";
-		sResultado = getFechaFin() + "\n";
-		sResultado = getHoraInit() + "\n";
-		sResultado = getHoraFin() + "\n";
-		sResultado = getAforo() + "\n";
-		sResultado = getImagen() + "\n";
-		sResultado = getidUbicacion() + "\n";
-		sResultado = getIdEvento() + "\n";
-		sResultado = getidUbicacion() + "\n";
+		sResultado += getFechaInit() + "\n";
+		sResultado += getFechaFin() + "\n";
+		sResultado += getHoraInit() + "\n";
+		sResultado+= getHoraFin() + "\n";
+		sResultado += getAforo() + "\n";
+		sResultado += getImagen() + "\n";
+		sResultado += getidUbicacion() + "\n";
+		sResultado += getIdEvento() + "\n";
+		sResultado += getidUbicacion() + "\n";
 		return sResultado;
 	}
 
