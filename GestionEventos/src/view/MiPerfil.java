@@ -9,21 +9,24 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.JLabel;
 
 
 public class MiPerfil extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtUsername;
+	private JTextField txtUser;
 	private JTextField txtPass;
 	private JTextField txtDni;
 	private JTextField txtCorreo;
-	private JTextField txtTelefono;
 	private JTextField txtApellidos;
 	private JTextField txtNombre;
+	private JLabel lblNewLabel_5;
+	private JLabel lblNewLabel_6;
+	private JTextField txtTelefono;
 
 	public MiPerfil () {
-		setBounds (500,200,300,200);
+		setBounds (500,200,557,506);
 		setTitle("Mi Perfil");	
 		getContentPane().setLayout(null);
 		
@@ -41,53 +44,80 @@ public class MiPerfil extends JFrame {
 		
 		JButton btnImgMiPerfil = new JButton("");
 		ImageIcon icono = new ImageIcon("stromp.png");
-		btnImgMiPerfil.setBounds(27, 11, 119, 90);
+		btnImgMiPerfil.setBounds(27, 11, 163, 100);
 		btnImgMiPerfil.setIcon(icono);
 		contentPane.add(btnImgMiPerfil);
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(126, 227, 89, 23);
-		contentPane.add(btnNewButton);
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setBounds(126, 227, 89, 23);
+		contentPane.add(btnCancelar);
 		
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(225, 227, 89, 23);
-		contentPane.add(btnNewButton_1);
+		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.setBounds(225, 227, 89, 23);
+		contentPane.add(btnAceptar);
 		
-		txtUsername = new JTextField();
-		txtUsername.setBounds(225, 91, 199, 20);
-		contentPane.add(txtUsername);
-		txtUsername.setColumns(10);
+		txtUser = new JTextField();
+		txtUser.setBounds(282, 99, 142, 20);
+		contentPane.add(txtUser);
+		txtUser.setColumns(10);
 		
 		txtPass = new JTextField();
-		txtPass.setText("Pass");
 		txtPass.setColumns(10);
-		txtPass.setBounds(225, 122, 199, 20);
+		txtPass.setBounds(282, 130, 142, 20);
 		contentPane.add(txtPass);
 		
 		txtDni = new JTextField();
 		txtDni.setColumns(10);
-		txtDni.setBounds(225, 184, 199, 20);
+		txtDni.setBounds(282, 192, 142, 20);
 		contentPane.add(txtDni);
 		
-		txtCorreo = new JTextField("Correo");
+		txtCorreo = new JTextField("");
 		txtCorreo.setColumns(10);
-		txtCorreo.setBounds(225, 153, 199, 20);
+		txtCorreo.setBounds(282, 161, 142, 20);
 		contentPane.add(txtCorreo);
-		
-		txtTelefono = new JTextField();
-		txtTelefono.setColumns(10);
-		txtTelefono.setBounds(10, 184, 199, 20);
-		contentPane.add(txtTelefono);
 		
 		txtApellidos = new JTextField();
 		txtApellidos.setColumns(10);
-		txtApellidos.setBounds(10, 153, 199, 20);
+		txtApellidos.setBounds(67, 161, 142, 20);
 		contentPane.add(txtApellidos);
 		
 		txtNombre = new JTextField();
 		txtNombre.setColumns(10);
-		txtNombre.setBounds(10, 122, 199, 20);
+		txtNombre.setBounds(67, 130, 142, 20);
 		contentPane.add(txtNombre);
+		
+		JLabel lblNewLabel = new JLabel("Nombre");
+		lblNewLabel.setBounds(10, 133, 46, 14);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Dni");
+		lblNewLabel_1.setBounds(225, 195, 46, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("User");
+		lblNewLabel_2.setBounds(225, 102, 46, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Password");
+		lblNewLabel_3.setBounds(226, 133, 46, 14);
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Correo");
+		lblNewLabel_4.setBounds(226, 164, 46, 14);
+		contentPane.add(lblNewLabel_4);
+		
+		lblNewLabel_5 = new JLabel("Apellidos");
+		lblNewLabel_5.setBounds(10, 164, 46, 14);
+		contentPane.add(lblNewLabel_5);
+		
+		lblNewLabel_6 = new JLabel("Telefono");
+		lblNewLabel_6.setBounds(10, 195, 46, 14);
+		contentPane.add(lblNewLabel_6);
+		
+		txtTelefono = new JTextField();
+		txtTelefono.setColumns(10);
+		txtTelefono.setBounds(67, 192, 142, 20);
+		contentPane.add(txtTelefono);
 		
 	}
 }
