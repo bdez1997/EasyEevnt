@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GestionEventoAndroid</string>
+
+    <string name="btnRegistro">Resgistrarse</string>
+    <string name="txtRegistro">REGISTRO</string>
+    <string name="editText"> </string>
+
+    <string-array name="roles">
+        <item>Trabajador</item>
+        <item>Voluntario</item>
+        <item>Asociado</item>
+        <item>Empresa</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_android_onclick">Button android:onClick=</string>
+
+</resources>
