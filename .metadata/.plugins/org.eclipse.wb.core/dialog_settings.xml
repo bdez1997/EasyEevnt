@@ -6,4 +6,25 @@
 		<item key="width" value="530"/>
 		<item key="height" value="346"/>
 	</section>
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.PaletteManagerDialog">
+		<item key="x" value="420"/>
+		<item key="y" value="106"/>
+		<item key="width" value="525"/>
+		<item key="height" value="516"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.CategoryAddDialog">
+		<item key="x" value="420"/>
+		<item key="y" value="164"/>
+		<item key="width" value="525"/>
+		<item key="height" value="399"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.ImportArchiveDialog">
+		<item key="x" value="420"/>
+		<item key="y" value="143"/>
+		<item key="width" value="525"/>
+		<item key="height" value="442"/>
+		<list key="HISTORY_JAR_LIST">
+			<item value="C:\Users\Usuario\Documents\Git-EasyEvent\EasyEevnt\GestionEventos\lib\jcalendar-1.4.jar"/>
+		</list>
+	</section>
 </section>
