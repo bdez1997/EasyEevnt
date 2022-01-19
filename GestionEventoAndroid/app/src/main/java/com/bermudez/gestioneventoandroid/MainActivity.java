@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         actionBarDrawerToggle.syncState();
 
-        openFragment(new AsistenciaFragment());
+        openFragment(new PrincipalFragment());
     }
 
     private void openFragment(Fragment fragment){
@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch(item.getItemId()) {
             case R.id.opPerfil: openPerfil(); break;
+            case R.id.opEventos: openFragment(new PrincipalFragment()); break;
             case R.id.opHistorial: openFragment(new AsistenciaFragment()); break;
             case R.id.salir: salir(); break;
         }

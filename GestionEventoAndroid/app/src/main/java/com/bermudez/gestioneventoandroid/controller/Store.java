@@ -14,4 +14,7 @@ public class Store {
     //Historial asistencia
     public static List<Evento> lstAsistencia = new ArrayList<Evento>();
     public static int iAsistenciaSelected;
+
+    //Perfil
+    public static boolean boIsEditing = false;
 }

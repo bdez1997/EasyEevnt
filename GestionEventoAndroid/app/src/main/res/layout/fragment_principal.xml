@@ -12,9 +12,20 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvEventos"
-            android:layout_width="383dp"
-            android:layout_height="563dp"
+            android:layout_width="355dp"
+            android:layout_height="529dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblEventos" />
+
+        <TextView
+            android:id="@+id/lblEventos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="EVENTOS"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

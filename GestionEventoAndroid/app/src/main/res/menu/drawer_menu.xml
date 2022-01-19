@@ -13,6 +13,11 @@
                 android:id="@+id/opHistorial"
                 android:icon="@drawable/historial">
             </item>
+            <item
+                android:title="Eventos"
+                android:id="@+id/opEventos">
+
+            </item>
         </menu>
     </item>
 
