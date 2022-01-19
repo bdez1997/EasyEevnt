@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         actionBarDrawerToggle.syncState();
 
-        openFragment(new PrincipalFragment());
+        openFragment(new AsistenciaFragment());
 
     }
 
@@ -63,16 +63,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void showData(){
-        Store.lstAsistencia.add(new Evento("Mangafest"));
-        Store.lstAsistencia.add(new Evento("Ficzone"));
+        Store.lstAsistencia.add(new Evento("Mangafest 2022"));
+        Store.lstAsistencia.add(new Evento("Ficzone 2021"));
         Store.lstEventos.add(new Evento("Ficzone", LocalDateTime.now(), LocalDateTime.now()));
+        Store.lstEventos.add(new Evento("Mangafest 2021", LocalDateTime.now(), LocalDateTime.now()));
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
         drawerLayout.closeDrawer(GravityCompat.START);
+
         switch(item.getItemId()) {
-            case R.id.opPerfil: openFragment(new AsistenciaFragment()); break;
+            //case R.id.opPerfil: openFragment(new AsistenciaFragment()); break;
             case R.id.opHistorial: openFragment(new AsistenciaFragment()); break;
             case R.id.salir: salir(); break;
         }
