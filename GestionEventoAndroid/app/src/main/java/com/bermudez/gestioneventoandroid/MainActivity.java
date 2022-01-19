@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Contacts;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -51,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBarDrawerToggle.syncState();
 
         openFragment(new AsistenciaFragment());
-
     }
 
     private void openFragment(Fragment fragment){
@@ -60,6 +60,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.replace(R.id.container, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+    private void openPerfil(){
+        Intent perfilActivity = new Intent(MainActivity.this, PerfilActivity.class);
+        startActivity(perfilActivity);
     }
 
     private void showData(){
@@ -75,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawer(GravityCompat.START);
 
         switch(item.getItemId()) {
-            //case R.id.opPerfil: openFragment(new AsistenciaFragment()); break;
+            case R.id.opPerfil: openPerfil(); break;
             case R.id.opHistorial: openFragment(new AsistenciaFragment()); break;
             case R.id.salir: salir(); break;
         }
