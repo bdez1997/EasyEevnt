@@ -21,4 +21,8 @@ public class Store {
 
     //Mi usuario
     public static Persona miPersona;
+
+    //Evento
+    public static Evento miEvento;
+
 }
