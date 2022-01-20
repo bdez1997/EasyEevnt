@@ -12,13 +12,14 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import javax.swing.JComboBox;
+import javax.swing.JList;
 
 public class DescripcionEventos extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtDescrpEvento;
-	private JButton btnCancelarDescrpEvento;
-	private JButton btnAceptarDescrpEvento;
+	private JButton btnAnnadirUsuario;
+	private JList lstUsuario;
 
 
 	
@@ -47,21 +48,12 @@ public class DescripcionEventos extends JFrame {
 		contentPane.add(panel, BorderLayout.SOUTH);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		btnCancelarDescrpEvento = new JButton("CANCELAR");
-		btnCancelarDescrpEvento.setFont(new Font("Arial", Font.BOLD, 12));
-		btnCancelarDescrpEvento.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		panel.add(btnCancelarDescrpEvento);
+		btnAnnadirUsuario = new JButton("A\u00D1ADIR");
+		btnAnnadirUsuario.setFont(new Font("Arial", Font.BOLD, 12));
+		panel.add(btnAnnadirUsuario);
 		
-		btnAceptarDescrpEvento = new JButton("ACEPTAR");
-		btnAceptarDescrpEvento.setFont(new Font("Arial", Font.BOLD, 12));
-		panel.add(btnAceptarDescrpEvento);
-		
-		txtDescrpEvento = new JTextField();
-		contentPane.add(txtDescrpEvento, BorderLayout.CENTER);
-		txtDescrpEvento.setColumns(10);
+		lstUsuario = new JList();
+		contentPane.add(lstUsuario, BorderLayout.CENTER);
 	}
 
 }

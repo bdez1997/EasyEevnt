@@ -12,13 +12,15 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import javax.swing.JList;
+import javax.swing.AbstractListModel;
+import javax.swing.ListSelectionModel;
 
 public class FrmUsuariosRegistrados extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtDescrpPerfil;
-	private JButton btnCancelarDescrpPerfil;
-	private JButton btnAceptarDescrpPerfil;
+	private JButton btnAnnadirEvento;
+	private JList lstUsuarios;
 
 	
 		public FrmUsuariosRegistrados() {
@@ -44,21 +46,22 @@ public class FrmUsuariosRegistrados extends JFrame {
 		contentPane.add(panel, BorderLayout.SOUTH);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		btnCancelarDescrpPerfil = new JButton("CANCELAR");
-		btnCancelarDescrpPerfil.setFont(new Font("Arial", Font.BOLD, 12));
-		btnCancelarDescrpPerfil.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnAnnadirEvento = new JButton("A\u00D1ADIR");
+		btnAnnadirEvento.setFont(new Font("Arial", Font.BOLD, 12));
+		panel.add(btnAnnadirEvento);
+		
+		lstUsuarios = new JList();
+		lstUsuarios.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		lstUsuarios.setModel(new AbstractListModel() {
+			String[] values = new String[] {""};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
 			}
 		});
-		panel.add(btnCancelarDescrpPerfil);
-		
-		btnAceptarDescrpPerfil = new JButton("ACEPTAR");
-		btnAceptarDescrpPerfil.setFont(new Font("Arial", Font.BOLD, 12));
-		panel.add(btnAceptarDescrpPerfil);
-		
-		txtDescrpPerfil = new JTextField();
-		contentPane.add(txtDescrpPerfil, BorderLayout.CENTER);
-		txtDescrpPerfil.setColumns(10);
+		contentPane.add(lstUsuarios, BorderLayout.CENTER);
 	}
 
 }
