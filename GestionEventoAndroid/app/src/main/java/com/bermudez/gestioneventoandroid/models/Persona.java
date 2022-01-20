@@ -12,8 +12,19 @@ public class Persona implements IMaxCaracteres{
         getsDni();
     }
 
-    public Persona(String sDni, String sNombre,String sApellido,String sUsername,String sPassword,
-                   String sCorreo,String sTelefono,String sInformacion, ArrayList<String> arrayRol) {
+    public Persona(String sDni, String sNombre, String sApellido, String sUsername, String sPassword, String sCorreo, String sTelefono, String sInformacion) {
+        this.sDni = sDni;
+        this.sNombre = sNombre;
+        this.sApellido = sApellido;
+        this.sUsername = sUsername;
+        this.sPassword = sPassword;
+        this.sCorreo = sCorreo;
+        this.sTelefono = sTelefono;
+        this.sInformacion = sInformacion;
+    }
+
+    public Persona(String sDni, String sNombre, String sApellido, String sUsername, String sPassword,
+                   String sCorreo, String sTelefono, String sInformacion, ArrayList<String> arrayRol) {
         setsDni(sDni);
         setsNombre(sNombre);
         setsApellido(sApellido);
@@ -23,6 +34,9 @@ public class Persona implements IMaxCaracteres{
         setsTelefono(sTelefono);
         setsInformacion(sInformacion);
         setArrayRol();
+    }
+
+    public Persona(String dni, String nombre, String apellidos, String username, String password, String correo, String telefono, String rol, String informacion) {
     }
 
     private void setArrayRol() {

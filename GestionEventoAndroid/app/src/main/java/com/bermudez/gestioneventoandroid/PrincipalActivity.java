@@ -18,7 +18,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.bermudez.gestioneventoandroid.controller.EventosAdapter;
+import com.bermudez.gestioneventoandroid.controller.Store;
 import com.google.android.material.navigation.NavigationView;
 
 
@@ -27,6 +31,7 @@ import android.os.Bundle;
 public class PrincipalActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +45,7 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
 
         drawerLayout = findViewById(R.id.drawerLayout);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
-                0,0);
+                0, 0);
 
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
@@ -49,7 +54,7 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
 
     }
 
-    private void openFragment(Fragment fragment){
+    private void openFragment(Fragment fragment) {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = manager.beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment);
@@ -60,5 +65,26 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;
+    }
+
+
+    private void mostrarDatos() {
+
+        RecyclerView rvEvento = findViewById(R.id.rvEventos);
+
+        rvEvento.setLayoutManager(new LinearLayoutManager(this));
+
+        EventosAdapter eventoAdapter = new EventosAdapter(this);
+
+        rvEvento.setAdapter(eventoAdapter);
+
+        eventoAdapter.setOnClickListener(view -> {
+
+            Store.iAsistenciaSelected = rvEvento.getChildAdapterPosition(view);
+            Toast.makeText(this, "Item" + Store.lstEventos.get(Store.iAsistenciaSelected).toString(), Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(this, InfoEvento.class);
+            startActivity(i);
+        });
+
     }
 }

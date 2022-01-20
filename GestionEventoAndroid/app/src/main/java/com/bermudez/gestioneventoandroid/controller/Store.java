@@ -1,6 +1,7 @@
 package com.bermudez.gestioneventoandroid.controller;
 
 import com.bermudez.gestioneventoandroid.models.Evento;
+import com.bermudez.gestioneventoandroid.models.Persona;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,4 +18,7 @@ public class Store {
 
     //Perfil
     public static boolean boIsEditing = false;
+
+    //Mi usuario
+    public static Persona miPersona;
 }
