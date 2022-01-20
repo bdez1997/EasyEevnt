@@ -11,6 +11,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class DescripcionEventos extends JFrame {
 
@@ -27,7 +28,7 @@ public class DescripcionEventos extends JFrame {
 		
 		setBounds (500,200,300,200);
 		setTitle("Doble");
-		setLayout(null);
+		getContentPane().setLayout(null);
 		
 		crearComponentes();
 		setVisible(true);
@@ -47,6 +48,7 @@ public class DescripcionEventos extends JFrame {
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		btnCancelarDescrpEvento = new JButton("CANCELAR");
+		btnCancelarDescrpEvento.setFont(new Font("Arial", Font.BOLD, 12));
 		btnCancelarDescrpEvento.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -54,6 +56,7 @@ public class DescripcionEventos extends JFrame {
 		panel.add(btnCancelarDescrpEvento);
 		
 		btnAceptarDescrpEvento = new JButton("ACEPTAR");
+		btnAceptarDescrpEvento.setFont(new Font("Arial", Font.BOLD, 12));
 		panel.add(btnAceptarDescrpEvento);
 		
 		txtDescrpEvento = new JTextField();

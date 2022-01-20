@@ -21,6 +21,25 @@ public class Logic {
     Evento evento;
     ArrayList<Evento> lstEvento;
 
+
+    private void obtenerTodos() {
+        String sURL = hosting + "get-evento.php?txtId=" + txtId.getText().toString();
+
+        Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, sURL,
+                s -> {
+                    if(s.equals("null")){
+                        Toast.makeText(getApplicationContext(), "No se ha encontrado", Toast.LENGTH_SHORT).show();
+                    }else{
+                        lstEvento = new ArrayList<>();
+                        evento = new Gson().fromJson(s, new TypeToken<Evento>() {}.getType());
+                        listarEventos();
+                    }
+
+                }
+                , volleyError -> {}
+        ));
+    }
+
     private void listarEventos() {
         StringBuffer str = new StringBuffer();
         lstEvento.forEach(c -> str.append(c.toString()).append("\n"));

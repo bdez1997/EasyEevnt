@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import java.awt.Font;
 
 
 public class MiPerfil extends JFrame {
@@ -26,7 +27,7 @@ public class MiPerfil extends JFrame {
 	private JTextField txtTelefono;
 
 	public MiPerfil () {
-		setBounds (500,200,557,506);
+		setBounds (500,200,511,335);
 		setTitle("Mi Perfil");	
 		getContentPane().setLayout(null);
 		
@@ -48,22 +49,24 @@ public class MiPerfil extends JFrame {
 		btnImgMiPerfil.setIcon(icono);
 		contentPane.add(btnImgMiPerfil);
 		
-		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.setBounds(126, 227, 89, 23);
+		JButton btnCancelar = new JButton("CANCELAR");
+		btnCancelar.setFont(new Font("Arial", Font.BOLD, 12));
+		btnCancelar.setBounds(103, 227, 106, 23);
 		contentPane.add(btnCancelar);
 		
-		JButton btnAceptar = new JButton("Aceptar");
-		btnAceptar.setBounds(225, 227, 89, 23);
+		JButton btnAceptar = new JButton("ACEPTAR");
+		btnAceptar.setFont(new Font("Arial", Font.BOLD, 12));
+		btnAceptar.setBounds(235, 227, 89, 23);
 		contentPane.add(btnAceptar);
 		
 		txtUser = new JTextField();
-		txtUser.setBounds(282, 99, 142, 20);
+		txtUser.setBounds(292, 99, 132, 23);
 		contentPane.add(txtUser);
 		txtUser.setColumns(10);
 		
 		txtPass = new JTextField();
 		txtPass.setColumns(10);
-		txtPass.setBounds(282, 130, 142, 20);
+		txtPass.setBounds(292, 130, 132, 23);
 		contentPane.add(txtPass);
 		
 		txtDni = new JTextField();
@@ -87,30 +90,37 @@ public class MiPerfil extends JFrame {
 		contentPane.add(txtNombre);
 		
 		JLabel lblNewLabel = new JLabel("Nombre");
+		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNewLabel.setBounds(10, 133, 46, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Dni");
+		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(225, 195, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("User");
+		lblNewLabel_2.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNewLabel_2.setBounds(225, 102, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Password");
-		lblNewLabel_3.setBounds(226, 133, 46, 14);
+		lblNewLabel_3.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblNewLabel_3.setBounds(226, 133, 56, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Correo");
+		lblNewLabel_4.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNewLabel_4.setBounds(226, 164, 46, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		lblNewLabel_5 = new JLabel("Apellidos");
+		lblNewLabel_5.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNewLabel_5.setBounds(10, 164, 46, 14);
 		contentPane.add(lblNewLabel_5);
 		
 		lblNewLabel_6 = new JLabel("Telefono");
+		lblNewLabel_6.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNewLabel_6.setBounds(10, 195, 46, 14);
 		contentPane.add(lblNewLabel_6);
 		

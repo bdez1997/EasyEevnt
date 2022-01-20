@@ -11,8 +11,9 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
-public class DescripcionPerfil extends JFrame {
+public class FrmUsuariosRegistrados extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtDescrpPerfil;
@@ -20,11 +21,11 @@ public class DescripcionPerfil extends JFrame {
 	private JButton btnAceptarDescrpPerfil;
 
 	
-		public DescripcionPerfil() {
+		public FrmUsuariosRegistrados() {
 		
 		setBounds (500,200,300,200);
 		setTitle("Doble");
-		setLayout(null);
+		getContentPane().setLayout(null);
 		
 		crearComponentes();
 		setVisible(true);
@@ -44,6 +45,7 @@ public class DescripcionPerfil extends JFrame {
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		btnCancelarDescrpPerfil = new JButton("CANCELAR");
+		btnCancelarDescrpPerfil.setFont(new Font("Arial", Font.BOLD, 12));
 		btnCancelarDescrpPerfil.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -51,6 +53,7 @@ public class DescripcionPerfil extends JFrame {
 		panel.add(btnCancelarDescrpPerfil);
 		
 		btnAceptarDescrpPerfil = new JButton("ACEPTAR");
+		btnAceptarDescrpPerfil.setFont(new Font("Arial", Font.BOLD, 12));
 		panel.add(btnAceptarDescrpPerfil);
 		
 		txtDescrpPerfil = new JTextField();

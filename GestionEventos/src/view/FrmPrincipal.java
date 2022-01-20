@@ -67,7 +67,7 @@ public class FrmPrincipal extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblNewLabel = new JLabel("EasyEvent");
-		lblNewLabel.setFont(new Font("Verdana", Font.PLAIN, 40));
+		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 40));
 		lblNewLabel.setForeground(new Color(0, 0, 0));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblNewLabel, BorderLayout.CENTER);

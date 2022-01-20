@@ -53,28 +53,31 @@ public class DlgCreacionEventos extends JDialog {
 		txtNombreEvento.setColumns(10);
 		
 		JLabel lblNombreEvento = new JLabel("Nombre del evento:");
-		lblNombreEvento.setFont(new Font("Arial", Font.PLAIN, 13));
+		lblNombreEvento.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblNombreEvento.setBounds(28, 39, 136, 14);
 		contentPanel.add(lblNombreEvento);
 		
-		JLabel lblFechaInicio = new JLabel("Fecha de inicio del evento:");
-		lblFechaInicio.setBounds(28, 92, 191, 14);
+		JLabel lblFechaInicio = new JLabel("Fecha de inicio:");
+		lblFechaInicio.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblFechaInicio.setBounds(28, 92, 136, 14);
 		contentPanel.add(lblFechaInicio);
 		
 		JDateChooser dateInicio = new JDateChooser();
 		dateInicio.setBounds(28, 117, 194, 20);
 		contentPanel.add(dateInicio);
 		
-		JLabel lblFechaFinEvento = new JLabel("Fecha del final del evento:");
-		lblFechaFinEvento.setBounds(28, 148, 191, 14);
+		JLabel lblFechaFinEvento = new JLabel("Fecha del final:");
+		lblFechaFinEvento.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblFechaFinEvento.setBounds(28, 148, 136, 15);
 		contentPanel.add(lblFechaFinEvento);
 		
 		JDateChooser dateFin = new JDateChooser();
 		dateFin.setBounds(28, 173, 191, 20);
 		contentPanel.add(dateFin);
 		
-		JLabel lblHoraInicio = new JLabel("Hora en la que se iniciar\u00E1 el evento:");
-		lblHoraInicio.setBounds(28, 203, 191, 14);
+		JLabel lblHoraInicio = new JLabel("Hora de apertura:");
+		lblHoraInicio.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblHoraInicio.setBounds(28, 203, 125, 15);
 		contentPanel.add(lblHoraInicio);
 		
 		txtHoraInicio = new JTextField();
@@ -82,8 +85,9 @@ public class DlgCreacionEventos extends JDialog {
 		contentPanel.add(txtHoraInicio);
 		txtHoraInicio.setColumns(10);
 		
-		JLabel lblHoraFin = new JLabel("Hora en la que finalizar\u00E1 el evento:");
-		lblHoraFin.setBounds(28, 259, 191, 14);
+		JLabel lblHoraFin = new JLabel("Hora de finalizaci\u00F3n:");
+		lblHoraFin.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblHoraFin.setBounds(28, 259, 149, 15);
 		contentPanel.add(lblHoraFin);
 		
 		txtHoraFin = new JTextField();
@@ -91,8 +95,9 @@ public class DlgCreacionEventos extends JDialog {
 		contentPanel.add(txtHoraFin);
 		txtHoraFin.setColumns(10);
 		
-		JLabel lblUbicacion = new JLabel("Indique donde se realizar\u00E1 el evento:");
-		lblUbicacion.setBounds(28, 312, 191, 14);
+		JLabel lblUbicacion = new JLabel("Direcci\u00F3n:");
+		lblUbicacion.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblUbicacion.setBounds(28, 312, 149, 14);
 		contentPanel.add(lblUbicacion);
 		
 		txtUbicacion = new JTextField();
@@ -100,8 +105,9 @@ public class DlgCreacionEventos extends JDialog {
 		contentPanel.add(txtUbicacion);
 		txtUbicacion.setColumns(10);
 		
-		JLabel lblAforoMax = new JLabel("Indique cuantas personas asistir\u00E1n al evento:");
-		lblAforoMax.setBounds(28, 367, 226, 14);
+		JLabel lblAforoMax = new JLabel("Aforo:");
+		lblAforoMax.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblAforoMax.setBounds(28, 367, 67, 19);
 		contentPanel.add(lblAforoMax);
 		
 		txtAforo = new JTextField();
@@ -115,23 +121,27 @@ public class DlgCreacionEventos extends JDialog {
 		
 		JLabel lblImgEvento = new JLabel("");
 		lblImgEvento.setIcon(new ImageIcon("C:\\Users\\Usuario\\Desktop\\descarga.png"));
-		lblImgEvento.setBounds(409, 284, 149, 151);
+		lblImgEvento.setBounds(409, 312, 149, 151);
 		contentPanel.add(lblImgEvento);
 		
-		JLabel lblDescripción = new JLabel("A\u00F1ada una descripci\u00F3n al evento:");
-		lblDescripción.setBounds(392, 39, 166, 14);
+		JLabel lblDescripción = new JLabel("Descripci\u00F3n:");
+		lblDescripción.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblDescripción.setBounds(322, 39, 166, 14);
 		contentPanel.add(lblDescripción);
 		
-		JButton btnImg = new JButton("Cambiar foto de perfil");
-		btnImg.setBounds(409, 440, 149, 23);
+		JButton btnImg = new JButton("SELECCIONAR FOTO:");
+		btnImg.setFont(new Font("Arial", Font.BOLD, 12));
+		btnImg.setBounds(409, 496, 149, 42);
 		contentPanel.add(btnImg);
 		
-		JButton btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(165, 541, 89, 23);
+		JButton btnGuardar = new JButton("GUARDAR");
+		btnGuardar.setFont(new Font("Arial", Font.BOLD, 12));
+		btnGuardar.setBounds(60, 496, 104, 42);
 		contentPanel.add(btnGuardar);
 		
-		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.setBounds(338, 541, 89, 23);
+		JButton btnCancelar = new JButton("CANCELAR");
+		btnCancelar.setFont(new Font("Arial", Font.BOLD, 12));
+		btnCancelar.setBounds(224, 496, 109, 42);
 		contentPanel.add(btnCancelar);
 		
 		
