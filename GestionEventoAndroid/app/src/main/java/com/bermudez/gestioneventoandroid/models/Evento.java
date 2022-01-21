@@ -8,20 +8,20 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Objects;
 
-public class Evento {
+public class Evento implements IMaxCaracteres{
 
     private String sNombreEvento;
     private int idEvento;
     private LocalDateTime fechaInit;
     private LocalDateTime fechaFin;
-    private int aforo;
-    private String descripcion;
+    private int iAforo;
+    private String sDescripcion;
     private ImageView imagen;
-    private int idUbicacion;
+    private String sUbicacion;
 
 
-    public Evento(String sNombre){
-        setsNombreEvento(sNombre);
+    public Evento(String sNombreEvento){
+        setsNombreEvento(sNombreEvento);
     }
 
     public Evento(String sNombre,LocalDateTime fechaInit,LocalDateTime fechaFin){
@@ -38,17 +38,17 @@ public class Evento {
         setFechaFin(fechaFin);
 
     }
-    public Evento(int idEvento,String sNombreEvento, LocalDateTime fechaInit, LocalDateTime fechaFin, int aforo,
-                  String descripcion, ImageView imagen, int idUbicacion) {
+    public Evento(int idEvento,String sNombreEvento, LocalDateTime fechaInit, LocalDateTime fechaFin, int iAforo,
+                  String sDescripcion, ImageView imagen, String sUbicacion) {
 
         setIdEvento(idEvento);
         setsNombreEvento(sNombreEvento);
         setFechaInit(fechaInit);
         setFechaFin(fechaFin);
-        setAforo(aforo);
-        setDescripcion(descripcion);
+        setiAforo(iAforo);
+        setsDescripcion(sDescripcion);
         setImagen(imagen);
-        setIdEvento(idUbicacion);
+        setsUbicacion(sUbicacion);
     }
 
     public String getsNombreEvento() {
@@ -56,7 +56,10 @@ public class Evento {
     }
 
     public void setsNombreEvento(String sNombreEvento) {
-        this.sNombreEvento = sNombreEvento;
+        if (sNombreEvento.length() > IMINIMO && sNombreEvento.length()< IMAXNOMBRE){
+            this.sNombreEvento = sNombreEvento;
+        }
+
     }
 
     public int getIdEvento() {
@@ -64,9 +67,7 @@ public class Evento {
     }
 
     public void setIdEvento(int idEvento) {
-        if (Integer.toString(idEvento).length() <= 16) {
             this.idEvento = idEvento;
-        }
     }
 
     public LocalDateTime getFechaInit() {
@@ -87,24 +88,22 @@ public class Evento {
 
 
 
-    public int getAforo() {
-        return aforo;
+    public int getiAforo() {
+        return iAforo;
     }
 
-    public void setAforo(int aforo) {
-        if (Integer.toString(aforo).length() <= 10) {
-            this.aforo = aforo;
+    public void setiAforo(int iAforo) {
+            this.iAforo = iAforo;
+    }
+
+    public String getsDescripcion() {
+        return sDescripcion;
+    }
+
+    public void setsDescripcion(String sDescripcion) {
+        if (sDescripcion.length() < IMAXDESCRIPCION) {
+            this.sDescripcion = sDescripcion;
         }
-    }
-
-    public void getDescripcion(String description) {
-        if (descripcion.length() <= 250) {
-            this.descripcion = descripcion;
-        }
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
     }
 
     public ImageView getImagen() {
@@ -115,13 +114,13 @@ public class Evento {
         this.imagen = imagen;
     }
 
-    public int getidUbicacion() {
-        return idUbicacion;
+    public String getsUbicacion() {
+        return sUbicacion;
     }
 
-    public void setidUbicacion(int idUbicacion) {
-        if (Integer.toString(idUbicacion).length() <= 10) {
-            this.idUbicacion = idUbicacion;
+    public void setsUbicacion(String sUbicacion) {
+        if (sUbicacion.length() > IMINIMO && sUbicacion.length() < IMAXDIRECCION) {
+            this.sUbicacion = sUbicacion;
         }
     }
 
@@ -144,17 +143,15 @@ public class Evento {
 
     @Override
     public String toString() {
-
         String sResultado;
 
-        sResultado = getIdEvento() + "\n";
+        sResultado = getsNombreEvento() + "\n";
         sResultado += getFechaInit() + "\n";
         sResultado += getFechaFin() + "\n";
-        sResultado += getAforo() + "\n";
+        sResultado += getiAforo() + "\n";
+        sResultado += getsUbicacion() + "\n";
         sResultado += getImagen() + "\n";
-        sResultado += getidUbicacion() + "\n";
-        sResultado += getIdEvento() + "\n";
-        sResultado += getidUbicacion() + "\n";
+
         return sResultado;
     }
 

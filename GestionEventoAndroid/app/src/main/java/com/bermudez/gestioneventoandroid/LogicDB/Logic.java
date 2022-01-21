@@ -67,17 +67,17 @@ public class Logic extends AppCompatActivity {
         String Imagen = json.getString("Imagen");
 
         /*
-        * int idEvento,String sNombreEvento, LocalDateTime fechaInit, LocalDateTime fechaFin, int aforo,
+         int idEvento,String sNombreEvento, LocalDateTime fechaInit, LocalDateTime fechaFin, int aforo,
                   String descripcion, ImageView imagen)
-        *
-        *
+
+
 
 
         Evento jsonEvento = new Evento(id_evento, sNombreEvento,FechaIni,FechaFin,Aforo, Descripcion, Imagen);
         Store.miEvento = jsonEvento;
         Log.i("MI Evento", Store.miEvento.toString());
-    }
-*/
+        }
+    */
 
     private void listarEventos() {
         StringBuffer str = new StringBuffer();
