@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Color;
 
 
 public class MiPerfil extends JFrame {
@@ -50,11 +51,14 @@ public class MiPerfil extends JFrame {
 		contentPane.add(btnImgMiPerfil);
 		
 		JButton btnCancelar = new JButton("CANCELAR");
+		btnCancelar.setBackground(new Color(135, 206, 250));
+		btnCancelar.setForeground(new Color(0, 0, 0));
 		btnCancelar.setFont(new Font("Arial", Font.BOLD, 12));
 		btnCancelar.setBounds(103, 227, 106, 23);
 		contentPane.add(btnCancelar);
 		
 		JButton btnAceptar = new JButton("ACEPTAR");
+		btnAceptar.setBackground(new Color(135, 206, 250));
 		btnAceptar.setFont(new Font("Arial", Font.BOLD, 12));
 		btnAceptar.setBounds(235, 227, 89, 23);
 		contentPane.add(btnAceptar);

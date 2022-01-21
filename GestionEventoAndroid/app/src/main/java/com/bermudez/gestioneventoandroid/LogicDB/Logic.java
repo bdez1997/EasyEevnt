@@ -23,14 +23,14 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Logic extends AppCompatActivity {
-/*
+
     EditText txtId;
     TextView txtResultado;
     String hosting = "http://proyectogestioneventos.atwebpages.com/PHP/";
     Evento evento;
     ArrayList<Evento> lstEvento;
 
-
+/*
     private void obtenerTodos() {
         String sURL = hosting + "eventos.php";
 
@@ -54,6 +54,7 @@ public class Logic extends AppCompatActivity {
         ));
     }
 
+
     private void jsonToEvent(JSONObject json) throws JSONException {
         //Hay que crear nombre de evento en base de datos
         int id_evento = json.getInt("id_evento");
@@ -76,11 +77,12 @@ public class Logic extends AppCompatActivity {
         Store.miEvento = jsonEvento;
         Log.i("MI Evento", Store.miEvento.toString());
     }
+*/
 
     private void listarEventos() {
         StringBuffer str = new StringBuffer();
         lstEvento.forEach(c -> str.append(c.toString()).append("\n"));
         txtResultado.setText(str);
     }
-*/
+
 }
