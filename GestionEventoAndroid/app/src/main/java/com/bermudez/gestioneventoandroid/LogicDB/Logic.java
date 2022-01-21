@@ -26,7 +26,7 @@ public class Logic extends AppCompatActivity {
 
     EditText txtId;
     TextView txtResultado;
-    String hosting = "http://proyectogestioneventos.atwebpages.com/PHP/";
+    String hosting = "http://proyectogestioneventos.atwebpages.com/php/";
     Evento evento;
     ArrayList<Evento> lstEvento;
 
