@@ -30,11 +30,11 @@ import java.awt.Color;
 public class DlgCreacionEventos extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField txtNombreEvento;
-	private JTextField txtHoraInicio;
-	private JTextField txtHoraFin;
-	private JTextField txtUbicacion;
-	private JTextField txtAforo;
+	public static JTextField txtNombreEvento;
+	public static JTextField txtHoraInicio;
+	public static JTextField txtHoraFin;
+	public static JTextField txtUbicacion;
+	public static JTextField txtAforo;
 
 	public DlgCreacionEventos() {
 		setTitle("Creación de eventos");
