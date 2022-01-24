@@ -13,6 +13,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import javax.swing.JSeparator;
 
 public class FrmPrincipal extends JFrame {
 
@@ -20,7 +21,7 @@ public class FrmPrincipal extends JFrame {
 
 
 	public FrmPrincipal() {
-		setTitle("WELCOME");
+		setTitle("EasyEvents");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);		
 		crearComponentes();
@@ -31,47 +32,67 @@ public class FrmPrincipal extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnNewMenu = new JMenu("A\u00F1adir");
-		mnNewMenu.setForeground(new Color(0, 0, 0));
-		menuBar.add(mnNewMenu);
+		JMenu mnEditar = new JMenu("Editar");
+		mnEditar.setFont(new Font("Arial", Font.PLAIN, 12));
+		mnEditar.setForeground(new Color(0, 0, 0));
+		menuBar.add(mnEditar);
 		
 		JMenuItem mntEvento = new JMenuItem("Evento");
-		mnNewMenu.add(mntEvento);
+		mntEvento.setFont(new Font("Arial", Font.PLAIN, 12));
+		mnEditar.add(mntEvento);
 		
 		JMenuItem mntmPersonas = new JMenuItem("Personas");
-		mnNewMenu.add(mntmPersonas);
+		mntmPersonas.setFont(new Font("Arial", Font.PLAIN, 12));
+		mnEditar.add(mntmPersonas);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Empresa");
+		mntmNewMenuItem.setFont(new Font("Arial", Font.PLAIN, 12));
+		mnEditar.add(mntmNewMenuItem);
+		
+		JSeparator separator = new JSeparator();
+		mnEditar.add(separator);
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Salir");
+		mntmNewMenuItem_1.setFont(new Font("Arial", Font.PLAIN, 12));
+		mnEditar.add(mntmNewMenuItem_1);
 		
 		JMenu mnMostrar = new JMenu("Mostrar");
+		mnMostrar.setFont(new Font("Arial", Font.PLAIN, 12));
 		mnMostrar.setForeground(new Color(0, 0, 0));
 		menuBar.add(mnMostrar);
 		
-		JMenuItem mntmEventoMostrar = new JMenuItem("Evento");
-		mnMostrar.add(mntmEventoMostrar);
+		JMenuItem mntmListarEventos = new JMenuItem("Eventos");
+		mntmListarEventos.setFont(new Font("Arial", Font.PLAIN, 12));
+		mnMostrar.add(mntmListarEventos);
 		
-		JMenuItem mntmPersonasMostrar = new JMenuItem("Mostrar");
-		mnMostrar.add(mntmPersonasMostrar);
+		JMenuItem mntmListarUsuarios = new JMenuItem("Usuarios");
+		mntmListarUsuarios.setFont(new Font("Arial", Font.PLAIN, 12));
+		mnMostrar.add(mntmListarUsuarios);
+		
+		JMenuItem mntmEmpresas = new JMenuItem("Empresas");
+		mntmEmpresas.setFont(new Font("Arial", Font.PLAIN, 12));
+		mnMostrar.add(mntmEmpresas);
 		
 		JMenu mnUsuario = new JMenu("Usuario");
+		mnUsuario.setFont(new Font("Arial", Font.PLAIN, 12));
 		mnUsuario.setForeground(new Color(0, 0, 0));
 		menuBar.add(mnUsuario);
 		
 		JMenuItem mntmPerfil = new JMenuItem("Mi Perfil");
+		mntmPerfil.setFont(new Font("Arial", Font.PLAIN, 12));
 		mnUsuario.add(mntmPerfil);
 		
+		JSeparator separator_1 = new JSeparator();
+		mnUsuario.add(separator_1);
+		
 		JMenuItem mntmDesconectar = new JMenuItem("Desconectar");
+		mntmDesconectar.setFont(new Font("Arial", Font.PLAIN, 12));
 		mnUsuario.add(mntmDesconectar);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(153, 153, 204));
+		contentPane.setBackground(new Color(230, 230, 250));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		
-		JLabel lblNewLabel = new JLabel("EasyEvent");
-		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 40));
-		lblNewLabel.setForeground(new Color(0, 0, 0));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lblNewLabel, BorderLayout.CENTER);
+		contentPane.setLayout(null);
 		
 	}
-
 }
