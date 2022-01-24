@@ -2,6 +2,7 @@ package com.bermudez.gestioneventoandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -24,7 +25,13 @@ public class LoginActivity extends AppCompatActivity {
         TextView txtUser = findViewById(R.id.txtUsernameLogin);
         TextView txtPassword = findViewById(R.id.txtPasswordLogin);
 
-        findViewById(R.id.buttonLogin).setOnClickListener(l -> {
+
+        findViewById(R.id.btnRegistrarse).setOnClickListener(e ->{
+            Intent RegistroActivity = new Intent(LoginActivity.this, RegistroActivity.class);
+            startActivity(RegistroActivity);
+        });
+
+        findViewById(R.id.btnLogin).setOnClickListener(l -> {
             String username = txtUser.getText() + "";
             String password = txtPassword.getText() + "";
             String url = "http://proyectogestioneventos.atwebpages.com/php/login.php?username=%22" + username + "%22&password=%22" + password + "%22";
