@@ -13,7 +13,7 @@ public class Logic {
 		
 	}
 	
-	private static Evento getEvento(int id) throws Exception {
+	/*private static Evento getEvento(int id) throws Exception {
 		// TODO Auto-generated method stub
 		String sUrl = URI + "lst-eventos.php?id=" + id;
 		String requestHttp = peticionHttp(sUrl);
@@ -21,7 +21,7 @@ public class Logic {
 		//Evento c = stringToCoche(requestHttp);
 		
 		return c;
-	}
+	}*/
 	
 	private static String peticionHttp(String urlWebService) throws Exception {
 		StringBuilder sbResultado = new StringBuilder();

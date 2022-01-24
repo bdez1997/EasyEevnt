@@ -45,12 +45,9 @@
                 android:id="@+id/txtApellidos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="172dp"
-                android:layout_marginTop="24dp"
                 android:ems="10"
                 android:hint="Apellidos"
-                android:inputType="textPersonName"
-                android:textSize="16sp" />
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/txtDni"
