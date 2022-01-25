@@ -17,14 +17,15 @@ import javax.swing.JTextArea;
 public class DlgCreacionPersona extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField txtTelf;
-	private JTextField txtApellido;
-	private JTextField txtNombre;
-	private JTextField txtDni;
-	private JTextField txtUsername;
-	private JTextField txtPass;
-	private JTextField txtCorreo;
-	private JTextField txtRol;
+	public static JTextField txtTelf;
+	public static JTextField txtApellido;
+	public static JTextField txtNombre;
+	public static JTextField txtDni;
+	public static JTextField txtUsername;
+	public static JTextField txtPass;
+	public static JTextField txtCorreo;
+	public static JTextField txtRol;
+	public static JTextArea txtInformacion;
 	
 
 	
@@ -184,9 +185,9 @@ public class DlgCreacionPersona extends JDialog {
 		lblInformacinAdicciona.setBounds(28, 225, 172, 24);
 		panelDatos.add(lblInformacinAdicciona);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("Arial", Font.PLAIN, 14));
-		textArea.setBounds(28, 259, 462, 108);
-		panelDatos.add(textArea);
+		JTextArea txtInformacion = new JTextArea();
+		txtInformacion.setFont(new Font("Arial", Font.PLAIN, 14));
+		txtInformacion.setBounds(28, 259, 462, 108);
+		panelDatos.add(txtInformacion);
 	}
 }

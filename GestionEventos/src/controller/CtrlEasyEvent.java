@@ -12,7 +12,7 @@ public class CtrlEasyEvent {
 	
 	private static void insPersonas() throws Exception {
 		
-		String sPass = new String(view.DlgCreacionPersona.txtPass.getPassword());
+		String passText = new String(view.DlgCreacionPersona.txtPass);
 
 		String url = URI + "ins-persona.php?dni=4567891b&"
 				+ "nombre="+view.DlgCreacionPersona.txtNombre.getText()+"&"
