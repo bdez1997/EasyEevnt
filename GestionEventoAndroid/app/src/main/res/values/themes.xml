@@ -15,6 +15,12 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    XHTML
+    <style name="SplashScreen" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">
+            @drawable/splash
+        </item>
+    </style>
 
     <style name="Navigation">
         <item name="android:textColorPrimary">#56AFE3</item>

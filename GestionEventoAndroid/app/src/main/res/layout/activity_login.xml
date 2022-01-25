@@ -11,7 +11,7 @@
         android:id="@+id/txtUsernameLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
@@ -27,7 +27,7 @@
         android:layout_marginBottom="56dp"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textPassword"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -58,8 +58,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="241dp"
-        android:layout_height="267dp"
+        android:layout_width="218dp"
+        android:layout_height="194dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

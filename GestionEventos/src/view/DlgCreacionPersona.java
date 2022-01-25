@@ -25,6 +25,7 @@ public class DlgCreacionPersona extends JDialog {
 	private JTextField txtPass;
 	private JTextField txtCorreo;
 	private JTextField txtRol;
+	
 
 	
 	public static void main(String[] args) {
