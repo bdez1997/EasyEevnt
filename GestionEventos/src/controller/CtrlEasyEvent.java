@@ -10,23 +10,24 @@ public class CtrlEasyEvent {
 	static final String URI = "http://proyectogestioneventos.atwebpages.com/php/";
 
 	
-	private static void insPersonas() throws Exception {
+	public static void insPersonas() throws Exception {
 		
-		String passText = new String(view.DlgCreacionPersona.txtPass);
-
-		String url = URI + "ins-persona.php?dni=4567891b&"
+		String sPass = new String(view.DlgCreacionPersona.txtPass.getPassword());
+		String sResult;
+		
+		String url = URI + "ins-persona.php?dni="+view.DlgCreacionPersona.txtDni.getText()+"&"
 				+ "nombre="+view.DlgCreacionPersona.txtNombre.getText()+"&"
 				+ "apellidos="+view.DlgCreacionPersona.txtApellido.getText()+"&"
 				+ "username="+view.DlgCreacionPersona.txtUsername.getText()+"&"
 				+ "password="+sPass+"&"
-				+ "correo="+view.DlgCreacionPersona.txtCorreo+"&"
-				+ "telefono=666555444&"
-				+ "rol=admin&"
-				+ "informacion=testeo";
+				+ "correo="+view.DlgCreacionPersona.txtCorreo.getText()+"&"
+				+ "telefono="+view.DlgCreacionPersona.txtTelf.getText()+"&"
+				+ "rol="+view.DlgCreacionPersona.txtRol.getText()+"+&"
+				+ "informacion="+view.DlgCreacionPersona.txtInformacion.getText();
+		
+		sResult= url.replace(" ", "%20");
 
-		String requesthttp = peticionhttp(url);
-
-		return lstCoches;
+		String requesthttp = peticionhttp(sResult);
 	}
 		
 	private static String peticionhttp(String urlWebService) throws Exception {

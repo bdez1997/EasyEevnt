@@ -13,5 +13,6 @@
     <fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="controller.CtrlEasyEvent"/>
     <fullyQualifiedTypeName name="view.DlgCreacionPersona"/>
 </qualifiedTypeNameHistroy>
