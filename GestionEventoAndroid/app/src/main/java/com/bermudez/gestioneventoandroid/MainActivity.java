@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("Eventos");
         Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);
         showData();
@@ -83,8 +84,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch(item.getItemId()) {
             case R.id.opPerfil: openPerfil(); break;
-            case R.id.opEventos: openFragment(new PrincipalFragment()); break;
-            case R.id.opHistorial: openFragment(new AsistenciaFragment()); break;
+            case R.id.opEventos: openFragment(new PrincipalFragment()); setTitle("Eventos"); break;
+            case R.id.opHistorial: openFragment(new AsistenciaFragment()); setTitle("Asistencia"); break;
             case R.id.salir: salir(); break;
         }
         return false;
