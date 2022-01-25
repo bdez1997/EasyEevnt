@@ -20,9 +20,6 @@ public class DescripcionEventos extends JFrame {
 	private JPanel contentPane;
 	private JButton btnAnnadirUsuario;
 	private JList lstUsuario;
-
-
-	
 	
 	
 	public DescripcionEventos() {
@@ -35,6 +32,8 @@ public class DescripcionEventos extends JFrame {
 		setVisible(true);
 		
 	}
+	
+	
 	
 	public void crearComponentes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -26,5 +26,7 @@ public class PersonaEvento implements IMaxCaracteres{
     	oEvento.setIdEvento(0);
     	setsValoracion(sValoracion);
     }
+    
+    
 
 }
