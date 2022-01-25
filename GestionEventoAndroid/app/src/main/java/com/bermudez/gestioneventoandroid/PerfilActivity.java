@@ -12,7 +12,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class PerfilActivity extends AppCompatActivity {
 
-    FloatingActionButton btnVolver;
     Button btnGuardar;
 
     @Override
@@ -21,7 +20,7 @@ public class PerfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
         setTitle("Perfil");
 
-        
+
 
         findViewById(R.id.btnVolver).setOnClickListener(e ->{
             onBackPressed();
