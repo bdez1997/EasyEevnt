@@ -1,7 +1,7 @@
-/view/
-<<<<<<< HEAD
+/.classpath
+/.project
+/DBLogic/
 /controller/
-/start/
-=======
 /model/
->>>>>>> master
+/start/
+/view/
