@@ -15,4 +15,5 @@
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
     <fullyQualifiedTypeName name="controller.CtrlEasyEvent"/>
     <fullyQualifiedTypeName name="view.DlgCreacionPersona"/>
+    <fullyQualifiedTypeName name="view.FrmUsuariosRegistrados"/>
 </qualifiedTypeNameHistroy>

@@ -21,39 +21,27 @@ import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
 public class FrmUsuariosRegistrados extends JDialog {
-
+	
 	private JPanel contentPane;
-	private JTextField txtNombre;
-	private JTextField txtDni;
-	private JTextField txtCorreo;
-	private JTextField txtPass;
-	private JTextField txtEmpresa;
-	private JTextField txtTelefono;
-	private JTextField txtUser;
-	private JTextField txtApellidos;
+	private JTextField txtNombreList;
+	private JTextField txtDniList;
+	private JTextField txtCorreoList;
+	private JTextField txtPassList;
+	private JTextField txtEmpresaList;
+	private JTextField txtTelefonoList;
+	private JTextField txtUserList;
+	private JTextField txtApellidosList;
 
 	
-	public static void main(String[] args) {
-		try {
-			DlgCreacionPersona dialog = new DlgCreacionPersona();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	
-		
-	public void crearComponentes() {
-		
+	public FrmUsuariosRegistrados() {
 		setBounds (500,200,600,500);
-		setTitle("Doble");
-		getContentPane().setLayout(null);
-		
+		setTitle("Lista de usuarios");
+		getContentPane().setLayout(null);	
 		crearComponentes();
 		setVisible(true);
-		
+	}
+
+	public void crearComponentes() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -62,46 +50,46 @@ public class FrmUsuariosRegistrados extends JDialog {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Nombre:");
-		lblNewLabel.setBounds(10, 26, 69, 14);
-		contentPane.add(lblNewLabel);
+		JLabel lblNombreList = new JLabel("Nombre:");
+		lblNombreList.setBounds(10, 26, 69, 14);
+		contentPane.add(lblNombreList);
 		
-		txtNombre = new JTextField();
-		txtNombre.setBounds(89, 23, 120, 20);
-		contentPane.add(txtNombre);
-		txtNombre.setColumns(10);
+		txtNombreList = new JTextField();
+		txtNombreList.setBounds(89, 23, 120, 20);
+		contentPane.add(txtNombreList);
+		txtNombreList.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("DNI:");
-		lblNewLabel_1.setBounds(10, 57, 69, 14);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblDniList = new JLabel("DNI:");
+		lblDniList.setBounds(10, 57, 69, 14);
+		contentPane.add(lblDniList);
 		
-		txtDni = new JTextField();
-		txtDni.setBounds(89, 54, 120, 20);
-		contentPane.add(txtDni);
-		txtDni.setColumns(10);
+		txtDniList = new JTextField();
+		txtDniList.setBounds(89, 54, 120, 20);
+		contentPane.add(txtDniList);
+		txtDniList.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Correo:");
-		lblNewLabel_2.setBounds(10, 88, 69, 14);
-		contentPane.add(lblNewLabel_2);
+		JLabel lblCorreoList = new JLabel("Correo:");
+		lblCorreoList.setBounds(10, 88, 69, 14);
+		contentPane.add(lblCorreoList);
 		
-		txtCorreo = new JTextField();
-		txtCorreo.setBounds(89, 85, 120, 20);
-		contentPane.add(txtCorreo);
-		txtCorreo.setColumns(10);
+		txtCorreoList = new JTextField();
+		txtCorreoList.setBounds(89, 85, 120, 20);
+		contentPane.add(txtCorreoList);
+		txtCorreoList.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("Contrase\u00F1a:");
-		lblNewLabel_3.setBounds(10, 113, 69, 14);
-		contentPane.add(lblNewLabel_3);
+		JLabel lblPassList = new JLabel("Contrase\u00F1a:");
+		lblPassList.setBounds(10, 113, 69, 14);
+		contentPane.add(lblPassList);
 		
-		txtPass = new JTextField();
-		txtPass.setBounds(89, 116, 120, 20);
-		contentPane.add(txtPass);
-		txtPass.setColumns(10);
+		txtPassList = new JTextField();
+		txtPassList.setBounds(89, 116, 120, 20);
+		contentPane.add(txtPassList);
+		txtPassList.setColumns(10);
 		
-		JTextPane txtDescripcion = new JTextPane();
-		txtDescripcion.setText("Informaci\u00F3n adicional:");
-		txtDescripcion.setBounds(98, 147, 245, 76);
-		contentPane.add(txtDescripcion);
+		JTextPane txtDescripcionList = new JTextPane();
+		txtDescripcionList.setText("Informaci\u00F3n adicional:");
+		txtDescripcionList.setBounds(98, 147, 245, 76);
+		contentPane.add(txtDescripcionList);
 		
 		JButton btnGuardar = new JButton("Guardar");
 		btnGuardar.setBounds(108, 227, 89, 23);
@@ -111,40 +99,40 @@ public class FrmUsuariosRegistrados extends JDialog {
 		btnCancelar.setBounds(242, 227, 89, 23);
 		contentPane.add(btnCancelar);
 		
-		JLabel lblNewLabel_5 = new JLabel("Username:");
-		lblNewLabel_5.setBounds(226, 57, 63, 14);
-		contentPane.add(lblNewLabel_5);
+		JLabel lblUserList = new JLabel("Username:");
+		lblUserList.setBounds(226, 57, 63, 14);
+		contentPane.add(lblUserList);
 		
-		JLabel lblNewLabel_6 = new JLabel("Telefono:");
-		lblNewLabel_6.setBounds(226, 88, 63, 14);
-		contentPane.add(lblNewLabel_6);
+		JLabel lblTelefonoList = new JLabel("Telefono:");
+		lblTelefonoList.setBounds(226, 88, 63, 14);
+		contentPane.add(lblTelefonoList);
 		
-		JLabel lblNewLabel_7 = new JLabel("Empresa");
-		lblNewLabel_7.setBounds(226, 113, 63, 14);
-		contentPane.add(lblNewLabel_7);
+		JLabel lblEmpresaList = new JLabel("Empresa");
+		lblEmpresaList.setBounds(226, 113, 63, 14);
+		contentPane.add(lblEmpresaList);
 		
-		txtEmpresa = new JTextField();
-		txtEmpresa.setColumns(10);
-		txtEmpresa.setBounds(304, 110, 120, 20);
-		contentPane.add(txtEmpresa);
+		txtEmpresaList = new JTextField();
+		txtEmpresaList.setColumns(10);
+		txtEmpresaList.setBounds(304, 110, 120, 20);
+		contentPane.add(txtEmpresaList);
 		
-		txtTelefono = new JTextField();
-		txtTelefono.setColumns(10);
-		txtTelefono.setBounds(304, 82, 120, 20);
-		contentPane.add(txtTelefono);
+		txtTelefonoList = new JTextField();
+		txtTelefonoList.setColumns(10);
+		txtTelefonoList.setBounds(304, 82, 120, 20);
+		contentPane.add(txtTelefonoList);
 		
-		txtUser = new JTextField();
-		txtUser.setColumns(10);
-		txtUser.setBounds(304, 51, 120, 20);
-		contentPane.add(txtUser);
+		txtUserList = new JTextField();
+		txtUserList.setColumns(10);
+		txtUserList.setBounds(304, 51, 120, 20);
+		contentPane.add(txtUserList);
 		
-		txtApellidos = new JTextField();
-		txtApellidos.setColumns(10);
-		txtApellidos.setBounds(304, 23, 120, 20);
-		contentPane.add(txtApellidos);
+		txtApellidosList = new JTextField();
+		txtApellidosList.setColumns(10);
+		txtApellidosList.setBounds(304, 23, 120, 20);
+		contentPane.add(txtApellidosList);
 		
-		JLabel lblNewLabel_5_1 = new JLabel("Apellidos:");
-		lblNewLabel_5_1.setBounds(226, 26, 63, 14);
-		contentPane.add(lblNewLabel_5_1);
+		JLabel lblApellidosList = new JLabel("Apellidos:");
+		lblApellidosList.setBounds(226, 26, 63, 14);
+		contentPane.add(lblApellidosList);
 	}
 }
