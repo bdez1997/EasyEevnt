@@ -3,6 +3,7 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -93,6 +94,10 @@ public class FrmPrincipal extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JLabel lblImgUser = new JLabel(new ImageIcon("img/user.png"));
+		lblImgUser.setBounds(34, 38, 97, 89);
+		contentPane.add(lblImgUser);
 		
 	}
 }

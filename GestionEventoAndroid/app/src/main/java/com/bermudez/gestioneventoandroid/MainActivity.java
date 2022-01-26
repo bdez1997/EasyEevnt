@@ -9,6 +9,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Eventos");
+
         Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);
         showData();
@@ -70,11 +73,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(perfilActivity);
     }
 
+    private void cards(){
+
+    }
+
     private void showData(){
         Store.lstAsistencia.add(new Evento("Mangafest 2022"));
         Store.lstAsistencia.add(new Evento("Ficzone 2021"));
         Store.lstEventos.add(new Evento("Ficzone", LocalDateTime.now(), LocalDateTime.now()));
         Store.lstEventos.add(new Evento("Mangafest 2021", LocalDateTime.now(), LocalDateTime.now()));
+
+        RecyclerView recyclerView = findViewById(R.id.rvEventos);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        EventosAdapter adaptador = new EventosAdapter(this);
+        recyclerView.setAdapter(adaptador);
+
+        adaptador.setOnClickListener( view ->{
+            Store.iEventoSelected = recyclerView.getChildAdapterPosition(view);
+            Intent i = new Intent(this, InfoEvento.class);
+            startActivity(i);
+        });
+
     }
 
     @Override
