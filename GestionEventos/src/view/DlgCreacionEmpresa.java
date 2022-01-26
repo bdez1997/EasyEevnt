@@ -21,23 +21,9 @@ public class DlgCreacionEmpresa extends JDialog {
 	private JTextField textField_2;
 	private JTextField textField;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			DlgCreacionEmpresa dialog = new DlgCreacionEmpresa();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
-	/**
-	 * Create the dialog.
-	 */
 	public DlgCreacionEmpresa() {
+		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 446, 428);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(135, 206, 235));
@@ -130,5 +116,7 @@ public class DlgCreacionEmpresa extends JDialog {
 		textField.setColumns(10);
 		textField.setBounds(128, 96, 106, 24);
 		panelDatos.add(textField);
+		
+		setVisible(true);
 	}
 }

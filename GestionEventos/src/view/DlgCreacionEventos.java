@@ -141,10 +141,18 @@ public class DlgCreacionEventos extends JDialog {
 		btnGuardar.setBounds(177, 537, 104, 42);
 		contentPanel.add(btnGuardar);
 		
+		btnGuardar.addActionListener(e -> {
+			dispose();
+		});
+		
 		JButton btnCancelar = new JButton("CANCELAR");
 		btnCancelar.setFont(new Font("Arial", Font.BOLD, 12));
 		btnCancelar.setBounds(366, 537, 109, 42);
 		contentPanel.add(btnCancelar);
+		
+		btnCancelar.addActionListener(e -> {
+			dispose();
+		});
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.BLACK);

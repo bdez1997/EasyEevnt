@@ -10,71 +10,69 @@
         android:id="@+id/imgInfoEvento"
         android:layout_width="89dp"
         android:layout_height="93dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user" />
 
-    <EditText
-        android:id="@+id/txtDescrripcionEvento"
-        android:layout_width="286dp"
-        android:layout_height="249dp"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgInfoEvento" />
-
-    <EditText
-        android:id="@+id/editTxtFecha"
-        android:layout_width="136dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="76dp"
-        android:ems="10"
-        android:hint="Fecha de Inicio"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescrripcionEvento" />
-
-    <EditText
-        android:id="@+id/editTxtHora"
-        android:layout_width="136dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="76dp"
-        android:ems="10"
-        android:hint="Hora de inicio"
-        android:inputType="time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toEndOf="@+id/editTxtFecha"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescrripcionEvento" />
-
     <Button
         android:id="@+id/btnAsistirEvento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:text="Obtener Plaza"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtFecha" />
+        app:layout_constraintTop_toBottomOf="@+id/lblFechaIniEvent" />
 
     <Button
         android:id="@+id/btnBajaEvento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:text="Darse de baja"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toEndOf="@+id/btnAsistirEvento"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtHora" />
+        app:layout_constraintTop_toBottomOf="@+id/lblFechaFinEvent" />
+
+    <TextView
+        android:id="@+id/lblInformacionEvent"
+        android:layout_width="317dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="32dp"
+        android:text="INFORMACIÓN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgInfoEvento" />
+
+    <TextView
+        android:id="@+id/lblFechaIniEvent"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:text="INICIO"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblInformacionEvent" />
+
+    <TextView
+        android:id="@+id/lblFechaFinEvent"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="48dp"
+        android:text="FIN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblInformacionEvent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:layout_editor_absoluteX="1dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
