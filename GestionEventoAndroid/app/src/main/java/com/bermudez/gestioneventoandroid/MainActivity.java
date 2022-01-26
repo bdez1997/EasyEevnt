@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Contacts;
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         setTitle("Eventos");
 
+        openFragment(new PrincipalFragment());
+
         Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);
         showData();
@@ -57,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         actionBarDrawerToggle.syncState();
 
-        openFragment(new PrincipalFragment());
+
     }
 
     private void openFragment(Fragment fragment){
@@ -73,29 +76,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(perfilActivity);
     }
 
-    private void cards(){
 
-    }
 
     private void showData(){
-        Store.lstAsistencia.add(new Evento("Mangafest 2022"));
-        Store.lstAsistencia.add(new Evento("Ficzone 2021"));
         Store.lstEventos.add(new Evento("Ficzone", LocalDateTime.now(), LocalDateTime.now()));
         Store.lstEventos.add(new Evento("Mangafest 2021", LocalDateTime.now(), LocalDateTime.now()));
-
-        RecyclerView recyclerView = findViewById(R.id.rvEventos);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        EventosAdapter adaptador = new EventosAdapter(this);
-        recyclerView.setAdapter(adaptador);
-
-        adaptador.setOnClickListener( view ->{
-            Store.iEventoSelected = recyclerView.getChildAdapterPosition(view);
-            Intent i = new Intent(this, InfoEvento.class);
-            startActivity(i);
-        });
-
+        Store.lstEventos.add(new Evento("CICA 2022", LocalDateTime.now(), LocalDateTime.now()));
     }
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
