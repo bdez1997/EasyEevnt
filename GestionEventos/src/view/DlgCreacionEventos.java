@@ -1,8 +1,6 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -30,11 +28,13 @@ import java.awt.Color;
 public class DlgCreacionEventos extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
+	public static JTextArea txtDescripcion;
 	public static JTextField txtNombreEvento;
 	public static JTextField txtHoraInicio;
 	public static JTextField txtHoraFin;
-	public static JTextField txtUbicacion;
+	public static JTextField txtDireccion;
 	public static JTextField txtAforo;
+	public static String dateIni, dateEnd;  
 
 	public DlgCreacionEventos() {
 		setTitle("Creación de eventos");
@@ -62,10 +62,13 @@ public class DlgCreacionEventos extends JDialog {
 		JLabel lblFechaInicio = new JLabel("Fecha de inicio:");
 		lblFechaInicio.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblFechaInicio.setBounds(28, 115, 136, 14);
+		
 		contentPanel.add(lblFechaInicio);
 		
 		JDateChooser dateInicio = new JDateChooser();
 		dateInicio.setBounds(28, 139, 194, 20);
+		dateIni  = ((JTextField)dateInicio.getDateEditor().getUiComponent()).getText();
+
 		contentPanel.add(dateInicio);
 		
 		JLabel lblFechaFinEvento = new JLabel("Fecha del final:");
@@ -75,6 +78,7 @@ public class DlgCreacionEventos extends JDialog {
 		
 		JDateChooser dateFin = new JDateChooser();
 		dateFin.setBounds(28, 205, 191, 20);
+		dateEnd  = ((JTextField)dateFin.getDateEditor().getUiComponent()).getText();
 		contentPanel.add(dateFin);
 		
 		JLabel lblHoraInicio = new JLabel("Hora de apertura:");
@@ -102,10 +106,10 @@ public class DlgCreacionEventos extends JDialog {
 		lblUbicacion.setBounds(28, 369, 149, 14);
 		contentPanel.add(lblUbicacion);
 		
-		txtUbicacion = new JTextField();
-		txtUbicacion.setBounds(28, 393, 195, 20);
-		contentPanel.add(txtUbicacion);
-		txtUbicacion.setColumns(10);
+		txtDireccion = new JTextField();
+		txtDireccion.setBounds(28, 393, 195, 20);
+		contentPanel.add(txtDireccion);
+		txtDireccion.setColumns(10);
 		
 		JLabel lblAforoMax = new JLabel("Aforo:");
 		lblAforoMax.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -117,9 +121,9 @@ public class DlgCreacionEventos extends JDialog {
 		contentPanel.add(txtAforo);
 		txtAforo.setColumns(10);
 		
-		JTextArea textAreaDescripcion = new JTextArea();
-		textAreaDescripcion.setBounds(324, 281, 299, 220);
-		contentPanel.add(textAreaDescripcion);
+		txtDescripcion = new JTextArea();
+		txtDescripcion.setBounds(324, 281, 299, 220);
+		contentPanel.add(txtDescripcion);
 		
 		JLabel lblImgEvento = new JLabel("");
 		lblImgEvento.setIcon(new ImageIcon("C:\\Users\\Usuario\\Desktop\\descarga.png"));
@@ -159,10 +163,10 @@ public class DlgCreacionEventos extends JDialog {
 		separator.setBounds(39, 41, 549, 2);
 		contentPanel.add(separator);
 		
-		JLabel lblNewLabel = new JLabel("EVENTO");
-		lblNewLabel.setFont(new Font("Arial", Font.BOLD, 20));
-		lblNewLabel.setBounds(39, 10, 125, 33);
-		contentPanel.add(lblNewLabel);
+		JLabel lblEvento = new JLabel("EVENTO");
+		lblEvento.setFont(new Font("Arial", Font.BOLD, 20));
+		lblEvento.setBounds(39, 10, 125, 33);
+		contentPanel.add(lblEvento);
 		
 		
 		
