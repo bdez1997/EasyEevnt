@@ -2,18 +2,25 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="model.Empresa"/>
     <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="controller.CtrlGestorEventos"/>
     <fullyQualifiedTypeName name="view.FrmPrincipal"/>
-    <fullyQualifiedTypeName name="java.io.InputStream"/>
     <fullyQualifiedTypeName name="javax.swing.JDialog"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="model.Evento"/>
+    <fullyQualifiedTypeName name="controller.CtrlEasyEvent"/>
+    <fullyQualifiedTypeName name="view.DlgCreacionPersona"/>
+    <fullyQualifiedTypeName name="view.FrmUsuariosRegistrados"/>
+    <fullyQualifiedTypeName name="controller.CtrlPersonas"/>
+    <fullyQualifiedTypeName name="model.Persona"/>
     <fullyQualifiedTypeName name="java.net.URL"/>
     <fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-    <fullyQualifiedTypeName name="controller.CtrlEasyEvent"/>
-    <fullyQualifiedTypeName name="view.DlgCreacionPersona"/>
-    <fullyQualifiedTypeName name="view.FrmUsuariosRegistrados"/>
+    <fullyQualifiedTypeName name="org.json.JSONObject"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="org.json.JSONException"/>
+    <fullyQualifiedTypeName name="java.nio.charset.Charset"/>
+    <fullyQualifiedTypeName name="java.io.Reader"/>
+    <fullyQualifiedTypeName name="view.FrmLogin"/>
 </qualifiedTypeNameHistroy>

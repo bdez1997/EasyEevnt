@@ -193,7 +193,7 @@ public class DlgCreacionPersona extends JDialog {
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					controller.CtrlEasyEvent.insPersonas();
+					controller.CtrlPersonas.insPersonas();
 					System.out.println(txtTelf.getText()+txtApellido.getText()+ txtNombre.getText()+ txtDni.getText()+txtUsername.getText()+txtPass.getPassword()+txtCorreo.getText()+txtRol.getText()+txtInformacion.getText());
 				} catch (Exception e1) {
 					e1.printStackTrace();
