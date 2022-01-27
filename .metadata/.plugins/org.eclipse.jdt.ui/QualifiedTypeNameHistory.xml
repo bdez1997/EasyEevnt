@@ -16,4 +16,8 @@
     <fullyQualifiedTypeName name="controller.CtrlEasyEvent"/>
     <fullyQualifiedTypeName name="view.DlgCreacionPersona"/>
     <fullyQualifiedTypeName name="view.FrmUsuariosRegistrados"/>
+    <fullyQualifiedTypeName name="view.DlgCreacionEventos"/>
+    <fullyQualifiedTypeName name="controller.CtrlEvento"/>
+    <fullyQualifiedTypeName name="com.toedter.calendar.JDateChooser"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 </qualifiedTypeNameHistroy>

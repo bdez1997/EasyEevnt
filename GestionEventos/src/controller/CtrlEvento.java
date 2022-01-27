@@ -12,25 +12,14 @@ public class CtrlEvento {
 	
 	static final String URI = "http://proyectogestioneventos.atwebpages.com/php/";
 
-	public static void main(String[] args) {
-
-		
-	}
 
 	public static void insEvento() throws Exception {
 		String sResult;
 		
-		String sfecha ="";
-		
-		
-		//String sDescripcion  = view.DlgCreacionEventos
-		
-		
-		
-		String url = URI + "ins-persona.php?dni="+ view.DlgCreacionEventos.txtNombreEvento.getText()+"&"
+		String url = URI + "ins-evento.php?nombre="+ view.DlgCreacionEventos.txtNombreEvento.getText()+"&"
 				
 				+ "nombre="+view.DlgCreacionEventos.txtNombreEvento.getText()+"&"
-				+ "fechaIni="+view.DlgCreacionEventos.dateIni+"&"
+				+ "fechaIni="+view.DlgCreacionEventos.dateInicio.getDate()+"&"
 				+ "fechaFin="+view.DlgCreacionEventos.dateEnd+"&"
 				+ "horaIni="+view.DlgCreacionEventos.txtHoraInicio.getText()+"&"
 				+ "horaFin="+view.DlgCreacionEventos.txtHoraFin.getText()+"&"
@@ -39,24 +28,28 @@ public class CtrlEvento {
 				+ "descripcion="+view.DlgCreacionEventos.txtDescripcion.getText();
 		
 		sResult= url.replace(" ", "%20");
-		
-		System.out.println(url);
-
 		String requesthttp = peticionhttp(sResult);
 	}
+	
+	
+	public static void delEvento() throws Exception {
+		String sResult;
+		String url = URI + "del-evento.php?nombre="+ view.DlgCreacionEventos.txtNombreEvento.getText();
+		
+		sResult= url.replace(" ", "%20");
+		String requesthttp = peticionhttp(sResult);
+	}
+	
 	
 	private static String peticionhttp(String urlWebService) throws Exception {
 		String sLinea;
 
 		StringBuilder resultado = new StringBuilder();
 
-		// Realizar petición http
-
 		URL url = new URL(urlWebService);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestMethod("GET");
 
-		// Recoger datos de respuesta
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 		while ((sLinea = br.readLine()) != null) {

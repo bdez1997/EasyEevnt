@@ -1,5 +1,9 @@
 package start;
 
+import java.text.SimpleDateFormat;
+
+import com.toedter.calendar.JDateChooser;
+
 import view.DlgCreacionPersona;
 import view.FrmPrincipal;
 
@@ -10,5 +14,7 @@ public class Init {
 		new FrmPrincipal();
 		
 	}
+	
+
 
 }

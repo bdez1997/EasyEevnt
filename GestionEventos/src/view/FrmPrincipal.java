@@ -100,10 +100,12 @@ public class FrmPrincipal extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblImgUser = new JLabel(new ImageIcon("img/users-icon.png"));
+		lblImgUser.setBackground(new Color(255, 255, 255));
 		lblImgUser.setBounds(37, 267, 97, 89);
 		contentPane.add(lblImgUser);
 		
 		JLabel lblImgEmpresa= new JLabel(new ImageIcon("img/business-icon.png"));
+		lblImgEmpresa.setBackground(new Color(255, 255, 255));
 		lblImgEmpresa.setBounds(200, 267, 97, 89);
 		contentPane.add(lblImgEmpresa);
 		
