@@ -24,22 +24,24 @@ public class DlgCreacionEmpresa extends JDialog {
 
 	public DlgCreacionEmpresa() {
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 446, 428);
+		setBounds(100, 100, 421, 428);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setBackground(new Color(135, 206, 235));
+		contentPanel.setBackground(new Color(230, 230, 250));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		{
 			JPanel panelBotones = new JPanel();
-			panelBotones.setBackground(new Color(248, 248, 255));
-			panelBotones.setBounds(33, 291, 358, 59);
+			panelBotones.setBackground(new Color(230, 230, 250));
+			panelBotones.setBounds(35, 290, 320, 59);
 			contentPanel.add(panelBotones);
 			panelBotones.setLayout(null);
 			
 			JButton btnGuardar = new JButton("GUARDAR");
+			btnGuardar.setForeground(new Color(255, 255, 255));
+			btnGuardar.setBackground(new Color(65, 105, 225));
 			btnGuardar.setFont(new Font("Arial", Font.BOLD, 12));
-			btnGuardar.setBounds(32, 10, 116, 38);
+			btnGuardar.setBounds(23, 11, 116, 38);
 			panelBotones.add(btnGuardar);
 			
 			btnGuardar.addActionListener(e -> {
@@ -47,8 +49,10 @@ public class DlgCreacionEmpresa extends JDialog {
 			});
 			
 			JButton btnCancelar = new JButton("CANCELAR");
+			btnCancelar.setBackground(new Color(65, 105, 225));
+			btnCancelar.setForeground(new Color(255, 255, 255));
 			btnCancelar.setFont(new Font("Arial", Font.BOLD, 12));
-			btnCancelar.setBounds(217, 10, 116, 38);
+			btnCancelar.setBounds(168, 11, 116, 38);
 			panelBotones.add(btnCancelar);
 			
 			btnCancelar.addActionListener(e -> {
@@ -58,8 +62,8 @@ public class DlgCreacionEmpresa extends JDialog {
 		}
 		
 		JPanel panelDatos = new JPanel();
-		panelDatos.setBackground(new Color(255, 250, 250));
-		panelDatos.setBounds(33, 22, 358, 242);
+		panelDatos.setBackground(new Color(230, 230, 250));
+		panelDatos.setBounds(34, 22, 338, 242);
 		contentPanel.add(panelDatos);
 		panelDatos.setLayout(null);
 		

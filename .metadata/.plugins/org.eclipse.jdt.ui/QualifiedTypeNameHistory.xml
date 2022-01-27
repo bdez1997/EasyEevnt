@@ -16,6 +16,7 @@
     <fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<<<<<<< HEAD
     <fullyQualifiedTypeName name="org.json.JSONObject"/>
     <fullyQualifiedTypeName name="java.io.InputStream"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
@@ -23,4 +24,13 @@
     <fullyQualifiedTypeName name="java.nio.charset.Charset"/>
     <fullyQualifiedTypeName name="java.io.Reader"/>
     <fullyQualifiedTypeName name="view.FrmLogin"/>
+=======
+    <fullyQualifiedTypeName name="controller.CtrlEasyEvent"/>
+    <fullyQualifiedTypeName name="view.DlgCreacionPersona"/>
+    <fullyQualifiedTypeName name="view.FrmUsuariosRegistrados"/>
+    <fullyQualifiedTypeName name="view.DlgCreacionEventos"/>
+    <fullyQualifiedTypeName name="controller.CtrlEvento"/>
+    <fullyQualifiedTypeName name="com.toedter.calendar.JDateChooser"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+>>>>>>> master
 </qualifiedTypeNameHistroy>
