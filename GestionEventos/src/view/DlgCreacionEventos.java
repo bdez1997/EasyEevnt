@@ -5,6 +5,8 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 import com.toedter.calendar.JDayChooser;
 import com.toedter.calendar.JDateChooser;
 import java.awt.event.MouseAdapter;
@@ -18,8 +20,11 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Font;
+import java.awt.Image;
+
 import com.toedter.components.JLocaleChooser;
 import javax.swing.JEditorPane;
+import javax.swing.JFileChooser;
 import javax.swing.JTextArea;
 import javax.swing.ImageIcon;
 import javax.swing.JSeparator;
@@ -37,6 +42,9 @@ public class DlgCreacionEventos extends JDialog {
 	public static String dateIni, dateEnd;
 	public static JDateChooser dateInicio;
 	public static JDateChooser dateFin;
+	
+	private FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivo de imagen", ".png" , ".jpg");
+	String sRuta="";
 
 	public DlgCreacionEventos() {
 		setTitle("Creación de eventos");
@@ -134,7 +142,7 @@ public class DlgCreacionEventos extends JDialog {
 		contentPanel.add(txtDescripcion);
 		
 		JLabel lblImgEvento = new JLabel("");
-		lblImgEvento.setIcon(new ImageIcon("C:\\Users\\Usuario\\Desktop\\descarga.png"));
+		lblImgEvento.setIcon(new ImageIcon("img/users-icon.png"));
 		lblImgEvento.setBounds(294, 61, 143, 137);
 		contentPanel.add(lblImgEvento);
 		
@@ -150,6 +158,28 @@ public class DlgCreacionEventos extends JDialog {
 		btnImg.setBounds(275, 205, 169, 30);
 		contentPanel.add(btnImg);
 		
+		btnImg.addActionListener(e -> {
+			JFileChooser img = new JFileChooser();
+			img.setFileFilter(filtro);
+			
+			//ventana de dialogo
+			int option = img.showOpenDialog(this);
+			
+			if(option == JFileChooser.APPROVE_OPTION) {
+				String imgPath = img.getSelectedFile().getPath();
+				String imgString = img.getSelectedFile().toString();
+				lblImgEvento.setIcon(new ImageIcon(imgPath));
+				ImageIcon icon = new ImageIcon(imgPath);
+				Image imgIcon = icon.getImage();
+				
+				ImageIcon newIcon = new ImageIcon(imgIcon);
+				lblImgEvento.setIcon(newIcon);
+				lblImgEvento.setSize(155, 155);
+			}
+			
+			
+		});
+		
 		JButton btnGuardar = new JButton("GUARDAR");
 		btnGuardar.setForeground(new Color(255, 255, 255));
 		btnGuardar.setBackground(new Color(65, 105, 225));
@@ -158,6 +188,13 @@ public class DlgCreacionEventos extends JDialog {
 		contentPanel.add(btnGuardar);
 		
 		btnGuardar.addActionListener(e -> {
+			
+			try {
+				controller.CtrlEvento.insEvento();
+			} catch (Exception e1) {
+				System.out.println(e1.getMessage());
+			}
+			
 			dispose();
 		});
 		

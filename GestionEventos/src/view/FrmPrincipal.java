@@ -2,11 +2,12 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
+import javax.swing.*;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -20,7 +21,7 @@ import javax.swing.JButton;
 public class FrmPrincipal extends JFrame {
 
 	private JPanel contentPane;
-
+	
 
 	public FrmPrincipal() {
 		setTitle("EasyEvents");
