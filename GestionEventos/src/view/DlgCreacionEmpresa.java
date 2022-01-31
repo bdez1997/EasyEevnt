@@ -17,9 +17,9 @@ public class DlgCreacionEmpresa extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtTelf;
-	private JTextField textField_4;
-	private JTextField textField_2;
-	private JTextField textField;
+	private JTextField txtNIF;
+	private JTextField txtCorreo;
+	private JTextField txtNombre;
 
 
 	public DlgCreacionEmpresa() {
@@ -93,17 +93,17 @@ public class DlgCreacionEmpresa extends JDialog {
 		separator.setBounds(16, 43, 305, 2);
 		panelDatos.add(separator);
 		
-		textField_4 = new JTextField();
-		textField_4.setFont(new Font("Arial", Font.PLAIN, 14));
-		textField_4.setColumns(10);
-		textField_4.setBounds(128, 56, 106, 24);
-		panelDatos.add(textField_4);
+		txtNIF = new JTextField();
+		txtNIF.setFont(new Font("Arial", Font.PLAIN, 14));
+		txtNIF.setColumns(10);
+		txtNIF.setBounds(128, 56, 106, 24);
+		panelDatos.add(txtNIF);
 		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Arial", Font.PLAIN, 14));
-		textField_2.setColumns(10);
-		textField_2.setBounds(128, 138, 106, 24);
-		panelDatos.add(textField_2);
+		txtCorreo = new JTextField();
+		txtCorreo.setFont(new Font("Arial", Font.PLAIN, 14));
+		txtCorreo.setColumns(10);
+		txtCorreo.setBounds(128, 138, 106, 24);
+		panelDatos.add(txtCorreo);
 		
 		JLabel lblCrearEmpresa = new JLabel("EMPRESA");
 		lblCrearEmpresa.setFont(new Font("Arial", Font.PLAIN, 24));
@@ -115,11 +115,11 @@ public class DlgCreacionEmpresa extends JDialog {
 		lblNombre.setBounds(28, 95, 56, 24);
 		panelDatos.add(lblNombre);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Arial", Font.PLAIN, 14));
-		textField.setColumns(10);
-		textField.setBounds(128, 96, 106, 24);
-		panelDatos.add(textField);
+		txtNombre = new JTextField();
+		txtNombre.setFont(new Font("Arial", Font.PLAIN, 14));
+		txtNombre.setColumns(10);
+		txtNombre.setBounds(128, 96, 106, 24);
+		panelDatos.add(txtNombre);
 		
 		setVisible(true);
 	}
