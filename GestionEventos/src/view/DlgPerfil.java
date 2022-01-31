@@ -43,6 +43,7 @@ public class DlgPerfil extends JDialog {
 	public DlgPerfil() {
 		setBounds(100, 100, 586, 535);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(230, 230, 250));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
@@ -147,11 +148,15 @@ public class DlgPerfil extends JDialog {
 		contentPanel.add(txtInformacion);
 		
 		JButton btnCancelar = new JButton("CANCELAR");
+		btnCancelar.setForeground(new Color(255, 255, 255));
+		btnCancelar.setBackground(new Color(65, 105, 225));
 		btnCancelar.setFont(new Font("Arial", Font.BOLD, 14));
 		btnCancelar.setBounds(382, 435, 122, 33);
 		contentPanel.add(btnCancelar);
 		
 		JButton btnEditar = new JButton("EDITAR");
+		btnEditar.setForeground(new Color(255, 255, 255));
+		btnEditar.setBackground(new Color(65, 105, 225));
 		btnEditar.setFont(new Font("Arial", Font.BOLD, 14));
 		btnEditar.setBounds(64, 435, 122, 33);
 		contentPanel.add(btnEditar);
@@ -167,6 +172,8 @@ public class DlgPerfil extends JDialog {
 		txtRol.setEditable(false);
 		
 		JButton btnGuardar = new JButton("GUARDAR");
+		btnGuardar.setForeground(new Color(255, 255, 255));
+		btnGuardar.setBackground(new Color(65, 105, 225));
 		btnGuardar.setFont(new Font("Arial", Font.BOLD, 14));
 		btnGuardar.setBounds(223, 435, 122, 33);
 		contentPanel.add(btnGuardar);

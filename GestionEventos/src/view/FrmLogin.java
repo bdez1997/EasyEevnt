@@ -23,7 +23,7 @@ public class FrmLogin extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 378, 282);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(135, 206, 235));
+		contentPane.setBackground(new Color(230, 230, 250));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -57,11 +57,15 @@ public class FrmLogin extends JFrame {
 		contentPane.add(lblNewLabel);
 
 		JButton btnLogin = new JButton("LOGGIN");
+		btnLogin.setForeground(new Color(255, 255, 255));
+		btnLogin.setBackground(new Color(65, 105, 225));
 		btnLogin.setFont(new Font("Arial", Font.BOLD, 12));
 		btnLogin.setBounds(78, 157, 89, 38);
 		contentPane.add(btnLogin);
 
 		JButton btnExit = new JButton("CANCELAR");
+		btnExit.setBackground(new Color(65, 105, 225));
+		btnExit.setForeground(new Color(255, 255, 255));
 		btnExit.setFont(new Font("Arial", Font.BOLD, 12));
 		btnExit.setBounds(206, 157, 97, 38);
 		contentPane.add(btnExit);

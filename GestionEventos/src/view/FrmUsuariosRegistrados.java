@@ -19,6 +19,7 @@ import javax.swing.AbstractListModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
+import java.awt.Color;
 
 public class FrmUsuariosRegistrados extends JDialog {
 	
@@ -46,6 +47,7 @@ public class FrmUsuariosRegistrados extends JDialog {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(230, 230, 250));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -92,10 +94,14 @@ public class FrmUsuariosRegistrados extends JDialog {
 		contentPane.add(txtDescripcionList);
 		
 		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.setForeground(new Color(255, 255, 255));
+		btnGuardar.setBackground(new Color(65, 105, 225));
 		btnGuardar.setBounds(108, 227, 89, 23);
 		contentPane.add(btnGuardar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setForeground(new Color(255, 255, 255));
+		btnCancelar.setBackground(new Color(65, 105, 225));
 		btnCancelar.setBounds(242, 227, 89, 23);
 		contentPane.add(btnCancelar);
 		
