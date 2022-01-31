@@ -79,9 +79,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     private void showData(){
-        Store.lstEventos.add(new Evento("Ficzone", LocalDateTime.now(), LocalDateTime.now()));
-        Store.lstEventos.add(new Evento("Mangafest 2021", LocalDateTime.now(), LocalDateTime.now()));
-        Store.lstEventos.add(new Evento("CICA 2022", LocalDateTime.now(), LocalDateTime.now()));
+        Store.lstEventos.add(new Evento("Ficzone", "25/7/22", "29/7/22"));
+        Store.lstEventos.add(new Evento("Mangafest 2021", "25/7/22", "29/7/22"));
+        Store.lstEventos.add(new Evento("CICA 2022", "25/7/22", "29/7/22"));
     }
 
 
