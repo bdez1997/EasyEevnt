@@ -5,4 +5,5 @@
     <fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
     <fullyQualifiedTypeName name="java.awt.Image"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="controller.CtrlPersonas"/>
 </qualifiedTypeNameHistroy>
