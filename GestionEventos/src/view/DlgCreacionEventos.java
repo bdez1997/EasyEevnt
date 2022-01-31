@@ -35,8 +35,6 @@ public class DlgCreacionEventos extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	public static JTextArea txtDescripcion;
 	public static JTextField txtNombreEvento;
-	public static JTextField txtHoraInicio;
-	public static JTextField txtHoraFin;
 	public static JTextField txtDireccion;
 	public static JTextField txtAforo;
 	public static String dateIni, dateEnd;
@@ -61,30 +59,31 @@ public class DlgCreacionEventos extends JDialog {
 	private void crearComponentes() {
 		txtNombreEvento = new JTextField();
 		txtNombreEvento.setFont(new Font("Arial", Font.PLAIN, 14));
-		txtNombreEvento.setBounds(28, 85, 191, 20);
+		txtNombreEvento.setBounds(28, 108, 191, 20);
 		contentPanel.add(txtNombreEvento);
 		txtNombreEvento.setColumns(10);
 		
 		JLabel lblNombreEvento = new JLabel("Nombre del evento:");
 		lblNombreEvento.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblNombreEvento.setBounds(28, 61, 136, 14);
+		lblNombreEvento.setBounds(28, 84, 136, 14);
 		contentPanel.add(lblNombreEvento);
 		
 		JLabel lblFechaInicio = new JLabel("Fecha de inicio:");
 		lblFechaInicio.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblFechaInicio.setBounds(28, 115, 136, 14);
+		lblFechaInicio.setBounds(28, 150, 136, 14);
 		
 		contentPanel.add(lblFechaInicio);
 		
 		
 		//CALENDARIO
 		dateInicio = new JDateChooser();
-		dateInicio.setBounds(28, 139, 194, 20);
+		dateInicio.setBounds(28, 178, 194, 20);
 		dateIni  = ((JTextField)dateInicio.getDateEditor().getUiComponent()).getText();
 		
 		dateFin = new JDateChooser();
-		dateFin.setBounds(28, 205, 191, 20);
+		dateFin.setBounds(28, 251, 191, 20);
 		dateEnd  = ((JTextField)dateFin.getDateEditor().getUiComponent()).getText();
+		
 		contentPanel.add(dateFin);
 		contentPanel.add(dateInicio);
 		
@@ -92,48 +91,26 @@ public class DlgCreacionEventos extends JDialog {
 		
 		JLabel lblFechaFinEvento = new JLabel("Fecha del final:");
 		lblFechaFinEvento.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblFechaFinEvento.setBounds(28, 180, 136, 15);
+		lblFechaFinEvento.setBounds(28, 226, 136, 15);
 		contentPanel.add(lblFechaFinEvento);
-		
-		
-		
-		JLabel lblHoraInicio = new JLabel("Hora de apertura:");
-		lblHoraInicio.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblHoraInicio.setBounds(28, 244, 125, 15);
-		contentPanel.add(lblHoraInicio);
-		
-		txtHoraInicio = new JTextField();
-		txtHoraInicio.setBounds(28, 269, 191, 20);
-		contentPanel.add(txtHoraInicio);
-		txtHoraInicio.setColumns(10);
-		
-		JLabel lblHoraFin = new JLabel("Hora de finalizaci\u00F3n:");
-		lblHoraFin.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblHoraFin.setBounds(28, 306, 149, 15);
-		contentPanel.add(lblHoraFin);
-		
-		txtHoraFin = new JTextField();
-		txtHoraFin.setBounds(28, 325, 191, 20);
-		contentPanel.add(txtHoraFin);
-		txtHoraFin.setColumns(10);
 		
 		JLabel lblUbicacion = new JLabel("Direcci\u00F3n:");
 		lblUbicacion.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblUbicacion.setBounds(28, 369, 149, 14);
+		lblUbicacion.setBounds(28, 304, 149, 14);
 		contentPanel.add(lblUbicacion);
 		
 		txtDireccion = new JTextField();
-		txtDireccion.setBounds(28, 393, 195, 20);
+		txtDireccion.setBounds(28, 328, 195, 20);
 		contentPanel.add(txtDireccion);
 		txtDireccion.setColumns(10);
 		
 		JLabel lblAforoMax = new JLabel("Aforo:");
 		lblAforoMax.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblAforoMax.setBounds(28, 423, 67, 19);
+		lblAforoMax.setBounds(28, 379, 67, 19);
 		contentPanel.add(lblAforoMax);
 		
 		txtAforo = new JTextField();
-		txtAforo.setBounds(28, 440, 191, 20);
+		txtAforo.setBounds(28, 408, 191, 20);
 		contentPanel.add(txtAforo);
 		txtAforo.setColumns(10);
 		
