@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+/.classpath
+/.project
+/DBLogic/
+/controller/
+/model/
+/start/
+=======
+/controller/
+>>>>>>> Stashed changes
+=======
+>>>>>>> master
 /view/
 /controller/
 /start/
