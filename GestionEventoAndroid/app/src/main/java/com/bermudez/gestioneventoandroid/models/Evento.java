@@ -12,8 +12,8 @@ public class Evento implements IMaxCaracteres{
 
     private String sNombreEvento;
     private int idEvento;
-    private LocalDateTime fechaInit;
-    private LocalDateTime fechaFin;
+    private String fechaInit;
+    private String fechaFin;
     private int iAforo;
     private String sDescripcion;
     private ImageView imagen;
@@ -24,21 +24,34 @@ public class Evento implements IMaxCaracteres{
         setsNombreEvento(sNombreEvento);
     }
 
-    public Evento(String sNombre,LocalDateTime fechaInit,LocalDateTime fechaFin){
+    public Evento(String sNombre,String fechaInit,String fechaFin){
         setsNombreEvento(sNombre);
         setFechaInit(fechaInit);
         setFechaFin(fechaFin);
 
     }
 
-    public Evento(String sNombre,ImageView imgEvento,LocalDateTime fechaInit,LocalDateTime fechaFin){
+    public Evento(String sNombre,ImageView imgEvento,String fechaInit,String fechaFin){
         setsNombreEvento(sNombre);
         setImagen(imgEvento);
         setFechaInit(fechaInit);
         setFechaFin(fechaFin);
 
     }
-    public Evento(int idEvento,String sNombreEvento, LocalDateTime fechaInit, LocalDateTime fechaFin, int iAforo,
+
+    public Evento(int idEvento,String sNombreEvento, String fechaInit, String fechaFin, int iAforo,
+                  String sDescripcion, String sUbicacion) {
+
+        setIdEvento(idEvento);
+        setsNombreEvento(sNombreEvento);
+        setFechaInit(fechaInit);
+        setFechaFin(fechaFin);
+        setiAforo(iAforo);
+        setsDescripcion(sDescripcion);
+        setsUbicacion(sUbicacion);
+    }
+
+    public Evento(int idEvento,String sNombreEvento, String fechaInit, String fechaFin, int iAforo,
                   String sDescripcion, ImageView imagen, String sUbicacion) {
 
         setIdEvento(idEvento);
@@ -70,19 +83,19 @@ public class Evento implements IMaxCaracteres{
             this.idEvento = idEvento;
     }
 
-    public LocalDateTime getFechaInit() {
+    public String getFechaInit() {
         return fechaInit;
     }
 
-    public void setFechaInit(LocalDateTime fechaInit) {
+    public void setFechaInit(String fechaInit) {
         this.fechaInit = fechaInit;
     }
 
-    public LocalDateTime getFechaFin() {
+    public String getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(LocalDateTime fechaFin) {
+    public void setFechaFin(String fechaFin) {
         this.fechaFin = fechaFin;
     }
 

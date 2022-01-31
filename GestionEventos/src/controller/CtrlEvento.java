@@ -21,8 +21,6 @@ public class CtrlEvento {
 				+ "nombre="+view.DlgCreacionEventos.txtNombreEvento.getText()+"&"
 				+ "fechaIni="+view.DlgCreacionEventos.dateInicio.getDate()+"&"
 				+ "fechaFin="+view.DlgCreacionEventos.dateEnd+"&"
-				+ "horaIni="+view.DlgCreacionEventos.txtHoraInicio.getText()+"&"
-				+ "horaFin="+view.DlgCreacionEventos.txtHoraFin.getText()+"&"
 				+ "direccion="+view.DlgCreacionEventos.txtDireccion.getText()+"&"
 				+ "aforo="+view.DlgCreacionEventos.txtAforo.getText()+"+&"
 				+ "descripcion="+view.DlgCreacionEventos.txtDescripcion.getText();
