@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="model.Empresa"/>
-    <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="java.io.IOException"/>
-    <fullyQualifiedTypeName name="controller.CtrlGestorEventos"/>
-    <fullyQualifiedTypeName name="view.FrmPrincipal"/>
-    <fullyQualifiedTypeName name="java.io.InputStream"/>
-    <fullyQualifiedTypeName name="javax.swing.JDialog"/>
-    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
-    <fullyQualifiedTypeName name="model.Evento"/>
-    <fullyQualifiedTypeName name="java.net.URL"/>
-    <fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
-    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
-    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-    <fullyQualifiedTypeName name="controller.CtrlEasyEvent"/>
-    <fullyQualifiedTypeName name="view.DlgCreacionPersona"/>
-    <fullyQualifiedTypeName name="view.FrmUsuariosRegistrados"/>
+    <fullyQualifiedTypeName name="controller.CtrlEvento"/>
+    <fullyQualifiedTypeName name="javax.swing.filechooser.FileNameExtensionFilter"/>
+    <fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
+    <fullyQualifiedTypeName name="java.awt.Image"/>
 </qualifiedTypeNameHistroy>

@@ -26,6 +26,10 @@ public class Persona implements IMaxCaracteres{
     	getArrayRol();
     }
     
+    public Persona() {
+    	
+    }
+    
     
     public static void addRoles() {
     	arrayRol.add("Voluntario");
