@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 /.classpath
 /.project
@@ -8,5 +9,8 @@
 =======
 /controller/
 >>>>>>> Stashed changes
+=======
+>>>>>>> master
 /view/
 /controller/
+/start/

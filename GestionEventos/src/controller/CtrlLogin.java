@@ -28,7 +28,7 @@ public class CtrlLogin {
 	    return sb.toString();
 	  }
 	
-	public static boolean Login() {
+	private static boolean Login() {
        boolean login = false; 
        
        	JSONObject jsonObj = new JSONObject();

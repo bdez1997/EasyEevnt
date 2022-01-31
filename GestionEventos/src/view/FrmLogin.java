@@ -11,15 +11,12 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class FrmLogin extends JFrame {
 
 	private JPanel contentPane;
 	public static JTextField txtUser;
 	public static JPasswordField passwordField;
-	public static JLabel lblMensajeIncorrecto;
 
 	public FrmLogin() {
 		setTitle("Login");
@@ -68,23 +65,6 @@ public class FrmLogin extends JFrame {
 		btnExit.setFont(new Font("Arial", Font.BOLD, 12));
 		btnExit.setBounds(206, 157, 97, 38);
 		contentPane.add(btnExit);
-		
-		lblMensajeIncorrecto = new JLabel("");
-		lblMensajeIncorrecto.setForeground(Color.RED);
-		lblMensajeIncorrecto.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		lblMensajeIncorrecto.setBounds(165, 25, 153, 14);
-		contentPane.add(lblMensajeIncorrecto);
-		
-		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(controller.CtrlLogin.Login()) {
-					dispose();
-					new FrmPrincipal();
-				}else {
-					lblMensajeIncorrecto.setText("Username/Password Incorrecto");
-				}
-			}
-		});
 
 	}
 }

@@ -26,11 +26,9 @@ public class LoginActivity extends AppCompatActivity {
         TextView txtPassword = findViewById(R.id.txtPasswordLogin);
 
 
-
         findViewById(R.id.btnRegistrarse).setOnClickListener(e ->{
             Intent RegistroActivity = new Intent(LoginActivity.this, RegistroActivity.class);
             startActivity(RegistroActivity);
-            finish();
         });
 
         findViewById(R.id.btnLogin).setOnClickListener(l -> {
@@ -54,11 +52,6 @@ public class LoginActivity extends AppCompatActivity {
 
             ));
         });
-    }
-
-    @Override
-    public void onBackPressed(){
-        moveTaskToBack(true);
     }
 
     private void jsonToUser(JSONObject json) throws JSONException {
