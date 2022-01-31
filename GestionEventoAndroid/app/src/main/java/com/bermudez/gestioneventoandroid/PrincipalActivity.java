@@ -84,6 +84,7 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
             Toast.makeText(this, "Item" + Store.lstEventos.get(Store.iAsistenciaSelected).toString(), Toast.LENGTH_SHORT).show();
             Intent i = new Intent(this, InfoEvento.class);
             startActivity(i);
+            finish();
         });
 
     }
