@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<<<<<<< HEAD
-    <fullyQualifiedTypeName name="controller.CtrlLogin"/>
-    <fullyQualifiedTypeName name="view.FrmPrincipal"/>
-    <fullyQualifiedTypeName name="view.FrmLogin"/>
-=======
     <fullyQualifiedTypeName name="controller.CtrlEvento"/>
     <fullyQualifiedTypeName name="javax.swing.filechooser.FileNameExtensionFilter"/>
     <fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
     <fullyQualifiedTypeName name="java.awt.Image"/>
->>>>>>> master
 </qualifiedTypeNameHistroy>

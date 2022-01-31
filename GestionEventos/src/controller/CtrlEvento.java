@@ -27,7 +27,6 @@ public class CtrlEvento {
 		
 		sResult= url.replace(" ", "%20");
 		String requesthttp = peticionhttp(sResult);
-		System.out.println("Insertado correctamente");
 	}
 	
 	

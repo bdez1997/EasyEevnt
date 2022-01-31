@@ -1,34 +1,24 @@
 package view;
 
 import java.awt.BorderLayout;
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.filechooser.FileNameExtensionFilter;
-
-import com.toedter.calendar.JDayChooser;
-import com.toedter.calendar.JDateChooser;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
-import java.awt.event.ContainerAdapter;
-import java.awt.event.ContainerEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 
-import com.toedter.components.JLocaleChooser;
-import javax.swing.JEditorPane;
-import javax.swing.JFileChooser;
-import javax.swing.JTextArea;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JSeparator;
-import java.awt.Color;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
+import com.toedter.calendar.JDateChooser;
 
 public class DlgCreacionEventos extends JDialog {
 
@@ -62,6 +52,7 @@ public class DlgCreacionEventos extends JDialog {
 		txtNombreEvento.setBounds(28, 108, 191, 20);
 		contentPanel.add(txtNombreEvento);
 		txtNombreEvento.setColumns(10);
+		
 		
 		JLabel lblNombreEvento = new JLabel("Nombre del evento:");
 		lblNombreEvento.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -153,8 +144,6 @@ public class DlgCreacionEventos extends JDialog {
 				lblImgEvento.setIcon(newIcon);
 				lblImgEvento.setSize(155, 155);
 			}
-			
-			
 		});
 		
 		JButton btnGuardar = new JButton("GUARDAR");
@@ -165,9 +154,14 @@ public class DlgCreacionEventos extends JDialog {
 		contentPanel.add(btnGuardar);
 		
 		btnGuardar.addActionListener(e -> {
-			
 			try {
-				controller.CtrlEvento.insEvento();
+				if(txtNombreEvento.getText() == null && dateIni == null && dateEnd == null && txtDescripcion.getText() == null && txtDireccion.getText() == null && txtAforo.getText() == null) {
+					JOptionPane.showConfirmDialog(null, "Tiene que rellenar todos los campos", "Eventos",  JOptionPane.OK_OPTION);
+				}else {
+					controller.CtrlEvento.insEvento();
+					JOptionPane.showConfirmDialog(null, "El evento se ha registrado", "Eventos",  JOptionPane.OK_OPTION);
+				}
+				
 			} catch (Exception e1) {
 				System.out.println(e1.getMessage());
 			}
