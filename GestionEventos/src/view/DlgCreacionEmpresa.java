@@ -16,10 +16,10 @@ import javax.swing.JSeparator;
 public class DlgCreacionEmpresa extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField txtTelf;
-	private JTextField txtNIF;
-	private JTextField txtCorreo;
-	private JTextField txtNombre;
+	public static JTextField txtTelf;
+	public static JTextField txtNIF;
+	public static JTextField txtCorreo;
+	public static JTextField txtNombre;
 
 
 	public DlgCreacionEmpresa() {
