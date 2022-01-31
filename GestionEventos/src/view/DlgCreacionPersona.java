@@ -63,6 +63,12 @@ public class DlgCreacionPersona extends JDialog {
 			panelBotones.add(btnGuardar);
 			
 			btnGuardar.addActionListener(e -> {
+				try {
+					controller.CtrlPersonas.insPersonas();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				dispose();
 			});
 			

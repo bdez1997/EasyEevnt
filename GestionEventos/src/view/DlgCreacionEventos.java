@@ -146,24 +146,20 @@ public class DlgCreacionEventos extends JDialog {
 			}
 		});
 		
-		JButton btnGuardar = new JButton("GUARDAR");
-		btnGuardar.setForeground(new Color(255, 255, 255));
-		btnGuardar.setBackground(new Color(65, 105, 225));
-		btnGuardar.setFont(new Font("Arial", Font.BOLD, 12));
-		btnGuardar.setBounds(149, 523, 104, 42);
-		contentPanel.add(btnGuardar);
+		JButton btnGuardarEvento = new JButton("GUARDAR");
+		btnGuardarEvento.setForeground(new Color(255, 255, 255));
+		btnGuardarEvento.setBackground(new Color(65, 105, 225));
+		btnGuardarEvento.setFont(new Font("Arial", Font.BOLD, 12));
+		btnGuardarEvento.setBounds(149, 523, 104, 42);
+		contentPanel.add(btnGuardarEvento);
 		
-		btnGuardar.addActionListener(e -> {
+		
+		btnGuardarEvento.addActionListener(e -> {
 			try {
-				if(txtNombreEvento.getText() == null && dateIni == null && dateEnd == null && txtDescripcion.getText() == null && txtDireccion.getText() == null && txtAforo.getText() == null) {
-					JOptionPane.showConfirmDialog(null, "Tiene que rellenar todos los campos", "Eventos",  JOptionPane.OK_OPTION);
-				}else {
-					controller.CtrlEvento.insEvento();
-					JOptionPane.showConfirmDialog(null, "El evento se ha registrado", "Eventos",  JOptionPane.OK_OPTION);
-				}
-				
+				controller.CtrlEvento.insEvento();
 			} catch (Exception e1) {
-				System.out.println(e1.getMessage());
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			}
 			
 			dispose();

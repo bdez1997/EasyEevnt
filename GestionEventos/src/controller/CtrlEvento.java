@@ -19,14 +19,16 @@ public class CtrlEvento {
 		String url = URI + "ins-evento.php?nombre="+ view.DlgCreacionEventos.txtNombreEvento.getText()+"&"
 				
 				+ "nombre="+view.DlgCreacionEventos.txtNombreEvento.getText()+"&"
-				+ "fechaIni="+view.DlgCreacionEventos.dateIni +"&"
-				+ "fechaFin="+view.DlgCreacionEventos.dateEnd+"&"
+				+ "fechaini="+view.DlgCreacionEventos.dateIni +"&"
+				+ "fechafin="+view.DlgCreacionEventos.dateEnd+"&"
 				+ "direccion="+view.DlgCreacionEventos.txtDireccion.getText()+"&"
 				+ "aforo="+view.DlgCreacionEventos.txtAforo.getText()+"+&"
 				+ "descripcion="+view.DlgCreacionEventos.txtDescripcion.getText();
+
 		
 		sResult= url.replace(" ", "%20");
 		String requesthttp = peticionhttp(sResult);
+		
 	}
 	
 	
