@@ -28,18 +28,38 @@ public class PrincipalFragment extends Fragment {
 
     RecyclerView rvEventos;
     View view;
+    public static String nombre;
+    public static String fechaIni ;
+    public static String fechaFin;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         view = inflater.inflate(R.layout.fragment_principal, container, false);
 
         rvEventos= view.findViewById(R.id.rvEventos);
         rvEventos.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
         EventosAdapter adapter = new EventosAdapter(getActivity().getApplicationContext());
         rvEventos.setAdapter(adapter);
+
+        String url = "http://proyectogestioneventos.atwebpages.com/php/get-evento.php";
+        Volley.newRequestQueue(getContext()).add(new StringRequest(Request.Method.GET, url,
+                s -> {
+                    try {
+                        JSONObject json = new JSONObject(s);
+                        jsonToEvent(json);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                },
+                r ->{
+
+                }
+
+        ));
 
         showData();
 
@@ -58,38 +78,19 @@ public class PrincipalFragment extends Fragment {
 
             Intent intent = new Intent(getActivity(), InfoEvento.class);
             startActivity(intent);
-            //((Activity) getActivity()).overridePendingTransition(0, 0);
         });
     }
 
-    private void obtenerTodos() {
-        String url = "http://proyectogestioneventos.atwebpages.com/php/get-evento.php";
-        Volley.newRequestQueue(getContext()).add(new StringRequest(Request.Method.GET, url,
-                s -> {
-                    try {
-                        JSONObject json = new JSONObject(s);
-                        jsonToEvent(json);
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                },
-                r ->{
-
-                }
-
-        ));
-    }
 
     private void jsonToEvent(JSONObject json) throws JSONException {
-        String nombre = json.getString("Nombre");
-        String fechaIni = json.getString("FechaIni");
-        String fechaFin = json.getString("FechaFin");
+        nombre = json.getString("Nombre");
+        fechaIni = json.getString("FechaIni");
+        fechaFin = json.getString("FechaFin");
 
 
         Evento jsonEvento = new Evento(nombre, fechaIni, fechaFin);
         Store.miEvento = jsonEvento;
-        Log.i("MI USUARIO", Store.miEvento.toString());
+        Log.i("MI EVENTO", Store.miEvento.toString());
     }
 
 
