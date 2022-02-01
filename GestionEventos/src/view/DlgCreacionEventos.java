@@ -75,17 +75,9 @@ public class DlgCreacionEventos extends JDialog {
 		
 		dateInicio = new JDateChooser();
 		dateInicio.setBounds(28, 178, 194, 20);
-		dateInicio.setDateFormatString("dd-MM-yyyy");
-		
-		Date fechaStandar = new Date();
-		 dateInicio.setDate(fechaStandar);
-		dateIni = dateInicio.getDate().toString();
-		
 
-		
 		dateFin = new JDateChooser();
 		dateFin.setBounds(28, 251, 191, 20);
-		dateEnd  = ((JTextField)dateFin.getDateEditor().getUiComponent()).getText();
 		
 		contentPanel.add(dateFin);
 		contentPanel.add(dateInicio);
@@ -167,6 +159,12 @@ public class DlgCreacionEventos extends JDialog {
 		
 		
 		btnGuardarEvento.addActionListener(e -> {
+			
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+			String startDateStringInit = dateFormat.format(dateInicio.getDate());
+			String startDateStringFin = dateFormat.format(dateFin.getDate());
+			dateIni = startDateStringInit;
+			dateEnd = startDateStringFin;
 			try {
 				controller.CtrlEvento.insEvento();
 			} catch (Exception e1) {
