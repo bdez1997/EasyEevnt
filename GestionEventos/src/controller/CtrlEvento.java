@@ -18,14 +18,13 @@ public class CtrlEvento {
 		
 		String url = URI + "ins-evento.php?nombre="+ view.DlgCreacionEventos.txtNombreEvento.getText()+"&"
 				
-				+ "nombre="+view.DlgCreacionEventos.txtNombreEvento.getText()+"&"
 				+ "fechaini="+view.DlgCreacionEventos.dateIni +"&"
 				+ "fechafin="+view.DlgCreacionEventos.dateEnd+"&"
 				+ "direccion="+view.DlgCreacionEventos.txtDireccion.getText()+"&"
 				+ "aforo="+view.DlgCreacionEventos.txtAforo.getText()+"+&"
 				+ "descripcion="+view.DlgCreacionEventos.txtDescripcion.getText();
 
-		
+		System.out.println(url);
 		sResult= url.replace(" ", "%20");
 		String requesthttp = peticionhttp(sResult);
 		

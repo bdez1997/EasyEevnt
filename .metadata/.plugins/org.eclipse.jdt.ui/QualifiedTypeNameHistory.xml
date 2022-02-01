@@ -6,4 +6,6 @@
     <fullyQualifiedTypeName name="java.awt.Image"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="controller.CtrlPersonas"/>
+    <fullyQualifiedTypeName name="java.text.DateFormat"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 </qualifiedTypeNameHistroy>

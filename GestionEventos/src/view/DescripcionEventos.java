@@ -41,19 +41,24 @@ public class DescripcionEventos extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(230, 230, 250));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(230, 230, 250));
 		contentPane.add(panel, BorderLayout.SOUTH);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		btnAnnadirUsuario = new JButton("A\u00D1ADIR");
+		btnAnnadirUsuario.setForeground(new Color(255, 255, 255));
+		btnAnnadirUsuario.setBackground(new Color(65, 105, 225));
 		btnAnnadirUsuario.setFont(new Font("Arial", Font.BOLD, 12));
 		panel.add(btnAnnadirUsuario);
 		
 		lstUsuario = new JList();
+		lstUsuario.setBackground(new Color(230, 230, 250));
 		contentPane.add(lstUsuario, BorderLayout.CENTER);
 	}
 

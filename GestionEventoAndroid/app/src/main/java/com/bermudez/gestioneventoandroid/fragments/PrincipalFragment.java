@@ -82,17 +82,12 @@ public class PrincipalFragment extends Fragment {
     }
 
     private void jsonToEvent(JSONObject json) throws JSONException {
-
-        int id = json.getInt("idEvento");
         String nombre = json.getString("Nombre");
         String fechaIni = json.getString("FechaIni");
         String fechaFin = json.getString("FechaFin");
-        int aforo = json.getInt("Aforo");
-        String descripcion = json.getString("Descripcion");
-        //String imagen = json.getString("Imagen");
-        String direccion = json.getString("Direccion");
 
-        Evento jsonEvento = new Evento(id,nombre, fechaIni, fechaFin, aforo, descripcion, direccion);
+
+        Evento jsonEvento = new Evento(nombre, fechaIni, fechaFin);
         Store.miEvento = jsonEvento;
         Log.i("MI USUARIO", Store.miEvento.toString());
     }

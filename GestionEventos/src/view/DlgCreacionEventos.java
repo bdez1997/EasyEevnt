@@ -4,6 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -67,9 +72,16 @@ public class DlgCreacionEventos extends JDialog {
 		
 		
 		//CALENDARIO
+		
 		dateInicio = new JDateChooser();
 		dateInicio.setBounds(28, 178, 194, 20);
-		dateIni  = ((JTextField)dateInicio.getDateEditor().getUiComponent()).getText();
+		dateInicio.setDateFormatString("dd-MM-yyyy");
+		
+		Date fechaStandar = new Date();
+		 dateInicio.setDate(fechaStandar);
+		dateIni = dateInicio.getDate().toString();
+		
+
 		
 		dateFin = new JDateChooser();
 		dateFin.setBounds(28, 251, 191, 20);
