@@ -13,7 +13,7 @@ public class CtrlEmpresa {
 		
 		String resultado;
 		
-		String url = URI + "ins-empresa.php?NIF="+ view.DlgCreacionEmpresa.txtNIF.getText()+"&"
+		String url = URI + "ins-empresa.php?nif="+ view.DlgCreacionEmpresa.txtNIF.getText()+"&"
 				
 				+ "nombre="+view.DlgCreacionEmpresa.txtNombre.getText() +"&"
 				+ "correo="+view.DlgCreacionEmpresa.txtCorreo+"&"

@@ -13,17 +13,18 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.JList;
 import java.awt.Color;
 
-public class DescripcionEventos extends JFrame {
+public class DlgDescripcionEventos extends JDialog {
 
 	private JPanel contentPane;
 	private JButton btnAnnadirUsuario;
 	private JList lstUsuario;
 	
 	
-	public DescripcionEventos() {
+	public DlgDescripcionEventos() {
 		setBackground(new Color(230, 230, 250));
 		
 		setBounds (500,200,300,200);
