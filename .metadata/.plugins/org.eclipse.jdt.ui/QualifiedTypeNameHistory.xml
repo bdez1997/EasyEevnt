@@ -7,6 +7,7 @@
     <fullyQualifiedTypeName name="controller.CtrlPersonas"/>
     <fullyQualifiedTypeName name="java.text.DateFormat"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<<<<<<< HEAD
     <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
     <fullyQualifiedTypeName name="org.json.JSONObject"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -18,4 +19,8 @@
     <fullyQualifiedTypeName name="org.json.JSONArray"/>
     <fullyQualifiedTypeName name="controller.CtrlEvento"/>
     <fullyQualifiedTypeName name="model.Evento"/>
+=======
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+>>>>>>> master
 </qualifiedTypeNameHistroy>

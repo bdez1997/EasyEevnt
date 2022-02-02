@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);
-        showData();
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -71,28 +71,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
     }
 
-    private void openPerfil(){
-        Intent perfilActivity = new Intent(MainActivity.this, PerfilActivity.class);
-        startActivity(perfilActivity);
-    }
-
-
-
-    private void showData(){
-        Store.lstEventos.add(new Evento("Ficzone", LocalDateTime.now(), LocalDateTime.now()));
-        Store.lstEventos.add(new Evento("Mangafest 2021", LocalDateTime.now(), LocalDateTime.now()));
-        Store.lstEventos.add(new Evento("CICA 2022", LocalDateTime.now(), LocalDateTime.now()));
-    }
-
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         drawerLayout.closeDrawer(GravityCompat.START);
 
         switch(item.getItemId()) {
-            case R.id.opPerfil: openPerfil(); break;
+            case R.id.opPerfil: openFragment(new PerfilFragment()); setTitle("Perfil");; break;
             case R.id.opEventos: openFragment(new PrincipalFragment()); setTitle("Eventos"); break;
             case R.id.opHistorial: openFragment(new AsistenciaFragment()); setTitle("Asistencia"); break;
             case R.id.salir: salir(); break;

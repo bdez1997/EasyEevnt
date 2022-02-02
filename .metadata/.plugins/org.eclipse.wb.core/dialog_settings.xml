@@ -27,4 +27,10 @@
 			<item value="C:\Users\Usuario\Documents\Git-EasyEvent\EasyEevnt\GestionEventos\lib\jcalendar-1.4.jar"/>
 		</list>
 	</section>
+	<section name="org.eclipse.wb.internal.core.model.property.order.ReorderDialog">
+		<item key="x" value="594"/>
+		<item key="y" value="503"/>
+		<item key="width" value="682"/>
+		<item key="height" value="473"/>
+	</section>
 </section>
