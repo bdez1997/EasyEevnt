@@ -68,7 +68,7 @@ public class CtrlEvento {
 		return c;
 	}
 
-	private static Evento objJson2Evento(JSONObject jsonObjct) {
+	public static Evento objJson2Evento(JSONObject jsonObjct) {
 
 		Evento c = new Evento();
 
@@ -93,37 +93,46 @@ public class CtrlEvento {
 		return c;
 	}
 
-	/*
-	 * public static void getList() { DefaultTableModel tableQuery = new
-	 * DefaultTableModel();
-	 * 
-	 * try {
-	 * 
-	 * int numCampos = numColumn;
-	 * 
-	 * tableQuery.addColumn("Nombre"); tableQuery.addColumn("Fecha de Inicio");
-	 * tableQuery.addColumn("Fecha de finalización"); tableQuery.addColumn("Aforo");
-	 * tableQuery.addColumn("Descripción"); tableQuery.addColumn("Imagen");
-	 * tableQuery.addColumn("Direccion");
-	 * 
-	 * String[] sShowDataColumn = new String[7];
-	 * 
-	 * ArrayList<Evento> eventList = jsonToEvent(URI + "get-evento.php"); for (int i
-	 * = 0; i < eventList.size(); i++) {
-	 * 
-	 * sShowDataColumn[0] = eventList.get(i).getsNombreEvento(); sShowDataColumn[1]
-	 * = eventList.get(i).getFechaInit(); sShowDataColumn[2] =
-	 * eventList.get(i).getFechaFin(); sShowDataColumn[3] =
-	 * String.valueOf(eventList.get(i).getAforo()); sShowDataColumn[4] =
-	 * eventList.get(i).getDescripcion(); sShowDataColumn[5]
-	 * =String.valueOf(eventList.get(i).getImagen()); sShowDataColumn[6] =
-	 * eventList.get(i).getsDireccion();
-	 * 
-	 * } tableQuery.addRow(sShowDataColumn);
-	 * 
-	 * view.DescripcionEventos.tableEventos.setModel(tableQuery); } catch (Exception
-	 * e) { e.printStackTrace(); } }
-	 */
+	public static void getList() {
+		DefaultTableModel tableQuery = new DefaultTableModel();
+
+		try {
+			String url = URI + "get-evento.php";
+			int numCampos = numColumn;
+
+			JSONObject myJson = new JSONObject(stringToEvento(url));
+
+			tableQuery.addColumn("idEvento");
+			tableQuery.addColumn("Nombre");
+			tableQuery.addColumn("Fecha de Inicio");
+			tableQuery.addColumn("Fecha de finalización");
+			tableQuery.addColumn("Aforo");
+			tableQuery.addColumn("Descripción");
+			tableQuery.addColumn("Imagen");
+			tableQuery.addColumn("Direccion");
+
+			String[] sShowDataColumn = new String[8];
+
+			for (int i = 0; i <8; i++) {
+
+				sShowDataColumn[0] = String.valueOf(objJson2Evento(myJson).getIdEvento());
+				sShowDataColumn[1] = objJson2Evento(myJson).getsNombreEvento();
+				sShowDataColumn[2] = objJson2Evento(myJson).getFechaInit();
+				sShowDataColumn[3] = objJson2Evento(myJson).getFechaFin();
+				sShowDataColumn[4] = String.valueOf(objJson2Evento(myJson).getAforo());
+				sShowDataColumn[5] = objJson2Evento(myJson).getDescripcion();
+				sShowDataColumn[6] = String.valueOf(objJson2Evento(myJson).getImagen());
+				sShowDataColumn[7] = objJson2Evento(myJson).getsDireccion();
+
+				tableQuery.addRow(sShowDataColumn);
+			}
+
+			view.DlgDescripcionEventos.tableEventos.setModel(tableQuery);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static void delEvento() throws Exception {
 		String sResult;

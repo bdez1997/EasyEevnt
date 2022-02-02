@@ -38,8 +38,7 @@ public class DlgDescripcionEventos extends JDialog {
 	}
 	
 	public void crearComponentes() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+				setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(230, 230, 250));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -58,11 +57,16 @@ public class DlgDescripcionEventos extends JDialog {
 		btnAnnadirUsuario.setFont(new Font("Arial", Font.BOLD, 12));
 		panel.add(btnAnnadirUsuario);
 		
-		scrollPane = new JScrollPane();
+		tableEventos = new JTable();
+		controller.CtrlEvento.getList();
+		scrollPane = new JScrollPane(tableEventos);
+		
 		contentPane.add(scrollPane, BorderLayout.CENTER);
 		
-		tableEventos = new JTable();
-		scrollPane.add(tableEventos);
+		
+		
+		
+		
 	}
 
 }

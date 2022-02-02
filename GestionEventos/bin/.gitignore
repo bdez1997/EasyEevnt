@@ -1,5 +1,7 @@
-/start/
+/.classpath
+/.project
+/DBLogic/
+/controller/
 /model/
-/controller/
+/start/
 /view/
-/controller/
