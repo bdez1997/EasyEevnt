@@ -58,8 +58,9 @@ public class DlgDescripcionEventos extends JDialog {
 		panel.add(btnAnnadirUsuario);
 		
 		tableEventos = new JTable();
-		controller.CtrlEvento.getList();
+		
 		scrollPane = new JScrollPane(tableEventos);
+		controller.CtrlEvento.getList();
 		
 		contentPane.add(scrollPane, BorderLayout.CENTER);
 		

@@ -80,7 +80,7 @@ public class CtrlEvento {
 			String sFechaIni = jsonObjct.getString("FechaIni");
 			String sFechaFin = jsonObjct.getString("FechaFin");
 			int iAforo = jsonObjct.getInt("Aforo");
-			String sDescripcion = jsonObjct.getString("Descrripcion");
+			String sDescripcion = jsonObjct.getString("Descripcion");
 			String sDireccion = jsonObjct.getString("Direccion");
 
 			Evento e = new Evento(id, sNombre, sFechaIni, sFechaFin, iAforo, sDescripcion, null, sDireccion);
@@ -100,7 +100,7 @@ public class CtrlEvento {
 			String url = URI + "get-evento.php";
 			int numCampos = numColumn;
 
-			JSONObject myJson = new JSONObject(stringToEvento(url));
+			
 
 			tableQuery.addColumn("idEvento");
 			tableQuery.addColumn("Nombre");
@@ -114,6 +114,8 @@ public class CtrlEvento {
 			String[] sShowDataColumn = new String[8];
 
 			for (int i = 0; i <8; i++) {
+				
+				JSONObject myJson = new JSONObject(peticionhttp(url));
 
 				sShowDataColumn[0] = String.valueOf(objJson2Evento(myJson).getIdEvento());
 				sShowDataColumn[1] = objJson2Evento(myJson).getsNombreEvento();
