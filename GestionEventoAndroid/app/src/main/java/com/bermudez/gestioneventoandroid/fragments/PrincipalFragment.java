@@ -90,8 +90,7 @@ public class PrincipalFragment extends Fragment {
 
         Evento jsonEvento = new Evento(nombre, fechaIni, fechaFin);
         Store.lstEventos.add(jsonEvento);
-        Store.miEvento = jsonEvento;
-        Log.i("MI EVENTO", Store.miEvento.toString());
+        //Store.miEvento = jsonEvento;
     }
 
 

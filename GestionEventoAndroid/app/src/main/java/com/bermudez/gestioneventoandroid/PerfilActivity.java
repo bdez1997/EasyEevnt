@@ -14,6 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class PerfilActivity extends AppCompatActivity {
 
     Button btnGuardar;
+
     EditText txtUserProfile;
     EditText txtPassProfile;
     EditText txtEmailProfile;
@@ -25,12 +26,18 @@ public class PerfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
         setTitle("Perfil");
 
+        findViewById(R.id.btnGuardar).setOnClickListener(e -> {
 
+        });
 
 
         findViewById(R.id.btnVolver).setOnClickListener(e ->{
             onBackPressed();
         });
+
+    }
+
+    public void updateProfile(){
 
     }
 

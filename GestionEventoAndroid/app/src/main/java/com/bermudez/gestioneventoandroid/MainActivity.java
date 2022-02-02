@@ -71,15 +71,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
     }
 
-    private void openPerfil(){
-        Intent perfilActivity = new Intent(MainActivity.this, PerfilActivity.class);
-        startActivity(perfilActivity);
-    }
-
-
-
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
