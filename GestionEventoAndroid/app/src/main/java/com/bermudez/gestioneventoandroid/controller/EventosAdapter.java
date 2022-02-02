@@ -67,7 +67,7 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return 3;
+        return Store.lstEventos.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

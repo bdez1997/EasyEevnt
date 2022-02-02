@@ -7,6 +7,8 @@
     <string name="valoracion">VALORACIÓN</string>
     <string name="comentario">Pon un comentario: </string>
 
+
+
     <string-array name="roles">
         <item>Trabajador</item>
         <item>Voluntario</item>

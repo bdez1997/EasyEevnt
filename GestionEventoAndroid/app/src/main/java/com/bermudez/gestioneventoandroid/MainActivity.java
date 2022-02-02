@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawer(GravityCompat.START);
 
         switch(item.getItemId()) {
-            case R.id.opPerfil: openPerfil(); break;
+            case R.id.opPerfil: openFragment(new PerfilFragment()); setTitle("Perfil");; break;
             case R.id.opEventos: openFragment(new PrincipalFragment()); setTitle("Eventos"); break;
             case R.id.opHistorial: openFragment(new AsistenciaFragment()); setTitle("Asistencia"); break;
             case R.id.salir: salir(); break;
