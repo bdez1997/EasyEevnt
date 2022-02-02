@@ -10,27 +10,29 @@ public class Evento {
 	private int idEvento;
 	
 	private String sNombreEvento;
-	private Date fechaInit;
-	private Date fechaFin;
-	private LocalTime horaInit;
-	private LocalTime horaFin;
+	private String fechaInit;
+	private String fechaFin;
 	private int aforo;
 	private String descripcion;
+	private String sDireccion;
 	private Image imagen;
-	private int idUbicacion;
+	
 
-	public Evento(int idEvento,String sNombreEvento, Date fechaInit, Date fechaFin, LocalTime horaInit, LocalTime horaFin, int aforo,
-			String descripcion, Image imagen, int idUbicacion) {
+	
+	public Evento() {
+		
+	}
+	public Evento(int idEvento,String sNombreEvento, String fechaInit, String fechaFin,  int aforo,
+			String descripcion, Image imagen,String sDireccion) {
 		
 		setIdEvento(idEvento);
+		setsNombreEvento(sNombreEvento);
         setFechaInit(fechaInit);
         setFechaFin(fechaFin);
-        setHoraInit(horaInit);
-        setHoraFin(horaFin);
         setAforo(aforo);
         setDescripcion(descripcion);
         setImagen(imagen);
-        setIdEvento(idUbicacion);
+        setsDireccion(sDireccion);
 	}
 
 	public int getIdEvento() {
@@ -48,41 +50,26 @@ public class Evento {
 	}
 
 	public void setsNombreEvento(String sNombreEvento) {
-		if(sNombreEvento.length()<=20) {this.sNombreEvento = sNombreEvento;}
+		if(sNombreEvento.length()<=50) {this.sNombreEvento = sNombreEvento;}
 	}
 
-	public Date getFechaInit() {
+	public String getFechaInit() {
 		return fechaInit;
 	}
 
-	public void setFechaInit(Date fechaInit) {
+	public void setFechaInit(String fechaInit) {
 		this.fechaInit = fechaInit;
 	}
 
-	public Date getFechaFin() {
+	public String getFechaFin() {
 		return fechaFin;
 	}
 
-	public void setFechaFin(Date fechaFin) {
+	public void setFechaFin(String fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 	
 
-	public LocalTime getHoraInit() {
-		return horaInit;
-	}
-
-	public void setHoraInit(LocalTime horaInit) {
-		this.horaInit = horaInit;
-	}
-
-	public LocalTime getHoraFin() {
-		return horaFin;
-	}
-
-	public void setHoraFin(LocalTime horaFin) {
-		this.horaFin = horaFin;
-	}
 
 	public int getAforo() {
 		return aforo;
@@ -94,14 +81,14 @@ public class Evento {
 		}
 	}
 
-	public void getDescripcion(String description) {
-		if (descripcion.length() <= 250) {
-			this.descripcion = descripcion;
-		}
+	public String getDescripcion() {		
+			return this.descripcion;
 	}
 
-	public void setDescripcion(String descripcion) {
+	public void setDescripcion(String descripcion) {	
+		if (descripcion.length() <= 250) {
 		this.descripcion = descripcion;
+		}
 	}
 
 	public Image getImagen() {
@@ -112,16 +99,16 @@ public class Evento {
 		this.imagen = imagen;
 	}
 
-	public int getidUbicacion() {
-		return idUbicacion;
+	
+	
+	public String getsDireccion() {
+		return sDireccion;
 	}
 
-	public void setidUbicacion(int idUbicacion) {
-		if (Integer.toString(idUbicacion).length() <= 10) {
-			this.idUbicacion = idUbicacion;
-		}
+	public void setsDireccion(String sDireccion) {
+		this.sDireccion = sDireccion;
 	}
-	
+
 	public int hashCode() {
 		return Objects.hash(idEvento);
 	}
@@ -146,14 +133,10 @@ public class Evento {
 		sResultado = getIdEvento() + "\n";
 		sResultado += getFechaInit() + "\n";
 		sResultado += getFechaFin() + "\n";
-		sResultado += getHoraInit() + "\n";
-		sResultado+= getHoraFin() + "\n";
 		sResultado += getAforo() + "\n";
 		sResultado += getImagen() + "\n";
-		sResultado += getidUbicacion() + "\n";
 		sResultado += getIdEvento() + "\n";
-		sResultado += getidUbicacion() + "\n";
+		sResultado += getsDireccion();
 		return sResultado;
 	}
-
 }

@@ -15,27 +15,26 @@ import java.awt.Font;
 import javax.swing.JComboBox;
 import javax.swing.JList;
 import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 public class DescripcionEventos extends JFrame {
 
 	private JPanel contentPane;
 	private JButton btnAnnadirUsuario;
-	private JList lstUsuario;
+	private JScrollPane scrollPane;
+	public static JTable tableEventos;
 	
 	
 	public DescripcionEventos() {
 		setBackground(new Color(230, 230, 250));
-		
 		setBounds (500,200,300,200);
-		setTitle("Doble");
+		setTitle("Eventos");
 		getContentPane().setLayout(null);
-		
 		crearComponentes();
 		setVisible(true);
 		
 	}
-	
-	
 	
 	public void crearComponentes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,6 +44,7 @@ public class DescripcionEventos extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(230, 230, 250));
@@ -57,9 +57,11 @@ public class DescripcionEventos extends JFrame {
 		btnAnnadirUsuario.setFont(new Font("Arial", Font.BOLD, 12));
 		panel.add(btnAnnadirUsuario);
 		
-		lstUsuario = new JList();
-		lstUsuario.setBackground(new Color(230, 230, 250));
-		contentPane.add(lstUsuario, BorderLayout.CENTER);
+		scrollPane = new JScrollPane();
+		contentPane.add(scrollPane, BorderLayout.CENTER);
+		
+		tableEventos = new JTable();
+		scrollPane.add(tableEventos);
 	}
 
 }
