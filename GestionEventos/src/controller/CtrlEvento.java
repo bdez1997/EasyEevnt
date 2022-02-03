@@ -155,12 +155,19 @@ public class CtrlEvento {
 		}
 	}
 
-	public static void delEvento() throws Exception {
-		String sResult;
-		String url = URI + "del-evento.php?nombre=" + view.DlgCreacionEventos.txtNombreEvento.getText();
+	public static void delEvento(String sEventName)  {
+		
+		try {
+			String sResult;
+			String url = URI + "del-evento.php?nombre=" + sEventName;
 
-		sResult = url.replace(" ", "%20");
-		String requesthttp = peticionhttp(sResult);
+			sResult = url.replace(" ", "%20");
+			
+			String requesthttp = peticionhttp(sResult);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private static Evento getEvento() {

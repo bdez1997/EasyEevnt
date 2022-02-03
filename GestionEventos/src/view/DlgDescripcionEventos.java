@@ -33,6 +33,7 @@ public class DlgDescripcionEventos extends JDialog {
 	private JPopupMenu popupMenu;
 	private JMenuItem mntmNewDelete;
 	private JMenuItem mntmNewMenuItem_1;
+	private String sEventName;
 
 	public DlgDescripcionEventos() {
 		setBackground(new Color(230, 230, 250));
@@ -73,21 +74,27 @@ public class DlgDescripcionEventos extends JDialog {
 		popupMenu = new JPopupMenu();
 		contentPane.add(popupMenu, BorderLayout.NORTH);
 
-		mntmNewDelete = new JMenuItem("Delete");
+		mntmNewDelete = new JMenuItem("Eliminar");
+		mntmNewDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("entra");
+				controller.CtrlEvento.delEvento(sEventName);
+				controller.CtrlEvento.getList();
+			}
+		});
+		
 		popupMenu.add(mntmNewDelete);
 
-		mntmNewMenuItem_1 = new JMenuItem("New menu item");
+		mntmNewMenuItem_1 = new JMenuItem("Borrar");
 		popupMenu.add(mntmNewMenuItem_1);
 		tableEventos.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (e.getButton() == MouseEvent.BUTTON3) {
 					popupMenu.show(DlgDescripcionEventos.this, e.getX(), e.getY());
+					sEventName=tableEventos.getValueAt(tableEventos.getSelectedRow(),0).toString();
 				}
 			}
 		});
 	}
-
-	
-
 }
