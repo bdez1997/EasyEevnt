@@ -1,76 +1,72 @@
 package com.bermudez.gestioneventoandroid.models;
 
-import android.net.Uri;
 import android.widget.ImageView;
 
-import java.net.URI;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.Objects;
 
 public class Evento implements IMaxCaracteres{
 
-    private String sNombreEvento;
+    private String Nombre;
     private int idEvento;
-    private String fechaInit;
-    private String fechaFin;
-    private int iAforo;
-    private String sDescripcion;
+    private String FechaInit;
+    private String FechaFin;
+    private int Aforo;
+    private String Descripcion;
     private ImageView imagen;
-    private String sUbicacion;
+    private String Direccion;
 
 
-    public Evento(String sNombreEvento){
-        setsNombreEvento(sNombreEvento);
+    public Evento(String Nombre){
+        setNombre(Nombre);
     }
 
     public Evento(String sNombre,String fechaInit,String fechaFin){
-        setsNombreEvento(sNombre);
+        setNombre(sNombre);
         setFechaInit(fechaInit);
         setFechaFin(fechaFin);
 
     }
 
     public Evento(String sNombre,ImageView imgEvento,String fechaInit,String fechaFin){
-        setsNombreEvento(sNombre);
+        setNombre(sNombre);
         setImagen(imgEvento);
         setFechaInit(fechaInit);
         setFechaFin(fechaFin);
 
     }
 
-    public Evento(int idEvento,String sNombreEvento, String fechaInit, String fechaFin, int iAforo,
-                  String sDescripcion, String sUbicacion) {
+    public Evento(int idEvento, String Nombre, String fechaInit, String fechaFin, int Aforo,
+                  String Descripcion, String Direccion) {
 
         setIdEvento(idEvento);
-        setsNombreEvento(sNombreEvento);
+        setNombre(Nombre);
         setFechaInit(fechaInit);
         setFechaFin(fechaFin);
-        setiAforo(iAforo);
-        setsDescripcion(sDescripcion);
-        setsUbicacion(sUbicacion);
+        setAforo(Aforo);
+        setDescripcion(Descripcion);
+        setDireccion(Direccion);
     }
 
-    public Evento(int idEvento,String sNombreEvento, String fechaInit, String fechaFin, int iAforo,
-                  String sDescripcion, ImageView imagen, String sUbicacion) {
+    public Evento(int idEvento, String Nombre, String fechaInit, String fechaFin, int Aforo,
+                  String Descripcion, ImageView imagen, String Direccion) {
 
         setIdEvento(idEvento);
-        setsNombreEvento(sNombreEvento);
+        setNombre(Nombre);
         setFechaInit(fechaInit);
         setFechaFin(fechaFin);
-        setiAforo(iAforo);
-        setsDescripcion(sDescripcion);
+        setAforo(Aforo);
+        setDescripcion(Descripcion);
         setImagen(imagen);
-        setsUbicacion(sUbicacion);
+        setDireccion(Direccion);
     }
 
-    public String getsNombreEvento() {
-        return sNombreEvento;
+    public String getNombre() {
+        return Nombre;
     }
 
-    public void setsNombreEvento(String sNombreEvento) {
-        if (sNombreEvento.length() > IMINIMO && sNombreEvento.length()< IMAXNOMBRE){
-            this.sNombreEvento = sNombreEvento;
+    public void setNombre(String nombre) {
+        if (nombre.length() > IMINIMO && nombre.length()< IMAXNOMBRE){
+            this.Nombre = nombre;
         }
 
     }
@@ -84,38 +80,38 @@ public class Evento implements IMaxCaracteres{
     }
 
     public String getFechaInit() {
-        return fechaInit;
+        return FechaInit;
     }
 
     public void setFechaInit(String fechaInit) {
-        this.fechaInit = fechaInit;
+        this.FechaInit = fechaInit;
     }
 
     public String getFechaFin() {
-        return fechaFin;
+        return FechaFin;
     }
 
     public void setFechaFin(String fechaFin) {
-        this.fechaFin = fechaFin;
+        this.FechaFin = fechaFin;
     }
 
 
 
-    public int getiAforo() {
-        return iAforo;
+    public int getAforo() {
+        return Aforo;
     }
 
-    public void setiAforo(int iAforo) {
-            this.iAforo = iAforo;
+    public void setAforo(int aforo) {
+            this.Aforo = aforo;
     }
 
-    public String getsDescripcion() {
-        return sDescripcion;
+    public String getDescripcion() {
+        return Descripcion;
     }
 
-    public void setsDescripcion(String sDescripcion) {
-        if (sDescripcion.length() < IMAXDESCRIPCION) {
-            this.sDescripcion = sDescripcion;
+    public void setDescripcion(String descripcion) {
+        if (descripcion.length() < IMAXDESCRIPCION) {
+            this.Descripcion = descripcion;
         }
     }
 
@@ -127,13 +123,13 @@ public class Evento implements IMaxCaracteres{
         this.imagen = imagen;
     }
 
-    public String getsUbicacion() {
-        return sUbicacion;
+    public String getDireccion() {
+        return Direccion;
     }
 
-    public void setsUbicacion(String sUbicacion) {
-        if (sUbicacion.length() > IMINIMO && sUbicacion.length() < IMAXDIRECCION) {
-            this.sUbicacion = sUbicacion;
+    public void setDireccion(String direccion) {
+        if (direccion.length() > IMINIMO && direccion.length() < IMAXDIRECCION) {
+            this.Direccion = direccion;
         }
     }
 
@@ -158,11 +154,11 @@ public class Evento implements IMaxCaracteres{
     public String toString() {
         String sResultado;
 
-        sResultado = getsNombreEvento() + "\n";
+        sResultado = getNombre() + "\n";
         sResultado += getFechaInit() + "\n";
         sResultado += getFechaFin() + "\n";
-        sResultado += getiAforo() + "\n";
-        sResultado += getsUbicacion() + "\n";
+        sResultado += getAforo() + "\n";
+        sResultado += getDireccion() + "\n";
         sResultado += getImagen() + "\n";
 
         return sResultado;

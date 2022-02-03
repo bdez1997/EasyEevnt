@@ -45,6 +45,11 @@ public class DlgCreacionEmpresa extends JDialog {
 			panelBotones.add(btnGuardar);
 			
 			btnGuardar.addActionListener(e -> {
+				try {
+					controller.CtrlEmpresa.insetarEmpresa();
+				} catch (Exception e1) {
+					System.out.println(e1.getMessage());
+				}
 				dispose();
 			});
 			

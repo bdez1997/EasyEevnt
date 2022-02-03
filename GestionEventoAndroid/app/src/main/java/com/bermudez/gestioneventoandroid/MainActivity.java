@@ -17,6 +17,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Contacts;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Eventos");
-
+        Log.d("Prueba","Entra1");
         openFragment(new PrincipalFragment());
 
         Intent i = new Intent(this, LoginActivity.class);
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction fragmentTransaction = manager.beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment);
         fragmentTransaction.addToBackStack(null);
+        Log.d("Prueba","Entra2");
         fragmentTransaction.commit();
     }
 
