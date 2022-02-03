@@ -1,4 +1,4 @@
-package view;
+	package view;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -8,6 +8,12 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Color;
@@ -23,6 +29,7 @@ public class DlgCreacionEmpresa extends JDialog {
 
 
 	public DlgCreacionEmpresa() {
+		
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 421, 428);
 		getContentPane().setLayout(new BorderLayout());
@@ -30,7 +37,8 @@ public class DlgCreacionEmpresa extends JDialog {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
-		{
+		
+			
 			JPanel panelBotones = new JPanel();
 			panelBotones.setBackground(new Color(230, 230, 250));
 			panelBotones.setBounds(35, 290, 320, 59);
@@ -44,10 +52,19 @@ public class DlgCreacionEmpresa extends JDialog {
 			btnGuardar.setBounds(23, 11, 116, 38);
 			panelBotones.add(btnGuardar);
 			
+<<<<<<< Updated upstream
 			btnGuardar.addActionListener(e -> {
+				try {
+					controller.CtrlEmpresa.insetarEmpresa();
+				} catch (Exception e1) {
+					System.out.println(e1.getMessage());
+				}
 				dispose();
 			});
+=======
+>>>>>>> Stashed changes
 			
+		
 			JButton btnCancelar = new JButton("CANCELAR");
 			btnCancelar.setBackground(new Color(65, 105, 225));
 			btnCancelar.setForeground(new Color(255, 255, 255));
@@ -59,7 +76,7 @@ public class DlgCreacionEmpresa extends JDialog {
 				dispose();
 			});
 			
-		}
+		
 		
 		JPanel panelDatos = new JPanel();
 		panelDatos.setBackground(new Color(230, 230, 250));
@@ -122,5 +139,22 @@ public class DlgCreacionEmpresa extends JDialog {
 		panelDatos.add(txtNombre);
 		
 		setVisible(true);
+		
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					controller.CtrlEmpresa.insertarEmpresa();
+					System.out.println(txtNIF.getText()+" "+ txtNombre.getText()+" "+txtCorreo.getText()+" "+txtTelf.getText());
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				dispose();
+			}
+			
+		});
+		
+		
+		
 	}
+	
 }

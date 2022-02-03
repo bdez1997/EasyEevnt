@@ -20,17 +20,20 @@ import com.bermudez.gestioneventoandroid.R;
 import com.bermudez.gestioneventoandroid.controller.EventosAdapter;
 import com.bermudez.gestioneventoandroid.controller.Store;
 import com.bermudez.gestioneventoandroid.models.Evento;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
 
 public class PrincipalFragment extends Fragment {
 
     RecyclerView rvEventos;
     View view;
-    public static String nombre;
-    public static String fechaIni ;
-    public static String fechaFin;
+
 
 
     @Override
@@ -38,7 +41,7 @@ public class PrincipalFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_principal, container, false);
-
+        Log.d("Prueba","Entra3");
         rvEventos= view.findViewById(R.id.rvEventos);
         rvEventos.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
         EventosAdapter adapter = new EventosAdapter(getActivity().getApplicationContext());
@@ -47,16 +50,23 @@ public class PrincipalFragment extends Fragment {
         String url = "http://proyectogestioneventos.atwebpages.com/php/get-evento.php";
         Volley.newRequestQueue(getContext()).add(new StringRequest(Request.Method.GET, url,
                 s -> {
-                    try {
-                        JSONObject json = new JSONObject(s);
-                        jsonToEvent(json);
+
+            Store.lstEventos = new Gson().fromJson(s, new TypeToken<List<Evento>>() {}.getType());
+            adapter.notifyDataSetChanged();
+
+                    /*try {
+                        //JSONObject json = new JSONObject(s);
+                        //JSONArray jsonArray = new JSONArray(s);
+                        //Log.d("Prueba",jsonArray.toString());
+                        //jsonToEvent(jsonArray);
 
                     } catch (JSONException e) {
+                        Log.d("Prueba",e.getMessage());
                         e.printStackTrace();
-                    }
+                    }*/
                 },
                 r ->{
-
+                    Log.d("Prueba","Entra4");
                 }
 
         ));
@@ -82,15 +92,19 @@ public class PrincipalFragment extends Fragment {
     }
 
 
-    private void jsonToEvent(JSONObject json) throws JSONException {
-        nombre = json.getString("Nombre");
+    private void jsonToEvent(JSONArray json) throws JSONException {
+        /*nombre = json.getString("Nombre");
         fechaIni = json.getString("FechaIni");
         fechaFin = json.getString("FechaFin");
 
-
         Evento jsonEvento = new Evento(nombre, fechaIni, fechaFin);
-        Store.lstEventos.add(jsonEvento);
+        Store.lstEventos.add(jsonEvento);*/
         //Store.miEvento = jsonEvento;
+
+        for(int i = 0; i < json.length(); i++){
+            Log.d("Prueba", json.get(i).toString());
+            Object jsonObject = json.get(i);
+        }
     }
 
 

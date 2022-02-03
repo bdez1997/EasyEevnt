@@ -4,22 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.bermudez.gestioneventoandroid.R;
-import com.bermudez.gestioneventoandroid.fragments.PrincipalFragment;
-import com.bermudez.gestioneventoandroid.models.Evento;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHolder> implements View.OnClickListener {
 
@@ -58,9 +49,9 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
     public void onBindViewHolder(@NonNull EventosAdapter.ViewHolder holder, int position) {
         holder.imgEvento.setImageResource(R.drawable.user);
 
-        holder.lblNombreEvento.setText(PrincipalFragment.nombre);
-        holder.lblFechaInit.setText(PrincipalFragment.fechaIni);
-        holder.lblFechaFin.setText(PrincipalFragment.fechaFin);
+        holder.lblNombreEvento.setText(Store.lstEventos.get(position).getNombre());
+        holder.lblFechaInit.setText(Store.lstEventos.get(position).getFechaIni());
+        holder.lblFechaFin.setText(Store.lstEventos.get(position).getFechaFin());
 
     }
 
@@ -81,7 +72,7 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
             super(itemView);
             imgEvento = itemView.findViewById(R.id.imageViewEvento);
             lblNombreEvento = itemView.findViewById(R.id.lblNombreEvento);
-            lblFechaInit = itemView.findViewById(R.id.lblFechaInit);
+            lblFechaInit = itemView.findViewById(R.id.lblFechaInicio);
             lblFechaFin = itemView.findViewById(R.id.lblFechaFin);
         }
     }
