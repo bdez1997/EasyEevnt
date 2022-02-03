@@ -52,17 +52,14 @@ public class DlgCreacionEmpresa extends JDialog {
 			btnGuardar.setBounds(23, 11, 116, 38);
 			panelBotones.add(btnGuardar);
 			
-<<<<<<< Updated upstream
 			btnGuardar.addActionListener(e -> {
 				try {
-					controller.CtrlEmpresa.insetarEmpresa();
+					controller.CtrlEmpresa.insertarEmpresa();
 				} catch (Exception e1) {
 					System.out.println(e1.getMessage());
 				}
 				dispose();
 			});
-=======
->>>>>>> Stashed changes
 			
 		
 			JButton btnCancelar = new JButton("CANCELAR");

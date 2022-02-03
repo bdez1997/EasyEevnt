@@ -6,4 +6,6 @@
     <fullyQualifiedTypeName name="view.FrmPrincipal"/>
     <fullyQualifiedTypeName name="controller.CtrlEvento"/>
     <fullyQualifiedTypeName name="controller.CtrlEmpresa"/>
+    <fullyQualifiedTypeName name="javax.swing.JPopupMenu"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

@@ -1,7 +1,7 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
 >>>>>>>=master
-content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="org.json.JSONObject"><rhs name\="org.json.JSONObject"/></lhs></history>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="org.json.JSONObject"><rhs name\="org.json.JSONObject"/></lhs><lhs name\="javax.accessibility.Accessible"><rhs name\="javax.swing.JPopupMenu"/></lhs><lhs name\="javax.swing.MenuElement"><rhs name\="javax.swing.JPopupMenu"/></lhs><lhs name\="javax.swing.JComponent"><rhs name\="javax.swing.JPopupMenu"/></lhs><lhs name\="javax.swing.TransferHandler$HasGetTransferHandler"><rhs name\="javax.swing.JPopupMenu"/></lhs><lhs name\="java.awt.Container"><rhs name\="javax.swing.JPopupMenu"/></lhs><lhs name\="java.awt.Component"><rhs name\="javax.swing.JPopupMenu"/></lhs><lhs name\="java.awt.image.ImageObserver"><rhs name\="javax.swing.JPopupMenu"/></lhs><lhs name\="java.awt.MenuContainer"><rhs name\="javax.swing.JPopupMenu"/></lhs><lhs name\="javax.swing.JPopupMenu"><rhs name\="javax.swing.JPopupMenu"/></lhs></history>
 content_assist_number_of_computers=13
 eclipse.preferences.version=1
 org.eclipse.jdt.ui.formatterprofiles.version=21

@@ -13,6 +13,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.regex.Pattern;
 import java.awt.Image;
 
@@ -48,6 +49,31 @@ public class CtrlEvento {
 
 	}
 
+	private static List<Evento> getTodosLosEventos() throws Exception {
+
+		String url = URI + "get-evento.php";
+
+		String requesthttp = peticionhttp(url);
+		List<Evento> lstCoches = stringToListEvento(requesthttp);
+
+		return lstCoches;
+	}
+
+	private static List<Evento> stringToListEvento(String requestHttp) throws Exception {
+		List<Evento> lstCoche = new ArrayList();
+		String url = URI + "get-evento.php";
+		JSONArray jsonArr = new JSONArray(peticionhttp(url));
+
+		for (int i = 0; i < jsonArr.length(); i++) {
+			JSONObject jsonObjct = jsonArr.getJSONObject(i);
+
+			Evento c = objJson2Evento(jsonObjct);
+			lstCoche.add(c);
+		}
+
+		return lstCoche;
+	}
+
 	public static Evento stringToEvento(String requesthttp) {
 
 		Evento c = new Evento();
@@ -70,39 +96,36 @@ public class CtrlEvento {
 
 	public static Evento objJson2Evento(JSONObject jsonObjct) {
 
-		Evento c = new Evento();
+		Evento e = new Evento();
 
 		// Extraer valores del objeto JSON
 
-		try {
-			int id = jsonObjct.getInt("idEvento");
-			String sNombre = jsonObjct.getString("Nombre");
-			String sFechaIni = jsonObjct.getString("FechaIni");
-			String sFechaFin = jsonObjct.getString("FechaFin");
-			int iAforo = jsonObjct.getInt("Aforo");
-			String sDescripcion = jsonObjct.getString("Descripcion");
-			String sDireccion = jsonObjct.getString("Direccion");
-
-			Evento e = new Evento(id, sNombre, sFechaIni, sFechaFin, iAforo, sDescripcion, null, sDireccion);
-
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		return c;
+			int id;
+			try {
+				id = jsonObjct.getInt("idEvento");
+				String sNombre = jsonObjct.getString("Nombre");
+				String sFechaIni = jsonObjct.getString("FechaIni");
+				String sFechaFin = jsonObjct.getString("FechaFin");
+				int iAforo = jsonObjct.getInt("Aforo");
+				String sDescripcion = jsonObjct.getString("Descripcion");
+				String sDireccion = jsonObjct.getString("Direccion");
+				
+				 e = new Evento(id, sNombre, sFechaIni, sFechaFin, iAforo, sDescripcion, null, sDireccion);
+			} catch (JSONException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		return e;
 	}
+	
 
 	public static void getList() {
 		DefaultTableModel tableQuery = new DefaultTableModel();
-
+		String dataColumn[] = new String[7];
 		try {
 			String url = URI + "get-evento.php";
 			int numCampos = numColumn;
 
-			
-
-			tableQuery.addColumn("idEvento");
 			tableQuery.addColumn("Nombre");
 			tableQuery.addColumn("Fecha de Inicio");
 			tableQuery.addColumn("Fecha de finalización");
@@ -111,22 +134,18 @@ public class CtrlEvento {
 			tableQuery.addColumn("Imagen");
 			tableQuery.addColumn("Direccion");
 
-			String[] sShowDataColumn = new String[8];
-
-			for (int i = 0; i <8; i++) {
+			for (int i = 0; i < stringToListEvento(url).size(); i++) {
 				
-				JSONObject myJson = new JSONObject(peticionhttp(url));
+					dataColumn[0]=getTodosLosEventos().get(i).getsNombreEvento();
+					dataColumn[1]=getTodosLosEventos().get(i).getFechaInit();
+					dataColumn[2]=getTodosLosEventos().get(i).getFechaFin();
+					dataColumn[3]=String.valueOf(getTodosLosEventos().get(i).getAforo());
+					dataColumn[4]=getTodosLosEventos().get(i).getDescripcion();
+					dataColumn[5]=String.valueOf(getTodosLosEventos().get(i).getImagen());
+					dataColumn[6]=getTodosLosEventos().get(i).getsDireccion();		
+					
+				tableQuery.addRow(dataColumn);
 
-				sShowDataColumn[0] = String.valueOf(objJson2Evento(myJson).getIdEvento());
-				sShowDataColumn[1] = objJson2Evento(myJson).getsNombreEvento();
-				sShowDataColumn[2] = objJson2Evento(myJson).getFechaInit();
-				sShowDataColumn[3] = objJson2Evento(myJson).getFechaFin();
-				sShowDataColumn[4] = String.valueOf(objJson2Evento(myJson).getAforo());
-				sShowDataColumn[5] = objJson2Evento(myJson).getDescripcion();
-				sShowDataColumn[6] = String.valueOf(objJson2Evento(myJson).getImagen());
-				sShowDataColumn[7] = objJson2Evento(myJson).getsDireccion();
-
-				tableQuery.addRow(sShowDataColumn);
 			}
 
 			view.DlgDescripcionEventos.tableEventos.setModel(tableQuery);
