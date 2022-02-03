@@ -9,14 +9,14 @@ public class CtrlEmpresa {
 
 	private static final String URI = "http://proyectogestioneventos.atwebpages.com/php/";
 	
-	public static void insetarEmpresa() throws Exception{
+	public static void insertarEmpresa() throws Exception{
 		
 		String resultado;
 		
 		String url = URI + "ins-empresa.php?nif="+ view.DlgCreacionEmpresa.txtNIF.getText()+"&"
 				
 				+ "nombre="+view.DlgCreacionEmpresa.txtNombre.getText() +"&"
-				+ "correo="+view.DlgCreacionEmpresa.txtCorreo+"&"
+				+ "correo="+view.DlgCreacionEmpresa.txtCorreo.getText()+"&"
 				+ "telefono="+view.DlgCreacionEmpresa.txtTelf.getText();
 		
 		resultado = url.replace(" ", "%20");
