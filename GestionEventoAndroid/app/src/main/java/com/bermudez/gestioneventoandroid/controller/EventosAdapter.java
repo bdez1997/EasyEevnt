@@ -50,12 +50,8 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
         holder.imgEvento.setImageResource(R.drawable.user);
 
         holder.lblNombreEvento.setText(Store.lstEventos.get(position).getNombre());
-        holder.lblFechaInit.setText(Store.lstEventos.get(position).getFechaInit());
+        holder.lblFechaInit.setText(Store.lstEventos.get(position).getFechaIni());
         holder.lblFechaFin.setText(Store.lstEventos.get(position).getFechaFin());
-
-        //holder.lblNombreEvento.setText(PrincipalFragment.nombre);
-        //holder.lblFechaInit.setText(PrincipalFragment.fechaIni);
-        //holder.lblFechaFin.setText(PrincipalFragment.fechaFin);
 
     }
 
@@ -76,7 +72,7 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
             super(itemView);
             imgEvento = itemView.findViewById(R.id.imageViewEvento);
             lblNombreEvento = itemView.findViewById(R.id.lblNombreEvento);
-            lblFechaInit = itemView.findViewById(R.id.lblFechaInit);
+            lblFechaInit = itemView.findViewById(R.id.lblFechaInicio);
             lblFechaFin = itemView.findViewById(R.id.lblFechaFin);
         }
     }

@@ -39,10 +39,11 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:text="Nombre evento"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/lblFechaInit"
+                android:id="@+id/lblFechaInicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"

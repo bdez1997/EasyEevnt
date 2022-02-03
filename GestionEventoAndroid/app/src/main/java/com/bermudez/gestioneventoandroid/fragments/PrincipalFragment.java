@@ -33,9 +33,7 @@ public class PrincipalFragment extends Fragment {
 
     RecyclerView rvEventos;
     View view;
-    public static String nombre;
-    public static String fechaIni ;
-    public static String fechaFin;
+
 
 
     @Override
@@ -55,6 +53,7 @@ public class PrincipalFragment extends Fragment {
 
             Store.lstEventos = new Gson().fromJson(s, new TypeToken<List<Evento>>() {}.getType());
             adapter.notifyDataSetChanged();
+
                     /*try {
                         //JSONObject json = new JSONObject(s);
                         //JSONArray jsonArray = new JSONArray(s);
@@ -98,11 +97,10 @@ public class PrincipalFragment extends Fragment {
         fechaIni = json.getString("FechaIni");
         fechaFin = json.getString("FechaFin");
 
-
         Evento jsonEvento = new Evento(nombre, fechaIni, fechaFin);
         Store.lstEventos.add(jsonEvento);*/
         //Store.miEvento = jsonEvento;
-        Log.d("Prueba", "" +json.length());
+
         for(int i = 0; i < json.length(); i++){
             Log.d("Prueba", json.get(i).toString());
             Object jsonObject = json.get(i);

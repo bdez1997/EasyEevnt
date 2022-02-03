@@ -8,7 +8,7 @@ public class Evento implements IMaxCaracteres{
 
     private String Nombre;
     private int idEvento;
-    private String FechaInit;
+    private String FechaIni;
     private String FechaFin;
     private int Aforo;
     private String Descripcion;
@@ -20,40 +20,40 @@ public class Evento implements IMaxCaracteres{
         setNombre(Nombre);
     }
 
-    public Evento(String sNombre,String fechaInit,String fechaFin){
-        setNombre(sNombre);
-        setFechaInit(fechaInit);
-        setFechaFin(fechaFin);
+    public Evento(String Nombre,String FechaIni,String FechaFin){
+        setNombre(Nombre);
+        setFechaIni(FechaIni);
+        setFechaFin(FechaFin);
 
     }
 
-    public Evento(String sNombre,ImageView imgEvento,String fechaInit,String fechaFin){
-        setNombre(sNombre);
+    public Evento(String Nombre,ImageView imgEvento,String FechaIni,String FechaFin){
+        setNombre(Nombre);
         setImagen(imgEvento);
-        setFechaInit(fechaInit);
-        setFechaFin(fechaFin);
+        setFechaIni(FechaIni);
+        setFechaFin(FechaFin);
 
     }
 
-    public Evento(int idEvento, String Nombre, String fechaInit, String fechaFin, int Aforo,
+    public Evento(int idEvento, String Nombre, String FechaIni, String FechaFin, int Aforo,
                   String Descripcion, String Direccion) {
 
         setIdEvento(idEvento);
         setNombre(Nombre);
-        setFechaInit(fechaInit);
-        setFechaFin(fechaFin);
+        setFechaIni(FechaIni);
+        setFechaFin(FechaFin);
         setAforo(Aforo);
         setDescripcion(Descripcion);
         setDireccion(Direccion);
     }
 
-    public Evento(int idEvento, String Nombre, String fechaInit, String fechaFin, int Aforo,
+    public Evento(int idEvento, String Nombre, String FechaIni, String FechaFin, int Aforo,
                   String Descripcion, ImageView imagen, String Direccion) {
 
         setIdEvento(idEvento);
         setNombre(Nombre);
-        setFechaInit(fechaInit);
-        setFechaFin(fechaFin);
+        setFechaIni(FechaIni);
+        setFechaFin(FechaFin);
         setAforo(Aforo);
         setDescripcion(Descripcion);
         setImagen(imagen);
@@ -79,20 +79,20 @@ public class Evento implements IMaxCaracteres{
             this.idEvento = idEvento;
     }
 
-    public String getFechaInit() {
-        return FechaInit;
+    public String getFechaIni() {
+        return FechaIni;
     }
 
-    public void setFechaInit(String fechaInit) {
-        this.FechaInit = fechaInit;
+    public void setFechaIni(String FechaIni) {
+        this.FechaIni = FechaIni;
     }
 
     public String getFechaFin() {
         return FechaFin;
     }
 
-    public void setFechaFin(String fechaFin) {
-        this.FechaFin = fechaFin;
+    public void setFechaFin(String FechaFin) {
+        this.FechaFin = FechaFin;
     }
 
 
@@ -101,8 +101,8 @@ public class Evento implements IMaxCaracteres{
         return Aforo;
     }
 
-    public void setAforo(int aforo) {
-            this.Aforo = aforo;
+    public void setAforo(int Aforo) {
+            this.Aforo = Aforo;
     }
 
     public String getDescripcion() {
@@ -127,9 +127,9 @@ public class Evento implements IMaxCaracteres{
         return Direccion;
     }
 
-    public void setDireccion(String direccion) {
-        if (direccion.length() > IMINIMO && direccion.length() < IMAXDIRECCION) {
-            this.Direccion = direccion;
+    public void setDireccion(String Direccion) {
+        if (Direccion.length() > IMINIMO && Direccion.length() < IMAXDIRECCION) {
+            this.Direccion = Direccion;
         }
     }
 
@@ -155,7 +155,7 @@ public class Evento implements IMaxCaracteres{
         String sResultado;
 
         sResultado = getNombre() + "\n";
-        sResultado += getFechaInit() + "\n";
+        sResultado += getFechaIni() + "\n";
         sResultado += getFechaFin() + "\n";
         sResultado += getAforo() + "\n";
         sResultado += getDireccion() + "\n";
