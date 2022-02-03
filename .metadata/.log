@@ -719,23 +719,40 @@ org.xml.sax.SAXParseException; lineNumber: 10; columnNumber: 2; The content of e
 	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:207)
 	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.lambda$0(EquinoxBundle.java:224)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+<<<<<<< Updated upstream
 !SESSION 2022-02-02 17:11:04.393 -----------------------------------------------
 eclipse.buildId=4.22.0.I20211124-1800
 java.version=17.0.1
 java.vendor=Eclipse Adoptium
+=======
+!SESSION 2022-02-03 09:53:41.046 -----------------------------------------------
+eclipse.buildId=4.21.0.I20210906-0500
+java.version=11.0.12
+java.vendor=Oracle Corporation
+>>>>>>> Stashed changes
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
 Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 
+<<<<<<< Updated upstream
 !ENTRY org.eclipse.jface 2 0 2022-02-02 17:11:20.665
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2022-02-02 17:11:20.665
+=======
+!ENTRY org.eclipse.jface 2 0 2022-02-03 09:53:58.665
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-02-03 09:53:58.665
+>>>>>>> Stashed changes
 !MESSAGE A conflict occurred for CTRL+SHIFT+T:
 Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
 		Open a type in a Java editor,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< Updated upstream
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7378c4a4,
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7b2dd35d,
+>>>>>>> Stashed changes
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
@@ -743,6 +760,7 @@ Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
 		,
 		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+<<<<<<< Updated upstream
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6694fb1b,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
@@ -1260,13 +1278,22 @@ Binding(ALT+SHIFT+R,
 		Rename the selected item,
 		Category(org.eclipse.ui.category.file,File,null,true),
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5c316230,
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@405223e4,
+>>>>>>> Stashed changes
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 
+<<<<<<< Updated upstream
 !ENTRY org.eclipse.egit.ui 2 0 2022-02-02 18:13:06.628
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\bdez_'. If this is
+=======
+!ENTRY org.eclipse.egit.ui 2 0 2022-02-03 09:54:03.195
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Usuario'. If this is
+>>>>>>> Stashed changes
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
