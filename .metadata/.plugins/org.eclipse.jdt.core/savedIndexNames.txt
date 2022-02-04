@@ -9,4 +9,10 @@ INDEX VERSION 1.131+C:\Users\Usuario\Documents\Git-EasyEvent\EasyEevnt\.metadata
 2039383001.index
 1067094681.index
 1949173365.index
+<<<<<<< HEAD
+=======
+3267937779.index
+1686339603.index
+1067094681.index
+>>>>>>> master
 2270867230.index

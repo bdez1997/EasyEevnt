@@ -9,4 +9,5 @@
     <fullyQualifiedTypeName name="javax.print.event.PrintJobAttributeEvent"/>
     <fullyQualifiedTypeName name="view.DlgDescripcionEventos"/>
     <fullyQualifiedTypeName name="controller.CtrlEvento"/>
+    <fullyQualifiedTypeName name="model.Persona"/>
 </qualifiedTypeNameHistroy>
