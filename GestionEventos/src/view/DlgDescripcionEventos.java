@@ -85,7 +85,7 @@ public class DlgDescripcionEventos extends JDialog {
 		
 		popupMenu.add(mntmNewDelete);
 
-		mntmNewMenuItem_1 = new JMenuItem("Borrar");
+		mntmNewMenuItem_1 = new JMenuItem("Actualizar");
 		popupMenu.add(mntmNewMenuItem_1);
 		tableEventos.addMouseListener(new MouseAdapter() {
 			@Override
@@ -93,6 +93,7 @@ public class DlgDescripcionEventos extends JDialog {
 				if (e.getButton() == MouseEvent.BUTTON3) {
 					popupMenu.show(DlgDescripcionEventos.this, e.getX(), e.getY());
 					sEventName=tableEventos.getValueAt(tableEventos.getSelectedRow(),0).toString();
+					System.out.println(sEventName);
 				}
 			}
 		});
