@@ -185,6 +185,32 @@ public class CtrlEvento {
 
 		return c;
 	}
+	
+	public static void updEvento(){
+		String sResultado="";
+		String pepe;
+		String url;
+		
+		try {
+			
+			url = URI + "upd-evento.php?nombre=" +view.DlgDescripcionEventos.sEventName + "&"
+				+ "fechaini=" + view.DlgDescripcionEventos.sStartDate + "&" + "fechafin=" + view.DlgDescripcionEventos.sEndDate
+				+ "&" + "direccion=" +view.DlgDescripcionEventos.sAddress + "&" + "aforo="
+				+ view.DlgDescripcionEventos.iMaxPeople + "&" + "descripcion="
+				+ view.DlgDescripcionEventos.sDescription+"&"+" nombreantiguo="+view.DlgDescripcionEventos.sEventNameAux;
+
+		
+		sResultado = url.replace(" ", "%20");
+		System.out.println(view.DlgDescripcionEventos.sEventNameAux);
+		System.out.println(sResultado);
+		pepe= peticionhttp(sResultado);
+			
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+		
+		
+	}
 
 	private static String peticionhttp(String urlWebService) throws Exception {
 		String sLinea;
