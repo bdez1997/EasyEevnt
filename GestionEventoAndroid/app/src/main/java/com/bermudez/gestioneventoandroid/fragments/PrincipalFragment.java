@@ -54,16 +54,6 @@ public class PrincipalFragment extends Fragment {
             Store.lstEventos = new Gson().fromJson(s, new TypeToken<List<Evento>>() {}.getType());
             adapter.notifyDataSetChanged();
 
-                    /*try {
-                        //JSONObject json = new JSONObject(s);
-                        //JSONArray jsonArray = new JSONArray(s);
-                        //Log.d("Prueba",jsonArray.toString());
-                        //jsonToEvent(jsonArray);
-
-                    } catch (JSONException e) {
-                        Log.d("Prueba",e.getMessage());
-                        e.printStackTrace();
-                    }*/
                 },
                 r ->{
                     Log.d("Prueba","Entra4");
