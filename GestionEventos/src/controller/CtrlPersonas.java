@@ -40,22 +40,22 @@ public static void insPersonas() throws Exception {
 		String requesthttp = peticionhttp(sResult);
 	}
 		
-	private static String peticionhttp(String urlWebService) throws Exception {
-		String sLinea;
+private static String peticionhttp(String urlWebService) throws Exception {
+	String sLinea;
 
-		StringBuilder resultado = new StringBuilder();
+	StringBuilder resultado = new StringBuilder();
 
-		URL url = new URL(urlWebService);
-		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		conn.setRequestMethod("GET");
+	URL url = new URL(urlWebService);
+	HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+	conn.setRequestMethod("GET");
 
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-		while ((sLinea = br.readLine()) != null) {
-			resultado.append(sLinea);
-		}
+	BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+	while ((sLinea = br.readLine()) != null) {
+		resultado.append(sLinea);
+	}
 
-		return resultado.toString();
+	return resultado.toString();
 
 	}
 	
@@ -131,37 +131,67 @@ public static void insPersonas() throws Exception {
 		DefaultTableModel tableQuery = new DefaultTableModel();
 		String dataColumn[] = new String[7];
 		try {
-			String url = URI + "get-evento.php";
+			String url = URI + "get-personas.php";
 			int numCampos = numColumn;
 
+			tableQuery.addColumn("DNI");
 			tableQuery.addColumn("Nombre");
-			tableQuery.addColumn("Fecha de Inicio");
-			tableQuery.addColumn("Fecha de finalización");
-			tableQuery.addColumn("Aforo");
-			tableQuery.addColumn("Descripción");
-			tableQuery.addColumn("Imagen");
-			tableQuery.addColumn("Direccion");
+			tableQuery.addColumn("Apellidos");
+			tableQuery.addColumn("Username");
+			tableQuery.addColumn("Password");
+			tableQuery.addColumn("Correo");
+			tableQuery.addColumn("Telefono");
+			tableQuery.addColumn("Rol");
+			tableQuery.addColumn("Informacion");
 
 			for (int i = 0; i < stringToListEvento(url).size(); i++) {
+					dataColumn[0] = getAllPersona().get(i).getsDni();
+					dataColumn[1] = getAllPersona().get(i).getsNombre();
+					dataColumn[2] = getAllPersona().get(i).getsApellido();
+					dataColumn[3] = getAllPersona().get(i).getsUsername();
+					dataColumn[4] = getAllPersona().get(i).getsPassword();
+					dataColumn[5] = getAllPersona().get(i).getsCorreo();
+					dataColumn[6] = getAllPersona().get(i).getsTelefono();
+					dataColumn[7] = getAllPersona().get(i).getsRol();
+					dataColumn[8] = getAllPersona().get(i).getsInformacion();
 				
-					dataColumn[0]=getAllPersona().get(i).getsNombreEvento();
-					dataColumn[1]=getAllPersona().get(i).getFechaInit();
-					dataColumn[2]=getAllPersona().get(i).getFechaFin();
-					dataColumn[3]=String.valueOf(getAllPersona().get(i).getAforo());
-					dataColumn[4]=getAllPersona().get(i).getDescripcion();
-					dataColumn[5]=String.valueOf(getAllPersona().get(i).getImagen());
-					dataColumn[6]=getAllPersona().get(i).getsDireccion();		
-					
 				tableQuery.addRow(dataColumn);
 
 			}
-
 			view.DlgDescripcionEventos.tableEventos.setModel(tableQuery);
-
+		
 		} catch (Exception e) {
-			e.printStackTrace();
+			
+			System.out.println(e.getMessage());
 		}
 	}
+	
+	
+	public static void updPersona(){
+		String sResultado="";
+		String persona;
+		String url;
+		
+		try {
+			
+			url = URI + "upd-persona.php?dni=" +view.DlgDescripcionPersonas.sDni + "&nombre=" + view.DlgDescripcionPersonas.sNombrePersona + "&apellidos=" + view.DlgDescripcionPersonas.sApellidosPersona
+				+ "&username=" +view.DlgDescripcionPersonas.sUsername + "&contrasena="
+				+ view.DlgDescripcionPersonas.sPass + "&correo="
+				+ view.DlgDescripcionPersonas.sCorreo + "&telefono=" + view.DlgDescripcionPersonas.sTelefono + "&rol=" + view.DlgDescripcionPersonas.sRol
+				+ "&informacion=" + view.DlgDescripcionPersonas.sInformacion;
+
+		
+		sResultado = url.replace(" ", "%20");
+		System.out.println(view.DlgDescripcionPersonas.sDni);
+		System.out.println(sResultado);
+		persona= peticionhttp(sResultado);
+			
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+		
+	}
+	
 
 }
 
