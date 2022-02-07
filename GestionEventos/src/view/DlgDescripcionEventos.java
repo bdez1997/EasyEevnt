@@ -43,6 +43,7 @@ public class DlgDescripcionEventos extends JDialog {
 	public static String iImage;
 	public static String sAddress;
 	public static String sDescription;
+	public static String idEvento;
 	
 
 	public DlgDescripcionEventos() {
@@ -114,6 +115,8 @@ public class DlgDescripcionEventos extends JDialog {
 
 		mntmUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				idEvento = tableEventos.getValueAt(tableEventos.getSelectedRow(), 0).toString();
 				sEventName = tableEventos.getValueAt(tableEventos.getSelectedRow(), 1).toString();				
 				sStartDate = tableEventos.getValueAt(tableEventos.getSelectedRow(), 2).toString();	
 				sEndDate = tableEventos.getValueAt(tableEventos.getSelectedRow(), 3).toString();	

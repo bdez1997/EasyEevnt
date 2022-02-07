@@ -187,22 +187,21 @@ public class CtrlEvento {
 	
 	public static void updEvento(){
 		String sResultado="";
-		String pepe;
-		String url;
+		String url,requestHttp;
 		
 		try {
 			
-			url = URI + "upd-evento.php?nombre=" +view.DlgDescripcionEventos.sEventName + "&"
-				+ "fechaini=" + view.DlgDescripcionEventos.sStartDate + "&" + "fechafin=" + view.DlgDescripcionEventos.sEndDate
-				+ "&" + "direccion=" +view.DlgDescripcionEventos.sAddress + "&" + "aforo="
-				+ view.DlgDescripcionEventos.iMaxPeople + "&" + "descripcion="
-				+ view.DlgDescripcionEventos.sDescription+"&"+" nombreantiguo="+view.DlgDescripcionEventos.sEventNameAux;
+			url = URI + "upd-evento.php?nombre=" +view.DlgEditarEventos.txtNombreEventoEdit.getText() + "&"
+				+ "fechaini=" + view.DlgEditarEventos.dateIniEdit + "&" + "fechafin=" + view.DlgEditarEventos.dateEndEdit
+				+ "&" + "direccion=" +view.DlgEditarEventos.txtDireccionEdit.getText() + "&" + "aforo="
+				+ view.DlgEditarEventos.txtAforoEdit.getText() + "&" + "descripcion="
+				+ view.DlgEditarEventos.txtDescripcionEdit.getText()+"&"+" idevento="+view.DlgDescripcionEventos.idEvento;
 
 		
 		sResultado = url.replace(" ", "%20");
 		System.out.println(view.DlgDescripcionEventos.sEventNameAux);
 		System.out.println(sResultado);
-		pepe= peticionhttp(sResultado);
+		requestHttp = peticionhttp(sResultado);
 			
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
