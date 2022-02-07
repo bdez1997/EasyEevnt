@@ -25,22 +25,23 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import com.toedter.calendar.JDateChooser;
 
-public class DlgCreacionEventos extends JDialog {
+public class DlgEditarEventos extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	public static JTextArea txtDescripcion;
-	public static JTextField txtNombreEvento;
-	public static JTextField txtDireccion;
-	public static JTextField txtAforo;
-	public static String dateIni, dateEnd;
-	public static JDateChooser dateInicio;
-	public static JDateChooser dateFin;
+	public static JTextArea txtDescripcionEdit;
+	public static JTextField txtNombreEventoEdit;
+	public static JTextField txtDireccionEdit;
+	public static JTextField txtAforoEdit;
+	public static String dateIniEdit, dateEndEdit;
+	public static JDateChooser dateInicioEdit;
+	public static Date dateTest;
+	public static JDateChooser dateFinEdit;
 	
 	private FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivo de imagen", ".png" , ".jpg");
 	String sRuta="";
 
-	public DlgCreacionEventos() {
-		setTitle("Creación de eventos");
+	public DlgEditarEventos() {
+		setTitle("Editar eventos");
 		setBounds(100, 100, 611, 626);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(230, 230, 250));
@@ -52,11 +53,12 @@ public class DlgCreacionEventos extends JDialog {
 	}
 
 	private void crearComponentes() {
-		txtNombreEvento = new JTextField();
-		txtNombreEvento.setFont(new Font("Arial", Font.PLAIN, 14));
-		txtNombreEvento.setBounds(28, 108, 191, 20);
-		contentPanel.add(txtNombreEvento);
-		txtNombreEvento.setColumns(10);
+		txtNombreEventoEdit = new JTextField();
+		txtNombreEventoEdit.setFont(new Font("Arial", Font.PLAIN, 14));
+		txtNombreEventoEdit.setBounds(28, 108, 191, 20);
+		txtDireccionEdit.setText(view.DlgDescripcionEventos.sEventName);
+		contentPanel.add(txtNombreEventoEdit);
+		txtNombreEventoEdit.setColumns(10);
 		
 		
 		JLabel lblNombreEvento = new JLabel("Nombre del evento:");
@@ -73,14 +75,28 @@ public class DlgCreacionEventos extends JDialog {
 		
 		//CALENDARIO
 		
-		dateInicio = new JDateChooser();
-		dateInicio.setBounds(28, 178, 194, 20);
-
-		dateFin = new JDateChooser();
-		dateFin.setBounds(28, 251, 191, 20);
+		dateInicioEdit = new JDateChooser();		
+		dateInicioEdit.setDate(null);
+		dateInicioEdit.setBounds(28, 178, 194, 20);
 		
-		contentPanel.add(dateFin);
-		contentPanel.add(dateInicio);
+		/*
+		 * 
+		 * sEventName = tableEventos.getValueAt(tableEventos.getSelectedRow(), 1).toString();				
+				sStartDate = tableEventos.getValueAt(tableEventos.getSelectedRow(), 2).toString();	
+				sEndDate = tableEventos.getValueAt(tableEventos.getSelectedRow(), 3).toString();	
+				iMaxPeople = tableEventos.getValueAt(tableEventos.getSelectedRow(), 4).toString();	
+				sDescription = tableEventos.getValueAt(tableEventos.getSelectedRow(), 5).toString();	
+				iImage = tableEventos.getValueAt(tableEventos.getSelectedRow(), 6).toString();	
+				sAddress = tableEventos.getValueAt(tableEventos.getSelectedRow(), 7).toString();	
+		 * 
+		 * 
+		 * */
+
+		dateFinEdit = new JDateChooser();
+		dateFinEdit.setBounds(28, 251, 191, 20);
+		
+		contentPanel.add(dateFinEdit);
+		contentPanel.add(dateInicioEdit);
 		
 		/////////
 		
@@ -94,24 +110,27 @@ public class DlgCreacionEventos extends JDialog {
 		lblUbicacion.setBounds(28, 304, 149, 14);
 		contentPanel.add(lblUbicacion);
 		
-		txtDireccion = new JTextField();
-		txtDireccion.setBounds(28, 328, 195, 20);
-		contentPanel.add(txtDireccion);
-		txtDireccion.setColumns(10);
+		txtDireccionEdit = new JTextField();
+		txtDireccionEdit.setBounds(28, 328, 195, 20);
+		txtDireccionEdit.setText(view.DlgDescripcionEventos.sAddress);
+		contentPanel.add(txtDireccionEdit);
+		txtDireccionEdit.setColumns(10);
 		
 		JLabel lblAforoMax = new JLabel("Aforo:");
 		lblAforoMax.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblAforoMax.setBounds(28, 379, 67, 19);
 		contentPanel.add(lblAforoMax);
 		
-		txtAforo = new JTextField();
-		txtAforo.setBounds(28, 408, 191, 20);
-		contentPanel.add(txtAforo);
-		txtAforo.setColumns(10);
+		txtAforoEdit = new JTextField();
+		txtAforoEdit.setBounds(28, 408, 191, 20);
+		txtAforoEdit.setText(view.DlgDescripcionEventos.iMaxPeople);
+		contentPanel.add(txtAforoEdit);
+		txtAforoEdit.setColumns(10);
 		
-		txtDescripcion = new JTextArea();
-		txtDescripcion.setBounds(278, 281, 299, 179);
-		contentPanel.add(txtDescripcion);
+		txtDescripcionEdit = new JTextArea();
+		txtDescripcionEdit.setBounds(278, 281, 299, 179);
+		txtDescripcionEdit.setText(view.DlgDescripcionEventos.sDescription);
+		contentPanel.add(txtDescripcionEdit);
 		
 		JLabel lblImgEvento = new JLabel("");
 		lblImgEvento.setIcon(new ImageIcon("img/users-icon.png"));
@@ -161,10 +180,10 @@ public class DlgCreacionEventos extends JDialog {
 		btnGuardarEvento.addActionListener(e -> {
 			
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-			String startDateStringInit = dateFormat.format(dateInicio.getDate());
-			String startDateStringFin = dateFormat.format(dateFin.getDate());
-			dateIni = startDateStringInit;
-			dateEnd = startDateStringFin;
+			String startDateStringInit = dateFormat.format(dateInicioEdit.getDate());
+			String startDateStringFin = dateFormat.format(dateFinEdit.getDate());
+			dateIniEdit = startDateStringInit;
+			dateEndEdit = startDateStringFin;
 			try {
 				controller.CtrlEvento.insEvento();
 			} catch (Exception e1) {
