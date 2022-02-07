@@ -21,6 +21,6 @@
     <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
     <fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
     <fullyQualifiedTypeName name="java.awt.Image"/>
-    <fullyQualifiedTypeName name="view.DlgDescripcionEventos"/>
     <fullyQualifiedTypeName name="view.DlgEditarEventos"/>
+    <fullyQualifiedTypeName name="view.DlgDescripcionEventos"/>
 </qualifiedTypeNameHistroy>

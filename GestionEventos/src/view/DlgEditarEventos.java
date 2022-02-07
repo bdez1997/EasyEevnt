@@ -56,7 +56,7 @@ public class DlgEditarEventos extends JDialog {
 		txtNombreEventoEdit = new JTextField();
 		txtNombreEventoEdit.setFont(new Font("Arial", Font.PLAIN, 14));
 		txtNombreEventoEdit.setBounds(28, 108, 191, 20);
-		txtDireccionEdit.setText(view.DlgDescripcionEventos.sEventName);
+		txtNombreEventoEdit.setText(view.DlgDescripcionEventos.sEventName);
 		contentPanel.add(txtNombreEventoEdit);
 		txtNombreEventoEdit.setColumns(10);
 		
