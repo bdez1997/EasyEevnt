@@ -2,4 +2,7 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="controller.CtrlEvento"/>
     <fullyQualifiedTypeName name="view.DlgEditarEventos"/>
+    <fullyQualifiedTypeName name="view.DlgDescripcionEventos"/>
+    <fullyQualifiedTypeName name="javax.net.ssl.HttpsURLConnection"/>
+    <fullyQualifiedTypeName name="org.json.JSONObject"/>
 </qualifiedTypeNameHistroy>
