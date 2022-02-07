@@ -17,7 +17,9 @@ public class Confirmacion extends AppCompatActivity {
         View cldConfir = findViewById(R.id.cldConfir);
 
         cldConfir.setOnClickListener(view -> {
-            
+
+
+
         });
 
     }
