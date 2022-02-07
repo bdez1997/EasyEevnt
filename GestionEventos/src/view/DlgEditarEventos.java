@@ -25,6 +25,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import com.toedter.calendar.JDateChooser;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class DlgEditarEventos extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
@@ -53,6 +56,8 @@ public class DlgEditarEventos extends JDialog {
 	}
 
 	private void crearComponentes() {
+		
+		
 		txtNombreEventoEdit = new JTextField();
 		txtNombreEventoEdit.setFont(new Font("Arial", Font.PLAIN, 14));
 		txtNombreEventoEdit.setBounds(28, 108, 191, 20);
@@ -79,19 +84,7 @@ public class DlgEditarEventos extends JDialog {
 		dateInicioEdit.setDate(null);
 		dateInicioEdit.setBounds(28, 178, 194, 20);
 		
-		/*
-		 * 
-		 * sEventName = tableEventos.getValueAt(tableEventos.getSelectedRow(), 1).toString();				
-				sStartDate = tableEventos.getValueAt(tableEventos.getSelectedRow(), 2).toString();	
-				sEndDate = tableEventos.getValueAt(tableEventos.getSelectedRow(), 3).toString();	
-				iMaxPeople = tableEventos.getValueAt(tableEventos.getSelectedRow(), 4).toString();	
-				sDescription = tableEventos.getValueAt(tableEventos.getSelectedRow(), 5).toString();	
-				iImage = tableEventos.getValueAt(tableEventos.getSelectedRow(), 6).toString();	
-				sAddress = tableEventos.getValueAt(tableEventos.getSelectedRow(), 7).toString();	
-		 * 
-		 * 
-		 * */
-
+	
 		dateFinEdit = new JDateChooser();
 		dateFinEdit.setBounds(28, 251, 191, 20);
 		
@@ -170,6 +163,7 @@ public class DlgEditarEventos extends JDialog {
 		});
 		
 		JButton btnGuardarEvento = new JButton("GUARDAR");
+		
 		btnGuardarEvento.setForeground(new Color(255, 255, 255));
 		btnGuardarEvento.setBackground(new Color(65, 105, 225));
 		btnGuardarEvento.setFont(new Font("Arial", Font.BOLD, 12));
@@ -179,11 +173,7 @@ public class DlgEditarEventos extends JDialog {
 		
 		btnGuardarEvento.addActionListener(e -> {
 			
-			SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-			String startDateStringInit = dateFormat.format(dateInicioEdit.getDate());
-			String startDateStringFin = dateFormat.format(dateFinEdit.getDate());
-			dateIniEdit = startDateStringInit;
-			dateEndEdit = startDateStringFin;
+			
 			try {
 				controller.CtrlEvento.insEvento();
 			} catch (Exception e1) {
@@ -214,6 +204,21 @@ public class DlgEditarEventos extends JDialog {
 		lblEvento.setFont(new Font("Calibri", Font.BOLD, 25));
 		lblEvento.setBounds(39, 10, 125, 33);
 		contentPanel.add(lblEvento);
+		
+		btnGuardarEvento.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+				String startDateStringInit = dateFormat.format(dateInicioEdit.getDate());
+				String startDateStringFin = dateFormat.format(dateFinEdit.getDate());
+				dateIniEdit = startDateStringInit;
+				dateEndEdit = startDateStringFin;
+				
+				controller.CtrlEvento.updEvento();
+				
+			}
+			
+		});
 		
 	}
 }

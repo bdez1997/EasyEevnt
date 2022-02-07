@@ -187,16 +187,15 @@ public class CtrlEvento {
 	
 	public static void updEvento(){
 		String sResultado="";
-		String pepe;
 		String url;
 		
 		try {
 			
-			url = URI + "upd-evento.php?nombre=" +view.DlgDescripcionEventos.sEventName + "&"
-				+ "fechaini=" + view.DlgDescripcionEventos.sStartDate + "&" + "fechafin=" + view.DlgDescripcionEventos.sEndDate
-				+ "&" + "direccion=" +view.DlgDescripcionEventos.sAddress + "&" + "aforo="
-				+ view.DlgDescripcionEventos.iMaxPeople + "&" + "descripcion="
-				+ view.DlgDescripcionEventos.sDescription+"&"+" nombreantiguo="+view.DlgDescripcionEventos.sEventNameAux;
+			url = URI + "upd-evento.php?nombre=" +view.DlgEditarEventos.txtNombreEventoEdit.getText() + "&"
+				+ "fechaini=" + view.DlgEditarEventos.dateIniEdit + "&" + "fechafin=" + view.DlgEditarEventos.dateEndEdit
+				+ "&" + "direccion=" +view.DlgEditarEventos.txtDireccionEdit.getText() + "&" + "aforo="
+				+ view.DlgEditarEventos.txtAforoEdit.getText() + "&" + "descripcion="
+				+ view.DlgEditarEventos.txtDescripcionEdit.getText()+"&"+" nombreantiguo=";
 
 		
 		sResultado = url.replace(" ", "%20");
