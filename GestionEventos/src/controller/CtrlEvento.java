@@ -87,8 +87,7 @@ public class CtrlEvento {
 				System.out.println(c);
 			}
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 
 		return c;
@@ -121,28 +120,27 @@ public class CtrlEvento {
 
 	public static void getList() {
 		DefaultTableModel tableQuery = new DefaultTableModel();
-		String dataColumn[] = new String[7];
+		String dataColumn[] = new String[8];
 		try {
 			String url = URI + "get-evento.php";
 			int numCampos = numColumn;
-
-			tableQuery.addColumn("Nombre");
-			tableQuery.addColumn("Fecha de Inicio");
-			tableQuery.addColumn("Fecha de finalización");
-			tableQuery.addColumn("Aforo");
-			tableQuery.addColumn("Descripción");
-			tableQuery.addColumn("Imagen");
-			tableQuery.addColumn("Direccion");
+			String sColumnas[]= {"idEvento","Nombre","Fecha de Inicio","Fecha de finalización","Aforo","Descripción","Imagen","Direccion"};
+			
+			
+			for (int i = 0; i < sColumnas.length; i++) {
+				tableQuery.addColumn(sColumnas[i]);
+			}
 
 			for (int i = 0; i < stringToListEvento(url).size(); i++) {
-				
-					dataColumn[0]=getTodosLosEventos().get(i).getsNombreEvento();
-					dataColumn[1]=getTodosLosEventos().get(i).getFechaInit();
-					dataColumn[2]=getTodosLosEventos().get(i).getFechaFin();
-					dataColumn[3]=String.valueOf(getTodosLosEventos().get(i).getAforo());
-					dataColumn[4]=getTodosLosEventos().get(i).getDescripcion();
-					dataColumn[5]=String.valueOf(getTodosLosEventos().get(i).getImagen());
-					dataColumn[6]=getTodosLosEventos().get(i).getsDireccion();		
+					
+					dataColumn[0]=String.valueOf(getTodosLosEventos().get(i).getIdEvento());
+					dataColumn[1]=getTodosLosEventos().get(i).getsNombreEvento();
+					dataColumn[2]=getTodosLosEventos().get(i).getFechaInit();
+					dataColumn[3]=getTodosLosEventos().get(i).getFechaFin();
+					dataColumn[4]=String.valueOf(getTodosLosEventos().get(i).getAforo());
+					dataColumn[5]=getTodosLosEventos().get(i).getDescripcion();
+					dataColumn[6]=String.valueOf(getTodosLosEventos().get(i).getImagen());
+					dataColumn[7]=getTodosLosEventos().get(i).getsDireccion();		
 					
 				tableQuery.addRow(dataColumn);
 
@@ -185,6 +183,32 @@ public class CtrlEvento {
 		}
 
 		return c;
+	}
+	
+	public static void updEvento(){
+		String sResultado="";
+		String pepe;
+		String url;
+		
+		try {
+			
+			url = URI + "upd-evento.php?nombre=" +view.DlgDescripcionEventos.sEventName + "&"
+				+ "fechaini=" + view.DlgDescripcionEventos.sStartDate + "&" + "fechafin=" + view.DlgDescripcionEventos.sEndDate
+				+ "&" + "direccion=" +view.DlgDescripcionEventos.sAddress + "&" + "aforo="
+				+ view.DlgDescripcionEventos.iMaxPeople + "&" + "descripcion="
+				+ view.DlgDescripcionEventos.sDescription+"&"+" nombreantiguo="+view.DlgDescripcionEventos.sEventNameAux;
+
+		
+		sResultado = url.replace(" ", "%20");
+		System.out.println(view.DlgDescripcionEventos.sEventNameAux);
+		System.out.println(sResultado);
+		pepe= peticionhttp(sResultado);
+			
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+		
+		
 	}
 
 	private static String peticionhttp(String urlWebService) throws Exception {

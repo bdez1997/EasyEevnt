@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.Image;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -32,8 +34,16 @@ public class DlgDescripcionEventos extends JDialog {
 	public static JTable tableEventos;
 	private JPopupMenu popupMenu;
 	private JMenuItem mntmNewDelete;
-	private JMenuItem mntmNewMenuItem_1;
-	private String sEventName;
+	private JMenuItem mntmUpdate;
+	public static String sEventName;
+	public static String sEventNameAux;
+	public static String sStartDate;
+	public static String sEndDate;
+	public static String iMaxPeople;
+	public static String iImage;
+	public static String sAddress;
+	public static String sDescription;
+	
 
 	public DlgDescripcionEventos() {
 		setBackground(new Color(230, 230, 250));
@@ -82,19 +92,39 @@ public class DlgDescripcionEventos extends JDialog {
 				controller.CtrlEvento.getList();
 			}
 		});
-		
+
 		popupMenu.add(mntmNewDelete);
 
-		mntmNewMenuItem_1 = new JMenuItem("Borrar");
-		popupMenu.add(mntmNewMenuItem_1);
+		mntmUpdate = new JMenuItem("Actualizar");
+		popupMenu.add(mntmUpdate);
 		tableEventos.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+
 				if (e.getButton() == MouseEvent.BUTTON3) {
 					popupMenu.show(DlgDescripcionEventos.this, e.getX(), e.getY());
-					sEventName=tableEventos.getValueAt(tableEventos.getSelectedRow(),0).toString();
+
+				}
+				if (e.getButton() == MouseEvent.BUTTON1) {
+					// El nombre antiguo para usar en el where
+					sEventNameAux = tableEventos.getValueAt(tableEventos.getSelectedRow(), 0).toString();
 				}
 			}
 		});
+
+		mntmUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				sEventName = tableEventos.getValueAt(tableEventos.getSelectedRow(), 1).toString();				
+				sStartDate = tableEventos.getValueAt(tableEventos.getSelectedRow(), 2).toString();	
+				sEndDate = tableEventos.getValueAt(tableEventos.getSelectedRow(), 3).toString();	
+				iMaxPeople = tableEventos.getValueAt(tableEventos.getSelectedRow(), 4).toString();	
+				sDescription = tableEventos.getValueAt(tableEventos.getSelectedRow(), 5).toString();	
+				iImage = tableEventos.getValueAt(tableEventos.getSelectedRow(), 6).toString();	
+				sAddress = tableEventos.getValueAt(tableEventos.getSelectedRow(), 7).toString();	
+				new DlgEditarEventos();
+				
+			}
+		});
+
 	}
 }

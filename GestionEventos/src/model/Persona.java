@@ -6,15 +6,14 @@ import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class Persona implements IMaxCaracteres{
-    private String sDni, sNombre, sApellido, sUsername,sPassword, sCorreo, sTelefono, sInformacion; 
-    private static ArrayList<String> arrayRol = new ArrayList<String>();
+    private String sDni, sNombre, sApellido, sUsername,sPassword, sCorreo, sTelefono, sRol,  sInformacion; 
     
     public Persona(String sDni) {
     	getsDni();
     }
     
     public Persona(String sDni, String sNombre,String sApellido,String sUsername,String sPassword,
-    		String sCorreo,String sTelefono,String sInformacion, ArrayList<String> arrayRol) {
+    		String sCorreo,String sTelefono,String sInformacion, String sRol) {
     	getsDni();
     	getsNombre();
     	getsApellido();
@@ -23,7 +22,7 @@ public class Persona implements IMaxCaracteres{
     	getsCorreo();
     	getsTelefono();
     	getsInformacion();
-    	getArrayRol();
+    	getsRol();
     }
     
     public Persona() {
@@ -31,16 +30,14 @@ public class Persona implements IMaxCaracteres{
     }
     
     
-    public static void addRoles() {
-    	arrayRol.add("Voluntario");
-    	arrayRol.add("Trabajador");
-    	arrayRol.add("Asociado");
-    	arrayRol.add("Empresa");
-    }
-
+    public String getsRol() {
+		return sRol;
+	}
     
-    public ArrayList<String> getArrayRol() {
-		return arrayRol;
+    public void setsRol(String sRol) {
+    	if (sRol != null && sRol.length() > IMINIMO && sRol.length() < IMAXNOMBRE)  {
+            this.sRol = sRol;
+        }
 	}
 
     
