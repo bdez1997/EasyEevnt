@@ -18,7 +18,7 @@ import javax.swing.JPasswordField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class DlgCreacionPersona extends JDialog {
+public class DlgEditarPersona extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	public static JTextField txtTelf;
@@ -34,7 +34,7 @@ public class DlgCreacionPersona extends JDialog {
 
 	
 	
-	public DlgCreacionPersona() {
+	public DlgEditarPersona() {
 		setBounds(100, 100, 582, 498);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(230, 230, 250));
@@ -50,7 +50,7 @@ public class DlgCreacionPersona extends JDialog {
 		
 			JPanel panelBotones = new JPanel();
 			panelBotones.setBackground(new Color(230, 230, 250));
-			panelBotones.setBounds(55, 380, 437, 58);
+			panelBotones.setBounds(10, 380, 539, 58);
 			contentPanel.add(panelBotones);
 			panelBotones.setLayout(null);
 			
@@ -59,7 +59,7 @@ public class DlgCreacionPersona extends JDialog {
 			btnGuardar.setBackground(new Color(65, 105, 225));
 			
 			btnGuardar.setFont(new Font("Arial", Font.BOLD, 14));
-			btnGuardar.setBounds(84, 10, 116, 38);
+			btnGuardar.setBounds(142, 10, 116, 38);
 			panelBotones.add(btnGuardar);
 			
 			btnGuardar.addActionListener(e -> {
@@ -76,7 +76,7 @@ public class DlgCreacionPersona extends JDialog {
 			btnCancelar.setForeground(new Color(255, 255, 255));
 			btnCancelar.setBackground(new Color(65, 105, 225));
 			btnCancelar.setFont(new Font("Arial", Font.BOLD, 14));
-			btnCancelar.setBounds(244, 10, 116, 38);
+			btnCancelar.setBounds(299, 10, 116, 38);
 			panelBotones.add(btnCancelar);
 			
 			btnCancelar.addActionListener(e -> {
@@ -87,49 +87,49 @@ public class DlgCreacionPersona extends JDialog {
 		
 		JPanel panelDatos = new JPanel();
 		panelDatos.setBackground(new Color(230, 230, 250));
-		panelDatos.setBounds(0, 10, 558, 360);
+		panelDatos.setBounds(0, 10, 549, 360);
 		contentPanel.add(panelDatos);
 		panelDatos.setLayout(null);
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblNombre.setBounds(40, 60, 56, 16);
+		lblNombre.setBounds(28, 60, 56, 16);
 		panelDatos.add(lblNombre);
 		
 		JLabel lblApellidos = new JLabel("Apellidos");
 		lblApellidos.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblApellidos.setBounds(40, 97, 68, 16);
+		lblApellidos.setBounds(28, 97, 68, 16);
 		panelDatos.add(lblApellidos);
 		
 		JLabel lblUsername = new JLabel("Username");
 		lblUsername.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblUsername.setBounds(294, 59, 73, 19);
+		lblUsername.setBounds(295, 59, 73, 19);
 		panelDatos.add(lblUsername);
 		
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblPassword.setBounds(294, 97, 73, 16);
+		lblPassword.setBounds(295, 97, 73, 16);
 		panelDatos.add(lblPassword);
 		
 		JLabel lblTelefono = new JLabel("Telefono");
 		lblTelefono.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblTelefono.setBounds(40, 138, 68, 16);
+		lblTelefono.setBounds(28, 138, 68, 16);
 		panelDatos.add(lblTelefono);
 		
 		JLabel lblDNI = new JLabel("DNI");
 		lblDNI.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblDNI.setBounds(40, 175, 56, 24);
+		lblDNI.setBounds(28, 175, 56, 24);
 		panelDatos.add(lblDNI);
 		
 		txtTelf = new JTextField();
 		txtTelf.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtTelf.setColumns(10);
-		txtTelf.setBounds(129, 134, 106, 24);
+		txtTelf.setBounds(106, 135, 106, 24);
 		panelDatos.add(txtTelf);
 		
 		JLabel lblNewLabel = new JLabel("Correo");
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblNewLabel.setBounds(291, 140, 60, 13);
+		lblNewLabel.setBounds(295, 140, 60, 13);
 		panelDatos.add(lblNewLabel);
 		
 		JSeparator separator = new JSeparator();
@@ -140,37 +140,37 @@ public class DlgCreacionPersona extends JDialog {
 		txtApellido = new JTextField();
 		txtApellido.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtApellido.setColumns(10);
-		txtApellido.setBounds(129, 93, 106, 24);
+		txtApellido.setBounds(106, 94, 106, 24);
 		panelDatos.add(txtApellido);
 		
 		txtNombre = new JTextField();
 		txtNombre.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtNombre.setColumns(10);
-		txtNombre.setBounds(129, 56, 106, 24);
+		txtNombre.setBounds(106, 57, 106, 24);
 		panelDatos.add(txtNombre);
 		
 		txtDni = new JTextField();
 		txtDni.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtDni.setColumns(10);
-		txtDni.setBounds(129, 175, 106, 24);
+		txtDni.setBounds(106, 176, 106, 24);
 		panelDatos.add(txtDni);
 		
 		txtUsername = new JTextField();
 		txtUsername.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtUsername.setColumns(10);
-		txtUsername.setBounds(412, 56, 106, 24);
+		txtUsername.setBounds(403, 56, 106, 24);
 		panelDatos.add(txtUsername);
 		
 		txtPass = new JPasswordField();
 		txtPass.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtPass.setColumns(10);
-		txtPass.setBounds(412, 93, 106, 24);
+		txtPass.setBounds(403, 93, 106, 24);
 		panelDatos.add(txtPass);
 		
 		txtCorreo = new JTextField();
 		txtCorreo.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtCorreo.setColumns(10);
-		txtCorreo.setBounds(412, 134, 106, 24);
+		txtCorreo.setBounds(403, 134, 106, 24);
 		panelDatos.add(txtCorreo);
 		
 		JLabel lblCrearUser = new JLabel("USUARIOS");
@@ -186,30 +186,29 @@ public class DlgCreacionPersona extends JDialog {
 		txtRol = new JTextField();
 		txtRol.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtRol.setColumns(10);
-		txtRol.setBounds(412, 175, 106, 24);
+		txtRol.setBounds(403, 175, 106, 24);
 		panelDatos.add(txtRol);
 		
 		JLabel lblInformacinAdicciona = new JLabel("Informaci\u00F3n adiccional");
 		lblInformacinAdicciona.setFont(new Font("Arial", Font.BOLD, 14));
-		lblInformacinAdicciona.setBounds(40, 225, 172, 24);
+		lblInformacinAdicciona.setBounds(28, 225, 172, 24);
 		panelDatos.add(lblInformacinAdicciona);
 		
 		txtInformacion = new JTextArea();
 		txtInformacion.setFont(new Font("Arial", Font.PLAIN, 14));
-		txtInformacion.setBounds(40, 259, 478, 85);
+		txtInformacion.setBounds(28, 259, 481, 85);
 		panelDatos.add(txtInformacion);
 		
-		
-		btnGuardar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					controller.CtrlPersonas.insPersonas();
-					System.out.println(txtTelf.getText()+txtApellido.getText()+ txtNombre.getText()+ txtDni.getText()+txtUsername.getText()+txtPass.getPassword()+txtCorreo.getText()+txtRol.getText()+txtInformacion.getText());
-				} catch (Exception e1) {
-					e1.printStackTrace();
-				}
+		btnGuardar.addActionListener(e -> {
+			try {
+				controller.CtrlPersonas.insPersonas();
+				System.out.println(txtTelf.getText()+txtApellido.getText()+ txtNombre.getText()+ txtDni.getText()+txtUsername.getText()
+				+txtPass.getPassword()+txtCorreo.getText()+txtRol.getText()+txtInformacion.getText());
+			} catch (Exception e1) {
+				e1.printStackTrace();
 			}
 		});
+		
 		
 	}
 }
