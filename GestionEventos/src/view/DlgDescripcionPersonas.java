@@ -32,9 +32,19 @@ public class DlgDescripcionPersonas extends JDialog {
 	public static JTable tablePersona;
 	
 	private JPopupMenu popupMenu;
-	private JMenuItem mntmNewDelete;
-	private JMenuItem mntmNewMenuItem_1;
-	private String sEventName;
+	private JMenuItem mntmDelete;
+	private JMenuItem mntmBorrar;
+	private JMenuItem mntmUpdate;
+	
+	public static String sDni;
+	public static String sNombrePersona;
+	public static String sApellidosPersona;
+	public static String sUsername;
+	public static String sPass;
+	public static String sCorreo;
+	public static String sTelefono;
+	public static String sRol;
+	public static String sInformacion;
 
 	public DlgDescripcionPersonas() {
 		setBackground(new Color(230, 230, 250));
@@ -78,27 +88,59 @@ public class DlgDescripcionPersonas extends JDialog {
 		popupMenu = new JPopupMenu();
 		contentPane.add(popupMenu, BorderLayout.NORTH);
 
-		mntmNewDelete = new JMenuItem("Eliminar");
-		mntmNewDelete.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("entra");
-				controller.CtrlEvento.delEvento(sEventName);
-				controller.CtrlEvento.getList();
-			}
+		mntmDelete = new JMenuItem("Eliminar");
+		mntmDelete.addActionListener(e -> {
+			controller.CtrlEvento.getList();
 		});
 		
-		popupMenu.add(mntmNewDelete);
+		
+		popupMenu.add(mntmDelete);
 
-		mntmNewMenuItem_1 = new JMenuItem("Borrar");
-		popupMenu.add(mntmNewMenuItem_1);
+		mntmBorrar = new JMenuItem("Borrar");
+		popupMenu.add(mntmBorrar);
+		
 		tablePersona.addMouseListener(new MouseAdapter() {
-			@Override
 			public void mouseClicked(MouseEvent e) {
+				
 				if (e.getButton() == MouseEvent.BUTTON3) {
+					
 					popupMenu.show(DlgDescripcionPersonas.this, e.getX(), e.getY());
-					sEventName=tablePersona.getValueAt(tablePersona.getSelectedRow(),0).toString();
+					sDni = tablePersona.getValueAt(tablePersona.getSelectedRow(),0).toString();
 				}
 			}
 		});
+		
+		mntmUpdate = new JMenuItem("Actualizar");
+		popupMenu.add(mntmUpdate);
+		
+		tablePersona.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+
+				if (e.getButton() == MouseEvent.BUTTON3) {
+					popupMenu.show(DlgDescripcionPersonas.this, e.getX(), e.getY());
+
+				}
+				if (e.getButton() == MouseEvent.BUTTON1) {
+					sDni = tablePersona.getValueAt(tablePersona.getSelectedRow(), 0).toString();
+				}
+			}
+		});
+
+		mntmUpdate.addActionListener(e ->{
+				sNombrePersona = tablePersona.getValueAt(tablePersona.getSelectedRow(), 0).toString();				
+				sApellidosPersona = tablePersona.getValueAt(tablePersona.getSelectedRow(), 1).toString();	
+				sUsername = tablePersona.getValueAt(tablePersona.getSelectedRow(), 2).toString();	
+				sPass = tablePersona.getValueAt(tablePersona.getSelectedRow(), 3).toString();	
+				sCorreo = tablePersona.getValueAt(tablePersona.getSelectedRow(), 4).toString();	
+				sTelefono = tablePersona.getValueAt(tablePersona.getSelectedRow(), 5).toString();	
+				sRol = tablePersona.getValueAt(tablePersona.getSelectedRow(), 6).toString();	
+				sInformacion = tablePersona.getValueAt(tablePersona.getSelectedRow(), 7).toString();	
+				
+				controller.CtrlPersonas.updPersona();
+		});
+		
+		
+		
+		
 	}
 }
