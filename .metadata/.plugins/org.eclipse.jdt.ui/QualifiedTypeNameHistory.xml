@@ -10,4 +10,5 @@
     <fullyQualifiedTypeName name="view.DlgDescripcionEventos"/>
     <fullyQualifiedTypeName name="controller.CtrlEvento"/>
     <fullyQualifiedTypeName name="model.Persona"/>
+    <fullyQualifiedTypeName name="view.DlgDescripcionPersonas"/>
 </qualifiedTypeNameHistroy>
