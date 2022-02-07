@@ -34,6 +34,8 @@ public class Valoracion extends AppCompatActivity {
             findViewById(R.id.btnEnviar);
             btnEnviar.setOnClickListener(view -> {
 
+
+
             });
 
     }

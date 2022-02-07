@@ -11,11 +11,22 @@ public class Init {
 		
 		new DlgDescripcionEventos();
 		
+<<<<<<< Updated upstream
 		/*new FrmPrincipal();
 		new DlgCreacionEmpresa();*/
 		
 
 		//new FrmPrincipal();
+=======
+		new FrmPrincipal();
+
+		new DlgCreacionEmpresa();
+		
+
+		//new FrmPrincipal();
+
+		
+>>>>>>> Stashed changes
 		
 	}
 }

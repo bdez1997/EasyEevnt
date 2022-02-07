@@ -187,7 +187,7 @@ public class CtrlEvento {
 	
 	public static void updEvento(){
 		String sResultado="";
-		String url;
+		String url,requestHttp;
 		
 		try {
 			
@@ -195,13 +195,13 @@ public class CtrlEvento {
 				+ "fechaini=" + view.DlgEditarEventos.dateIniEdit + "&" + "fechafin=" + view.DlgEditarEventos.dateEndEdit
 				+ "&" + "direccion=" +view.DlgEditarEventos.txtDireccionEdit.getText() + "&" + "aforo="
 				+ view.DlgEditarEventos.txtAforoEdit.getText() + "&" + "descripcion="
-				+ view.DlgEditarEventos.txtDescripcionEdit.getText()+"&"+" nombreantiguo=";
+				+ view.DlgEditarEventos.txtDescripcionEdit.getText()+"&"+" idevento="+view.DlgDescripcionEventos.idEvento;
 
 		
 		sResultado = url.replace(" ", "%20");
 		System.out.println(view.DlgDescripcionEventos.sEventNameAux);
 		System.out.println(sResultado);
-		pepe= peticionhttp(sResultado);
+		requestHttp = peticionhttp(sResultado);
 			
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
