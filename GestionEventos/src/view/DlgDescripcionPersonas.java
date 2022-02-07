@@ -126,8 +126,7 @@ public class DlgDescripcionPersonas extends JDialog {
 			}
 		});
 
-		mntmUpdate.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		mntmUpdate.addActionListener(e ->{
 				sNombrePersona = tablePersona.getValueAt(tablePersona.getSelectedRow(), 0).toString();				
 				sApellidosPersona = tablePersona.getValueAt(tablePersona.getSelectedRow(), 1).toString();	
 				sUsername = tablePersona.getValueAt(tablePersona.getSelectedRow(), 2).toString();	
@@ -138,9 +137,9 @@ public class DlgDescripcionPersonas extends JDialog {
 				sInformacion = tablePersona.getValueAt(tablePersona.getSelectedRow(), 7).toString();	
 				
 				controller.CtrlPersonas.updPersona();
-				
-			}
 		});
+		
+		
 		
 		
 	}
