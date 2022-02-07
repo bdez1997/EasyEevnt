@@ -120,12 +120,15 @@ public class DlgDescripcionPersonas extends JDialog {
 					popupMenu.show(DlgDescripcionPersonas.this, e.getX(), e.getY());
 
 				}
+				
 				if (e.getButton() == MouseEvent.BUTTON1) {
 					sDni = tablePersona.getValueAt(tablePersona.getSelectedRow(), 0).toString();
+					
 				}
 			}
 		});
 
+		
 		mntmUpdate.addActionListener(e ->{
 				sNombrePersona = tablePersona.getValueAt(tablePersona.getSelectedRow(), 0).toString();				
 				sApellidosPersona = tablePersona.getValueAt(tablePersona.getSelectedRow(), 1).toString();	

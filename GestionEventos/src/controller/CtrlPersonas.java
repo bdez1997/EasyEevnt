@@ -158,7 +158,7 @@ private static String peticionhttp(String urlWebService) throws Exception {
 				tableQuery.addRow(dataColumn);
 
 			}
-			view.DlgDescripcionEventos.tableEventos.setModel(tableQuery);
+			view.DlgDescripcionPersonas.tablePersona.setModel(tableQuery);
 		
 		} catch (Exception e) {
 			
@@ -193,6 +193,36 @@ private static String peticionhttp(String urlWebService) throws Exception {
 	}
 	
 
+	public static void delPersona(String sDni)  {
+		
+		try {
+			String sResult;
+			String url = URI + "del-persona.php?dni=" + sDni;
+
+			sResult = url.replace(" ", "%20");
+			
+			String requesthttp = peticionhttp(sResult);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	private static Persona getPersona() {
+
+		String url = URI + "get-evento.php";
+		Persona p = new Persona();
+		String requesthttp;
+		try {
+			requesthttp = peticionhttp(url);
+			p = stringToPersona(requesthttp);
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return p;
+	}
+	
 }
 
 

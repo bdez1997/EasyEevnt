@@ -7,8 +7,10 @@
     <fullyQualifiedTypeName name="javax.swing.JPopupMenu"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="javax.print.event.PrintJobAttributeEvent"/>
+    <fullyQualifiedTypeName name="view.DlgDescripcionEventos"/>
     <fullyQualifiedTypeName name="controller.CtrlEvento"/>
     <fullyQualifiedTypeName name="model.Persona"/>
+<<<<<<< HEAD
     <fullyQualifiedTypeName name="javax.swing.JSeparator"/>
     <fullyQualifiedTypeName name="javax.swing.JLabel"/>
     <fullyQualifiedTypeName name="java.awt.Font"/>
@@ -23,4 +25,7 @@
     <fullyQualifiedTypeName name="java.awt.Image"/>
     <fullyQualifiedTypeName name="view.DlgEditarEventos"/>
     <fullyQualifiedTypeName name="view.DlgDescripcionEventos"/>
+=======
+    <fullyQualifiedTypeName name="view.DlgDescripcionPersonas"/>
+>>>>>>> master
 </qualifiedTypeNameHistroy>
