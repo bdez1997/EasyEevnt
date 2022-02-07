@@ -120,28 +120,27 @@ public class CtrlEvento {
 
 	public static void getList() {
 		DefaultTableModel tableQuery = new DefaultTableModel();
-		String dataColumn[] = new String[7];
+		String dataColumn[] = new String[8];
 		try {
 			String url = URI + "get-evento.php";
 			int numCampos = numColumn;
-
-			tableQuery.addColumn("Nombre");
-			tableQuery.addColumn("Fecha de Inicio");
-			tableQuery.addColumn("Fecha de finalización");
-			tableQuery.addColumn("Aforo");
-			tableQuery.addColumn("Descripción");
-			tableQuery.addColumn("Imagen");
-			tableQuery.addColumn("Direccion");
+			String sColumnas[]= {"idEvento","Nombre","Fecha de Inicio","Fecha de finalización","Aforo","Descripción","Imagen","Direccion"};
+			
+			
+			for (int i = 0; i < sColumnas.length; i++) {
+				tableQuery.addColumn(sColumnas[i]);
+			}
 
 			for (int i = 0; i < stringToListEvento(url).size(); i++) {
-				
-					dataColumn[0]=getTodosLosEventos().get(i).getsNombreEvento();
-					dataColumn[1]=getTodosLosEventos().get(i).getFechaInit();
-					dataColumn[2]=getTodosLosEventos().get(i).getFechaFin();
-					dataColumn[3]=String.valueOf(getTodosLosEventos().get(i).getAforo());
-					dataColumn[4]=getTodosLosEventos().get(i).getDescripcion();
-					dataColumn[5]=String.valueOf(getTodosLosEventos().get(i).getImagen());
-					dataColumn[6]=getTodosLosEventos().get(i).getsDireccion();		
+					
+					dataColumn[0]=String.valueOf(getTodosLosEventos().get(i).getIdEvento());
+					dataColumn[1]=getTodosLosEventos().get(i).getsNombreEvento();
+					dataColumn[2]=getTodosLosEventos().get(i).getFechaInit();
+					dataColumn[3]=getTodosLosEventos().get(i).getFechaFin();
+					dataColumn[4]=String.valueOf(getTodosLosEventos().get(i).getAforo());
+					dataColumn[5]=getTodosLosEventos().get(i).getDescripcion();
+					dataColumn[6]=String.valueOf(getTodosLosEventos().get(i).getImagen());
+					dataColumn[7]=getTodosLosEventos().get(i).getsDireccion();		
 					
 				tableQuery.addRow(dataColumn);
 

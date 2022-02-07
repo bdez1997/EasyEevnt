@@ -114,15 +114,14 @@ public class DlgDescripcionEventos extends JDialog {
 
 		mntmUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				sEventName = tableEventos.getValueAt(tableEventos.getSelectedRow(), 0).toString();				
-				sStartDate = tableEventos.getValueAt(tableEventos.getSelectedRow(), 1).toString();	
-				sEndDate = tableEventos.getValueAt(tableEventos.getSelectedRow(), 2).toString();	
-				iMaxPeople = tableEventos.getValueAt(tableEventos.getSelectedRow(), 3).toString();	
-				sDescription = tableEventos.getValueAt(tableEventos.getSelectedRow(), 4).toString();	
-				iImage = tableEventos.getValueAt(tableEventos.getSelectedRow(), 5).toString();	
-				sAddress = tableEventos.getValueAt(tableEventos.getSelectedRow(), 6).toString();	
-				System.out.println(sEventName+" "+sEventNameAux);
-				controller.CtrlEvento.updEvento();
+				sEventName = tableEventos.getValueAt(tableEventos.getSelectedRow(), 1).toString();				
+				sStartDate = tableEventos.getValueAt(tableEventos.getSelectedRow(), 2).toString();	
+				sEndDate = tableEventos.getValueAt(tableEventos.getSelectedRow(), 3).toString();	
+				iMaxPeople = tableEventos.getValueAt(tableEventos.getSelectedRow(), 4).toString();	
+				sDescription = tableEventos.getValueAt(tableEventos.getSelectedRow(), 5).toString();	
+				iImage = tableEventos.getValueAt(tableEventos.getSelectedRow(), 6).toString();	
+				sAddress = tableEventos.getValueAt(tableEventos.getSelectedRow(), 7).toString();	
+				new DlgEditarEventos();
 				
 			}
 		});
