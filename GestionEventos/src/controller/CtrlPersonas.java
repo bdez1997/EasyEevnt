@@ -65,12 +65,12 @@ private static String peticionhttp(String urlWebService) throws Exception {
 		String url = URI + "get-personas.php";
 
 		String requesthttp = peticionhttp(url);
-		List<Persona> lstPersona = stringToListEvento(requesthttp);
+		List<Persona> lstPersona = stringToListPersona(requesthttp);
 
 		return lstPersona;
 	}
 
-	private static List<Persona> stringToListEvento(String requestHttp) throws Exception {
+	private static List<Persona> stringToListPersona(String requestHttp) throws Exception {
 		List<Persona> lstPersona = new ArrayList();
 		String url = URI + "get-personas.php";
 		JSONArray jsonArr = new JSONArray(peticionhttp(url));
@@ -144,7 +144,7 @@ private static String peticionhttp(String urlWebService) throws Exception {
 			tableQuery.addColumn("Rol");
 			tableQuery.addColumn("Informacion");
 
-			for (int i = 0; i < stringToListEvento(url).size(); i++) {
+			for (int i = 0; i < stringToListPersona(url).size(); i++) {
 					dataColumn[0] = getAllPersona().get(i).getsDni();
 					dataColumn[1] = getAllPersona().get(i).getsNombre();
 					dataColumn[2] = getAllPersona().get(i).getsApellido();
@@ -209,7 +209,7 @@ private static String peticionhttp(String urlWebService) throws Exception {
 
 	private static Persona getPersona() {
 
-		String url = URI + "get-evento.php";
+		String url = URI + "get-persona.php";
 		Persona p = new Persona();
 		String requesthttp;
 		try {
