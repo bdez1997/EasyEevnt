@@ -24,7 +24,6 @@ public class DlgEditarPersona extends JDialog {
 	public static JTextField txtTelf;
 	public static JTextField txtApellido;
 	public static JTextField txtNombre;
-	public static JTextField txtDni;
 	public static JTextField txtUsername;
 	public static JPasswordField txtPass;
 	public static JTextField txtCorreo;
@@ -54,17 +53,17 @@ public class DlgEditarPersona extends JDialog {
 			contentPanel.add(panelBotones);
 			panelBotones.setLayout(null);
 			
-			JButton btnGuardar = new JButton("GUARDAR");
-			btnGuardar.setForeground(new Color(255, 255, 255));
-			btnGuardar.setBackground(new Color(65, 105, 225));
+			JButton btnActualizar = new JButton("ACTUALIZAR");
+			btnActualizar.setForeground(new Color(255, 255, 255));
+			btnActualizar.setBackground(new Color(65, 105, 225));
 			
-			btnGuardar.setFont(new Font("Arial", Font.BOLD, 14));
-			btnGuardar.setBounds(142, 10, 116, 38);
-			panelBotones.add(btnGuardar);
+			btnActualizar.setFont(new Font("Arial", Font.BOLD, 14));
+			btnActualizar.setBounds(133, 10, 125, 38);
+			panelBotones.add(btnActualizar);
 			
-			btnGuardar.addActionListener(e -> {
+			btnActualizar.addActionListener(e -> {
 				try {
-					controller.CtrlPersonas.insPersonas();
+					controller.CtrlPersonas.updPersona();
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -116,11 +115,6 @@ public class DlgEditarPersona extends JDialog {
 		lblTelefono.setBounds(28, 138, 68, 16);
 		panelDatos.add(lblTelefono);
 		
-		JLabel lblDNI = new JLabel("DNI");
-		lblDNI.setFont(new Font("Arial", Font.PLAIN, 12));
-		lblDNI.setBounds(28, 175, 56, 24);
-		panelDatos.add(lblDNI);
-		
 		txtTelf = new JTextField();
 		txtTelf.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtTelf.setColumns(10);
@@ -148,12 +142,6 @@ public class DlgEditarPersona extends JDialog {
 		txtNombre.setColumns(10);
 		txtNombre.setBounds(106, 57, 106, 24);
 		panelDatos.add(txtNombre);
-		
-		txtDni = new JTextField();
-		txtDni.setFont(new Font("Arial", Font.PLAIN, 12));
-		txtDni.setColumns(10);
-		txtDni.setBounds(106, 176, 106, 24);
-		panelDatos.add(txtDni);
 		
 		txtUsername = new JTextField();
 		txtUsername.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -199,10 +187,10 @@ public class DlgEditarPersona extends JDialog {
 		txtInformacion.setBounds(28, 259, 481, 85);
 		panelDatos.add(txtInformacion);
 		
-		btnGuardar.addActionListener(e -> {
+		btnActualizar.addActionListener(e -> {
 			try {
 				controller.CtrlPersonas.insPersonas();
-				System.out.println(txtTelf.getText()+txtApellido.getText()+ txtNombre.getText()+ txtDni.getText()+txtUsername.getText()
+				System.out.println(txtTelf.getText()+txtApellido.getText()+ txtNombre.getText()+ txtUsername.getText()
 				+txtPass.getPassword()+txtCorreo.getText()+txtRol.getText()+txtInformacion.getText());
 			} catch (Exception e1) {
 				e1.printStackTrace();

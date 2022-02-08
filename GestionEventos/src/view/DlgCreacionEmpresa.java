@@ -52,10 +52,6 @@ public class DlgCreacionEmpresa extends JDialog {
 			btnGuardar.setBounds(23, 11, 116, 38);
 			panelBotones.add(btnGuardar);
 			
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 			btnGuardar.addActionListener(e -> {
 				try {
 					controller.CtrlEmpresa.insertarEmpresa();
@@ -64,11 +60,6 @@ public class DlgCreacionEmpresa extends JDialog {
 				}
 				dispose();
 			});
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-			
 		
 			JButton btnCancelar = new JButton("CANCELAR");
 			btnCancelar.setBackground(new Color(65, 105, 225));

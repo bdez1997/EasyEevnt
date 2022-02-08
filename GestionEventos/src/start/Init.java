@@ -9,24 +9,8 @@ public class Init {
 
 	public static void main(String[] args) {
 		
-		new DlgDescripcionEventos();
-		
-<<<<<<< Updated upstream
-		/*new FrmPrincipal();
-		new DlgCreacionEmpresa();*/
-		
-
-		//new FrmPrincipal();
-=======
 		new FrmPrincipal();
 
-		new DlgCreacionEmpresa();
-		
-
-		//new FrmPrincipal();
-
-		
->>>>>>> Stashed changes
 		
 	}
 }

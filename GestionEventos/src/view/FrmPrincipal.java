@@ -43,11 +43,11 @@ public class FrmPrincipal extends JFrame {
 		mnEditar.setForeground(new Color(0, 0, 0));
 		menuBar.add(mnEditar);
 		
-		JMenuItem mntEvento = new JMenuItem("Evento");
-		mntEvento.setFont(new Font("Arial", Font.PLAIN, 12));
-		mnEditar.add(mntEvento);
+			JMenuItem mntEvento = new JMenuItem("Evento");
+			mntEvento.setFont(new Font("Arial", Font.PLAIN, 12));
+			mnEditar.add(mntEvento);
 		
-		JMenuItem mntmPersonas = new JMenuItem("Personas");
+			JMenuItem mntmPersonas = new JMenuItem("Personas");
 		mntmPersonas.setFont(new Font("Arial", Font.PLAIN, 12));
 		mnEditar.add(mntmPersonas);
 		
@@ -67,17 +67,25 @@ public class FrmPrincipal extends JFrame {
 		mnListar.setForeground(new Color(0, 0, 0));
 		menuBar.add(mnListar);
 		
-		JMenuItem mntmListarEventos = new JMenuItem("Eventos");
-		mntmListarEventos.setFont(new Font("Arial", Font.PLAIN, 12));
-		mnListar.add(mntmListarEventos);
+			JMenuItem mntmListarEventos = new JMenuItem("Eventos");
+			mntmListarEventos.setFont(new Font("Arial", Font.PLAIN, 12));
+			mnListar.add(mntmListarEventos);
+			
+			mntmListarEventos.addActionListener(e -> {
+				new DlgDescripcionEventos();
+			});
 		
-		JMenuItem mntmListarUsuarios = new JMenuItem("Usuarios");
-		mntmListarUsuarios.setFont(new Font("Arial", Font.PLAIN, 12));
-		mnListar.add(mntmListarUsuarios);
+			JMenuItem mntmListarUsuarios = new JMenuItem("Usuarios");
+			mntmListarUsuarios.setFont(new Font("Arial", Font.PLAIN, 12));
+			mnListar.add(mntmListarUsuarios);
+			
+			mntmListarUsuarios.addActionListener(e -> {
+				new DlgDescripcionPersonas();
+			});
 		
-		JMenuItem mntmEmpresas = new JMenuItem("Empresas");
-		mntmEmpresas.setFont(new Font("Arial", Font.PLAIN, 12));
-		mnListar.add(mntmEmpresas);
+			JMenuItem mntmEmpresas = new JMenuItem("Empresas");
+			mntmEmpresas.setFont(new Font("Arial", Font.PLAIN, 12));
+			mnListar.add(mntmEmpresas);
 		
 		JMenu mnUsuario = new JMenu("Usuario");
 		mnUsuario.setFont(new Font("Arial", Font.PLAIN, 12));
