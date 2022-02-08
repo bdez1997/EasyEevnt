@@ -8,27 +8,24 @@ import java.util.regex.Pattern;
 public class Persona implements IMaxCaracteres{
     private String sDni, sNombre, sApellido, sUsername,sPassword, sCorreo, sTelefono, sRol,  sInformacion; 
     
-    public Persona(String sDni) {
-    	getsDni();
-    }
-    
-    public Persona(String sDni, String sNombre,String sApellido,String sUsername,String sPassword,
-    		String sCorreo,String sTelefono,String sInformacion, String sRol) {
-    	getsDni();
-    	getsNombre();
-    	getsApellido();
-    	getsUsername();
-    	getsPassword();
-    	getsCorreo();
-    	getsTelefono();
-    	getsInformacion();
-    	getsRol();
-    }
-    
     public Persona() {
     	
     }
     
+    public Persona(String sDni, String sNombre, String sApellido, String sUsername, String sPassword, String sCorreo,
+			String sTelefono, String sRol, String sInformacion) {
+		super();
+		this.sDni = sDni;
+		this.sNombre = sNombre;
+		this.sApellido = sApellido;
+		this.sUsername = sUsername;
+		this.sPassword = sPassword;
+		this.sCorreo = sCorreo;
+		this.sTelefono = sTelefono;
+		this.sRol = sRol;
+		this.sInformacion = sInformacion;
+	}
+
     
     public String getsRol() {
 		return sRol;

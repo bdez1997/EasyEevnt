@@ -23,6 +23,7 @@ import javax.swing.JTable;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JPopupMenu;
+import javax.swing.JLabel;
 
 public class DlgDescripcionPersonas extends JDialog {
 
@@ -48,8 +49,8 @@ public class DlgDescripcionPersonas extends JDialog {
 
 	public DlgDescripcionPersonas() {
 		setBackground(new Color(230, 230, 250));
-		setBounds(500, 200, 300, 200);
-		setTitle("Eventos");
+		setBounds(100, 100, 582, 498);
+		setTitle("Usuarios");
 		getContentPane().setLayout(null);
 		crearComponentes();
 		setVisible(true);
@@ -62,19 +63,8 @@ public class DlgDescripcionPersonas extends JDialog {
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(230, 230, 250));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(230, 230, 250));
-		contentPane.add(panel, BorderLayout.SOUTH);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-
-		btnAddUsuario = new JButton("A\u00D1ADIR");
-		btnAddUsuario.setForeground(new Color(255, 255, 255));
-		btnAddUsuario.setBackground(new Color(65, 105, 225));
-		btnAddUsuario.setFont(new Font("Arial", Font.BOLD, 12));
-		panel.add(btnAddUsuario);
+		contentPane.setLayout(null);
 		
 		
 		////////////////////////////////////////TABLA///////////////////////////////////////////////
@@ -82,15 +72,18 @@ public class DlgDescripcionPersonas extends JDialog {
 		tablePersona = new JTable();
 
 		scrollPane = new JScrollPane(tablePersona);
-		controller.CtrlEvento.getList();
-		contentPane.add(scrollPane, BorderLayout.CENTER);
+		scrollPane.setBounds(5, 44, 421, 174);
+		controller.CtrlPersonas.getListPersonas();
+		contentPane.add(scrollPane);
 
 		popupMenu = new JPopupMenu();
-		contentPane.add(popupMenu, BorderLayout.NORTH);
+		popupMenu.setBounds(-10007, -10030, 107, 78);
+		contentPane.add(popupMenu);
 
 		mntmDelete = new JMenuItem("Eliminar");
+		
 		mntmDelete.addActionListener(e -> {
-			controller.CtrlEvento.getList();
+			controller.CtrlPersonas.getListPersonas();
 		});
 		
 		
@@ -113,6 +106,16 @@ public class DlgDescripcionPersonas extends JDialog {
 		mntmUpdate = new JMenuItem("Actualizar");
 		popupMenu.add(mntmUpdate);
 		
+				btnAddUsuario = new JButton("ADD");
+				btnAddUsuario.setBounds(176, 228, 80, 23);
+				contentPane.add(btnAddUsuario);
+				btnAddUsuario.setForeground(new Color(255, 255, 255));
+				btnAddUsuario.setBackground(new Color(65, 105, 225));
+				btnAddUsuario.setFont(new Font("Arial", Font.BOLD, 12));
+				
+			
+		
+				
 		tablePersona.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 
@@ -130,14 +133,16 @@ public class DlgDescripcionPersonas extends JDialog {
 
 		
 		mntmUpdate.addActionListener(e ->{
-				sNombrePersona = tablePersona.getValueAt(tablePersona.getSelectedRow(), 0).toString();				
-				sApellidosPersona = tablePersona.getValueAt(tablePersona.getSelectedRow(), 1).toString();	
-				sUsername = tablePersona.getValueAt(tablePersona.getSelectedRow(), 2).toString();	
-				sPass = tablePersona.getValueAt(tablePersona.getSelectedRow(), 3).toString();	
-				sCorreo = tablePersona.getValueAt(tablePersona.getSelectedRow(), 4).toString();	
-				sTelefono = tablePersona.getValueAt(tablePersona.getSelectedRow(), 5).toString();	
-				sRol = tablePersona.getValueAt(tablePersona.getSelectedRow(), 6).toString();	
-				sInformacion = tablePersona.getValueAt(tablePersona.getSelectedRow(), 7).toString();	
+				
+				sDni = tablePersona.getValueAt(tablePersona.getSelectedRow(), 0).toString();
+				sNombrePersona = tablePersona.getValueAt(tablePersona.getSelectedRow(), 1).toString();				
+				sApellidosPersona = tablePersona.getValueAt(tablePersona.getSelectedRow(), 2).toString();	
+				sUsername = tablePersona.getValueAt(tablePersona.getSelectedRow(), 3).toString();	
+				sPass = tablePersona.getValueAt(tablePersona.getSelectedRow(), 4).toString();	
+				sCorreo = tablePersona.getValueAt(tablePersona.getSelectedRow(), 5).toString();	
+				sTelefono = tablePersona.getValueAt(tablePersona.getSelectedRow(), 6).toString();	
+				sRol = tablePersona.getValueAt(tablePersona.getSelectedRow(), 7).toString();	
+				sInformacion = tablePersona.getValueAt(tablePersona.getSelectedRow(), 8).toString();	
 				
 				controller.CtrlPersonas.updPersona();
 		});
