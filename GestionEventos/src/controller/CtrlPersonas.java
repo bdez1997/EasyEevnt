@@ -65,24 +65,26 @@ private static String peticionhttp(String urlWebService) throws Exception {
 		String url = URI + "get-personas.php";
 
 		String requesthttp = peticionhttp(url);
-		List<Persona> lstPersona = stringToListPersona(requesthttp);
-
+		ArrayList<Persona> lstPersona = (ArrayList<Persona>) stringToListPersona(requesthttp);
+		
 		return lstPersona;
 	}
 
 	private static List<Persona> stringToListPersona(String requestHttp) throws Exception {
-		List<Persona> lstPersona = new ArrayList();
+		List<Persona> lstPersonas = new ArrayList<>();
 		String url = URI + "get-personas.php";
 		JSONArray jsonArr = new JSONArray(peticionhttp(url));
 
 		for (int i = 0; i < jsonArr.length(); i++) {
-			JSONObject jsonObjct = jsonArr.getJSONObject(i);
+			JSONObject jsonObj = jsonArr.getJSONObject(i);
 
-			Persona p = objJson2Persona(jsonObjct);
-			lstPersona.add(p);
+			
+			Persona p = objJsonToPersona(jsonObj);
+			lstPersonas.add(p);
 		}
-
-		return lstPersona;
+		
+		
+		return lstPersonas;
 	}
 	
 	public static Persona stringToPersona(String requesthttp) {
@@ -94,8 +96,8 @@ private static String peticionhttp(String urlWebService) throws Exception {
 			for (int i = 0; i < jsonArr.length(); i++) {
 				JSONObject jsonObjct = jsonArr.getJSONObject(i);
 
-				p = objJson2Persona(jsonObjct);
-				System.out.println(p);
+				p = objJsonToPersona(jsonObjct);
+				
 			}
 		} catch (JSONException e) {
 			System.out.println(e.getMessage());
@@ -104,9 +106,9 @@ private static String peticionhttp(String urlWebService) throws Exception {
 		return p;
 	}
 
-	public static Persona objJson2Persona(JSONObject jsonObjct) {
+	public static Persona objJsonToPersona(JSONObject jsonObjct) {
 
-		Persona p = new Persona();
+		Persona p = null;
 			try {
 				String DNI = jsonObjct.getString("DNI");
 				String nombre = jsonObjct.getString("Nombre");
@@ -114,22 +116,27 @@ private static String peticionhttp(String urlWebService) throws Exception {
 				String user = jsonObjct.getString("Username");
 				String pass = jsonObjct.getString("Contrasena");
 				String correo = jsonObjct.getString("Correo");
-				String telefono = jsonObjct.getString("Direccion");
+				String telefono = jsonObjct.getString("Telefono");
 				String rol = jsonObjct.getString("Rol");
 				String informacion = jsonObjct.getString("Informacion");
 				
 				 p = new Persona(DNI, nombre, apellidos, user, pass, correo, telefono, rol, informacion);
-			} catch (JSONException e1) {
-				// TODO Auto-generated catch block
+				 
+				 
+			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
+			
 		return p;
 	}
 	
+
 	
-	public static void getList() {
+	public static void getListPersonas() {
+		
 		DefaultTableModel tableQuery = new DefaultTableModel();
-		String dataColumn[] = new String[7];
+		String dataColumn[] = new String[9];
+		
 		try {
 			String url = URI + "get-personas.php";
 			int numCampos = numColumn;
@@ -138,7 +145,7 @@ private static String peticionhttp(String urlWebService) throws Exception {
 			tableQuery.addColumn("Nombre");
 			tableQuery.addColumn("Apellidos");
 			tableQuery.addColumn("Username");
-			tableQuery.addColumn("Password");
+			tableQuery.addColumn("Contrasena");
 			tableQuery.addColumn("Correo");
 			tableQuery.addColumn("Telefono");
 			tableQuery.addColumn("Rol");
@@ -166,7 +173,6 @@ private static String peticionhttp(String urlWebService) throws Exception {
 		}
 	}
 	
-	
 	public static void updPersona(){
 		String sResultado="";
 		String persona;
@@ -192,7 +198,6 @@ private static String peticionhttp(String urlWebService) throws Exception {
 		
 	}
 	
-
 	public static void delPersona(String sDni)  {
 		
 		try {

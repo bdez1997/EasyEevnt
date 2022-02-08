@@ -52,6 +52,7 @@ public class DlgCreacionEmpresa extends JDialog {
 			btnGuardar.setBounds(23, 11, 116, 38);
 			panelBotones.add(btnGuardar);
 			
+
 			btnGuardar.addActionListener(e -> {
 				try {
 					controller.CtrlEmpresa.insertarEmpresa();
