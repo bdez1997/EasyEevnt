@@ -80,14 +80,7 @@ public class DlgDescripcionPersonas extends JDialog {
 		popupMenu.setBounds(-10007, -10030, 107, 78);
 		contentPane.add(popupMenu);
 
-		mntmDelete = new JMenuItem("Eliminar");
-		
-		mntmDelete.addActionListener(e -> {
-			controller.CtrlPersonas.getListPersonas();
-		});
-		
-		
-		popupMenu.add(mntmDelete);
+	
 
 		mntmBorrar = new JMenuItem("Borrar");
 		popupMenu.add(mntmBorrar);
@@ -104,6 +97,11 @@ public class DlgDescripcionPersonas extends JDialog {
 		});
 		
 		mntmUpdate = new JMenuItem("Actualizar");
+		
+		mntmUpdate.addActionListener(e -> {
+			new DlgEditarPersona();
+		});
+		
 		popupMenu.add(mntmUpdate);
 		
 				btnAddUsuario = new JButton("ADD");
@@ -131,7 +129,7 @@ public class DlgDescripcionPersonas extends JDialog {
 			}
 		});
 
-		
+		/*
 		mntmUpdate.addActionListener(e ->{
 				
 				sDni = tablePersona.getValueAt(tablePersona.getSelectedRow(), 0).toString();
@@ -147,7 +145,7 @@ public class DlgDescripcionPersonas extends JDialog {
 				controller.CtrlPersonas.updPersona();
 		});
 		
-		
+		*/
 		
 		
 	}

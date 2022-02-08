@@ -6,4 +6,5 @@
     <fullyQualifiedTypeName name="org.json.JSONObject"/>
     <fullyQualifiedTypeName name="view.DlgDescripcionEventos"/>
     <fullyQualifiedTypeName name="view.DlgDescripcionPersonas"/>
+    <fullyQualifiedTypeName name="view.DlgEditarPersona"/>
 </qualifiedTypeNameHistroy>
