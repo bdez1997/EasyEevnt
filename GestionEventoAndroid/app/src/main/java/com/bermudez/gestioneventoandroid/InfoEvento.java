@@ -18,10 +18,34 @@ import org.json.JSONObject;
 public class InfoEvento extends AppCompatActivity {
 
     Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_evento);
+
+
+
+        findViewById(R.id.btnAsistirEvento).setOnClickListener( e -> {
+            String url = "http://proyectogestioneventos.atwebpages.com/php/select-dni.php?username=%22" + Store.sUsernameActual + "%22";
+
+            Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, url,
+                    s -> {
+
+                    },
+
+                    n ->{
+
+                    }
+                    ));
+        });
+
+
+        findViewById(R.id.btnBajaEvento).setOnClickListener( e -> {
+
+        });
+
+
 
     }
 

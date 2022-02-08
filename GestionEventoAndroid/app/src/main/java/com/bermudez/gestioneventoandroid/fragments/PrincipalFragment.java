@@ -76,6 +76,7 @@ public class PrincipalFragment extends Fragment {
         adaptador.setOnClickListener( view ->{
             Store.iEventoSelected = recyclerView.getChildAdapterPosition(view);
 
+
             Intent intent = new Intent(getActivity(), InfoEvento.class);
             startActivity(intent);
         });
