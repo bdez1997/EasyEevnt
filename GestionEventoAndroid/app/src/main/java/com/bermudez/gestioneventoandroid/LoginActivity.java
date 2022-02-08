@@ -34,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.btnLogin).setOnClickListener(l -> {
             String username = txtUser.getText() + "";
             String password = txtPassword.getText() + "";
-            Store.sUsernameActual = username;
 
             String url = "http://proyectogestioneventos.atwebpages.com/php/login.php?username=%22" + username + "%22&password=%22" + password + "%22";
             Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, url,

@@ -12,7 +12,7 @@ public class Store {
     public static List<Evento> lstEventos = new ArrayList<Evento>();
     public static int iEventoSelected;
 
-    public static String sNombreEvento;
+
 
     //Historial asistencia
     public static List<Evento> lstAsistencia = new ArrayList<Evento>();
@@ -23,8 +23,6 @@ public class Store {
 
     //Mi usuario
     public static Persona miPersona;
-
-    public static String sUsernameActual;
 
     //Evento
     public static Evento miEvento;

@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bermudez.gestioneventoandroid.controller.Store;
+import com.bermudez.gestioneventoandroid.fragments.PrincipalFragment;
 import com.bermudez.gestioneventoandroid.models.Evento;
 
 import org.json.JSONException;
@@ -27,15 +29,17 @@ public class InfoEvento extends AppCompatActivity {
 
 
         findViewById(R.id.btnAsistirEvento).setOnClickListener( e -> {
-            String url = "http://proyectogestioneventos.atwebpages.com/php/select-dni.php?username=%22" + Store.sUsernameActual + "%22";
-
-            Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, url,
+            String dni = Store.miPersona.getsDni();
+            String id = PrincipalFragment.sIdEvento;
+            String url = "http://proyectogestioneventos.atwebpages.com/php/ins-personaevento.php?dni=" + dni + "&idevento=" + id;
+            String sResultado=url.replace(" ","%20");
+            Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, sResultado,
                     s -> {
-
+                        Toast.makeText(getApplicationContext(), "Se ha dado de alta correctamente", Toast.LENGTH_SHORT).show();
                     },
 
                     n ->{
-
+                        Toast.makeText(getApplicationContext(), "No se ha podido completar el registro", Toast.LENGTH_SHORT).show();
                     }
                     ));
         });

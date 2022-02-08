@@ -34,6 +34,7 @@ public class PrincipalFragment extends Fragment {
     RecyclerView rvEventos;
     View view;
 
+    public static String sIdEvento;
 
 
     @Override
@@ -75,7 +76,7 @@ public class PrincipalFragment extends Fragment {
 
         adaptador.setOnClickListener( view ->{
             Store.iEventoSelected = recyclerView.getChildAdapterPosition(view);
-
+            sIdEvento = Store.lstEventos.get(Store.iEventoSelected).getIdEvento();
 
             Intent intent = new Intent(getActivity(), InfoEvento.class);
             startActivity(intent);
