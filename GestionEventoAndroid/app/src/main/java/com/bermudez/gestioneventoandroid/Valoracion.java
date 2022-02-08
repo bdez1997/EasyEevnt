@@ -3,6 +3,7 @@ package com.bermudez.gestioneventoandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,10 +23,7 @@ public class Valoracion extends AppCompatActivity {
         setContentView(R.layout.activity_valoracion);
 
         RatingBar ratingBar = (RatingBar) findViewById(R.id.rtValoracion);
-
-                ratingBar.getRating();
-
-
+            ratingBar.getRating();
 
             EditText txtComentario = findViewById(R.id.txtComentario);
             txtComentario.getText();
@@ -33,9 +31,8 @@ public class Valoracion extends AppCompatActivity {
 
             findViewById(R.id.btnEnviar);
             btnEnviar.setOnClickListener(view -> {
-
-
-
+                Toast.makeText(getApplicationContext(),"Gracias por su valoración",Toast.LENGTH_LONG).show();
+                onDestroy();
             });
 
     }
