@@ -21,11 +21,11 @@
 
         <ImageView
             android:id="@+id/imageViewEvento"
-            android:layout_width="153dp"
+            android:layout_width="226dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="10dp"
-            app:srcCompat="@drawable/user" />
+            app:srcCompat="@drawable/eventscardview" />
 
         <LinearLayout
             android:layout_width="match_parent"
