@@ -29,6 +29,7 @@ public class DlgEditarPersona extends JDialog {
 	public static JTextField txtCorreo;
 	public static JTextField txtRol;
 	public static JTextArea txtInformacion;
+	private JTextField txtDni;
 	
 
 	
@@ -185,6 +186,17 @@ public class DlgEditarPersona extends JDialog {
 		txtInformacion.setFont(new Font("Arial", Font.PLAIN, 14));
 		txtInformacion.setBounds(28, 259, 481, 85);
 		panelDatos.add(txtInformacion);
+		
+		JLabel lblDni = new JLabel("DNI");
+		lblDni.setFont(new Font("Arial", Font.PLAIN, 12));
+		lblDni.setBounds(28, 181, 68, 16);
+		panelDatos.add(lblDni);
+		
+		txtDni = new JTextField();
+		txtDni.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtDni.setColumns(10);
+		txtDni.setBounds(106, 178, 106, 24);
+		panelDatos.add(txtDni);
 		
 		btnActualizar.addActionListener(e -> {
 			try {
