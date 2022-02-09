@@ -38,23 +38,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Nombre evento"
+                android:text="@string/enBlanco"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/lblFechaInicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Fecha inicio" />
+                android:text="@string/enBlanco" />
 
             <TextView
                 android:id="@+id/lblFechaFin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Fecha fin" />
+                android:text="@string/enBlanco" />
         </LinearLayout>
     </LinearLayout>
 

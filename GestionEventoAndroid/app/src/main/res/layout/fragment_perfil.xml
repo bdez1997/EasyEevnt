@@ -12,31 +12,35 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="91dp"
-            android:layout_height="82dp"
-            android:layout_marginTop="82dp"
-            android:src="@drawable/user"
+            android:layout_width="113dp"
+            android:layout_height="112dp"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/usericon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lblNombre"
-            android:layout_width="64dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="91dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="48dp"
             android:layout_marginTop="32dp"
-            android:text="Nombre"
+            android:text="@string/lblNombre"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
         <TextView
             android:id="@+id/lblUsername"
-            android:layout_width="66dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="91dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="48dp"
             android:layout_marginTop="5dp"
-            android:text="User"
+            android:text="@string/lblUser"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lblNombre" />
 
@@ -45,18 +49,20 @@
             android:layout_width="143dp"
             android:layout_height="36dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="24dp"
-            android:text="User"
+            android:layout_marginEnd="32dp"
+            android:text="@string/enBlanco"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lblNombreBD" />
 
         <TextView
             android:id="@+id/lblEmail"
-            android:layout_width="66dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="71dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="48dp"
             android:layout_marginTop="5dp"
-            android:text="Email"
+            android:text="@string/lblEmail"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lblUsername" />
 
@@ -65,18 +71,20 @@
             android:layout_width="143dp"
             android:layout_height="32dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="24dp"
-            android:text="Email"
+            android:layout_marginEnd="32dp"
+            android:text="@string/enBlanco"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lblUserDB" />
 
         <TextView
             android:id="@+id/lblTlfn"
-            android:layout_width="101dp"
-            android:layout_height="33dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="106dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="48dp"
             android:layout_marginTop="5dp"
-            android:text="Telefono"
+            android:text="@string/lblTlfn"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lblEmail" />
 
@@ -85,18 +93,20 @@
             android:layout_width="143dp"
             android:layout_height="36dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="24dp"
-            android:text="Telefono"
+            android:layout_marginEnd="32dp"
+            android:text="@string/enBlanco"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lblEmailDB" />
 
         <TextView
             android:id="@+id/lblRol"
-            android:layout_width="64dp"
-            android:layout_height="31dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="59dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="48dp"
             android:layout_marginTop="5dp"
-            android:text="Rol"
+            android:text="@string/lblRol"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lblTlfn" />
 
@@ -104,9 +114,9 @@
             android:id="@+id/lblRolDB"
             android:layout_width="143dp"
             android:layout_height="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="24dp"
-            android:text="Rol"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/enBlanco"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lblTlfnDB" />
 
@@ -115,37 +125,40 @@
             android:layout_width="141dp"
             android:layout_height="39dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="24dp"
-            android:text="nombre"
+            android:layout_marginEnd="32dp"
+            android:text="@string/enBlanco"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
         <TextView
             android:id="@+id/lblInfo"
-            android:layout_width="235dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="248dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="48dp"
             android:layout_marginTop="24dp"
-            android:text="Informacion adiccional"
+            android:text="@string/lblInformacion"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lblRol" />
 
         <TextView
             android:id="@+id/lblInfoBD"
-            android:layout_width="338dp"
-            android:layout_height="111dp"
-            android:layout_marginTop="24dp"
-            android:text="Infor...."
+            android:layout_width="313dp"
+            android:layout_height="84dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/enBlanco"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lblInfo" />
 
         <Button
             android:id="@+id/btnEditarProfile"
-            android:layout_width="355dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="24dp"
-            android:text="Editar"
+            android:layout_width="195dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/btnEditar"
+            app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lblInfoBD" />
