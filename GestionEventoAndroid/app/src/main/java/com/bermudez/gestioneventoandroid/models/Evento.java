@@ -47,18 +47,7 @@ public class Evento implements IMaxCaracteres{
         setDireccion(Direccion);
     }
 
-    public Evento(int idEvento, String Nombre, String FechaIni, String FechaFin, int Aforo,
-                  String Descripcion, ImageView imagen, String Direccion) {
 
-        setIdEvento(idEvento);
-        setNombre(Nombre);
-        setFechaIni(FechaIni);
-        setFechaFin(FechaFin);
-        setAforo(Aforo);
-        setDescripcion(Descripcion);
-        setImagen(imagen);
-        setDireccion(Direccion);
-    }
 
     public String getNombre() {
         return Nombre;
@@ -110,9 +99,9 @@ public class Evento implements IMaxCaracteres{
     }
 
     public void setDescripcion(String descripcion) {
-        if (descripcion.length() < IMAXDESCRIPCION) {
+        //if (descripcion.length() < IMAXDESCRIPCION) {
             this.Descripcion = descripcion;
-        }
+       // }
     }
 
     public ImageView getImagen() {
@@ -159,7 +148,7 @@ public class Evento implements IMaxCaracteres{
         sResultado += getFechaFin() + "\n";
         sResultado += getAforo() + "\n";
         sResultado += getDireccion() + "\n";
-        sResultado += getImagen() + "\n";
+        sResultado += getDescripcion() + "\n";
 
         return sResultado;
     }

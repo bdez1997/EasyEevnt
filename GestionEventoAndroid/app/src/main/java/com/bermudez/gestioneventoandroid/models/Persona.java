@@ -46,7 +46,6 @@ public class Persona implements IMaxCaracteres {
         return sDni;
     }
 
-
     public void setsDni(String sDni) {
         String dniRegexp = "\\d{8}[A-HJ-NP-TV-Z]";
         if (Pattern.matches(dniRegexp, sDni)) {
@@ -164,10 +163,8 @@ public class Persona implements IMaxCaracteres {
         sResultado += "Correo: " + getsCorreo() + "\n";
         sResultado += "Rol: " + getsRol() + "\n";
         sResultado += "Telefono: " + getsTelefono() + "\n";
+        sResultado += "Informacion adiccional: " + getsInformacion();
 
-        if (sInformacion != null) {
-            sResultado += "Informacion adiccional: " + getsInformacion();
-        }
         return sResultado;
     }
 

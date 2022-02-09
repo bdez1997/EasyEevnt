@@ -29,8 +29,8 @@ import org.json.JSONObject;
 public class PerfilFragment extends Fragment {
     View view;
     Button btnEditarProfile;
-    String dni, nombre, apellido, username, password, correo, telefono, rol , informacion,sUrl;
-    TextView  lblNombreBD,lblApellidoBD,lblUserBD,lblPasswordBD,lblEmailBD,lblTelefonoBD,lblRolBD,lblInfoBD;
+
+    TextView  lblNombreBD,lblUserBD,lblEmailBD,lblTelefonoBD,lblRolBD,lblInfoBD;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

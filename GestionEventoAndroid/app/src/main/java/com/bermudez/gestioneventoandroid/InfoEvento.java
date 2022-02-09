@@ -35,37 +35,42 @@ public class InfoEvento extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_evento);
+        /////////////////////////////////////////////////////
         extraerInformacion();
+        //////////////////////////////////////////////////////
+       lblInformacionEvent = findViewById(R.id.lblInformacionEvent);
+        lblFechaIniEvent = findViewById(R.id.lblFechaIniEvent);
+        lblFechaFinEvent = findViewById(R.id.lblFechaFinEvent);
 
-        lblInformacionEvent.setText(Store.miEvento.getDescripcion());
-        lblFechaIniEvent.setText(Store.miEvento.getFechaIni());
-        lblFechaFinEvent.setText(Store.miEvento.getFechaFin());
+        ///////////////////////////////////////////////////////
 
-        findViewById(R.id.btnAsistirEvento).setOnClickListener( e -> {
+
+
+        findViewById(R.id.btnAsistirEvento).setOnClickListener(e -> {
             String dni = Store.miPersona.getsDni();
             int id = PrincipalFragment.id;
             String url = "http://proyectogestioneventos.atwebpages.com/php/ins-personaevento.php?dni=" + dni + "&idevento=" + id;
-            String sResultado=url.replace(" ","%20");
+            String sResultado = url.replace(" ", "%20");
             Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, sResultado,
                     s -> {
                         Toast.makeText(getApplicationContext(), "Se ha dado de alta correctamente", Toast.LENGTH_SHORT).show();
                     },
 
-                    n ->{
+                    n -> {
                         Toast.makeText(getApplicationContext(), "No se ha podido completar el registro", Toast.LENGTH_SHORT).show();
                     }
-                    ));
+            ));
         });
 
 
-        findViewById(R.id.btnBajaEvento).setOnClickListener( e -> {
+        findViewById(R.id.btnBajaEvento).setOnClickListener(e -> {
 
         });
 
     }
 
 
-    public void extraerInformacion(){
+    public void extraerInformacion() {
         String nombre = PrincipalFragment.sNombre;
 
         String url = "http://proyectogestioneventos.atwebpages.com/php/select-evento.php?nombre=" + nombre;
@@ -74,13 +79,16 @@ public class InfoEvento extends AppCompatActivity {
                     try {
                         JSONObject json = new JSONObject(s);
                         jsonToEvento(json);
+                        lblInformacionEvent.setText(Store.miEvento.getDescripcion());
+                        lblFechaIniEvent.setText(Store.miEvento.getFechaIni());
+                        lblFechaFinEvent.setText(Store.miEvento.getFechaFin());
 
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
 
                 },
-                r ->{
+                r -> {
 
                 }
 
@@ -95,7 +103,8 @@ public class InfoEvento extends AppCompatActivity {
         int aforo = json.getInt("Aforo");
         String descripcion = json.getString("Descripcion");
         String direccion = json.getString("Direccion");
-
+        Log.i("JSON", json + "");
+        Log.i("DESCRIPCION",descripcion);
 
         Evento jsonEvento = new Evento(id, nombre, fechaini, fechafin, aforo, descripcion, direccion);
         Store.miEvento = jsonEvento;
