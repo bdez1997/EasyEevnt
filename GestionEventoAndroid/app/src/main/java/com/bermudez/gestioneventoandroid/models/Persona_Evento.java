@@ -20,12 +20,12 @@ public class Persona_Evento implements IMaxCaracteres{
 
     public Persona_Evento(Persona oPersona, Evento oEvento) {
         oPersona.setsDni(null);
-        oEvento.setIdEvento(null);
+        oEvento.setIdEvento(0);
     }
 
     public Persona_Evento(Persona oPersona, Evento oEvento, String sValoracion) {
         oPersona.setsDni(null);
-        oEvento.setIdEvento(null);
+        oEvento.setIdEvento(0);
         setsValoracion(sValoracion);
     }
 

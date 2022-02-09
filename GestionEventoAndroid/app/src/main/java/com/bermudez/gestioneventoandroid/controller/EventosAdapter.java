@@ -19,7 +19,7 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.ViewHold
     private View.OnClickListener listener;
     public static String nombre;
     public static String fechaIni ;
-    public static String fechaFin;
+    public static int idEvento;
 
     public EventosAdapter(Context context){
         inflater=LayoutInflater.from(context);

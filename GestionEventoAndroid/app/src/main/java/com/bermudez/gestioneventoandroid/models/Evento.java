@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Evento implements IMaxCaracteres{
 
     private String Nombre;
-    private String idEvento;
+    private int idEvento;
     private String FechaIni;
     private String FechaFin;
     private int Aforo;
@@ -35,7 +35,7 @@ public class Evento implements IMaxCaracteres{
 
     }
 
-    public Evento(String idEvento, String Nombre, String FechaIni, String FechaFin, int Aforo,
+    public Evento(int idEvento, String Nombre, String FechaIni, String FechaFin, int Aforo,
                   String Descripcion, String Direccion) {
 
         setIdEvento(idEvento);
@@ -47,7 +47,7 @@ public class Evento implements IMaxCaracteres{
         setDireccion(Direccion);
     }
 
-    public Evento(String idEvento, String Nombre, String FechaIni, String FechaFin, int Aforo,
+    public Evento(int idEvento, String Nombre, String FechaIni, String FechaFin, int Aforo,
                   String Descripcion, ImageView imagen, String Direccion) {
 
         setIdEvento(idEvento);
@@ -71,11 +71,11 @@ public class Evento implements IMaxCaracteres{
 
     }
 
-    public String getIdEvento() {
+    public int getIdEvento() {
         return idEvento;
     }
 
-    public void setIdEvento(String idEvento) {
+    public void setIdEvento(int idEvento) {
             this.idEvento = idEvento;
     }
 
@@ -141,7 +141,7 @@ public class Evento implements IMaxCaracteres{
 
         boolean boEquals = false;
         Evento oEvento = (Evento)obj;
-        if(oEvento.getIdEvento()!= null &&this.getIdEvento()!= null
+        if(oEvento.getIdEvento()!= 0 &&this.getIdEvento()!= 0
                 && this.getIdEvento()==oEvento.idEvento) {
 
             boEquals=true;

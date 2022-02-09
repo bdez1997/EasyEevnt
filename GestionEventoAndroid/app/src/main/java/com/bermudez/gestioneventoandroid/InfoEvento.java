@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -13,24 +14,36 @@ import com.android.volley.toolbox.Volley;
 import com.bermudez.gestioneventoandroid.controller.Store;
 import com.bermudez.gestioneventoandroid.fragments.PrincipalFragment;
 import com.bermudez.gestioneventoandroid.models.Evento;
+import com.bermudez.gestioneventoandroid.models.Persona;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
 
 public class InfoEvento extends AppCompatActivity {
 
     Toolbar toolbar;
 
+    TextView lblInformacionEvent;
+    TextView lblFechaIniEvent;
+    TextView lblFechaFinEvent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_evento);
+        extraerInformacion();
 
-
+        lblInformacionEvent.setText(Store.miEvento.getDescripcion());
+        lblFechaIniEvent.setText(Store.miEvento.getFechaIni());
+        lblFechaFinEvent.setText(Store.miEvento.getFechaFin());
 
         findViewById(R.id.btnAsistirEvento).setOnClickListener( e -> {
             String dni = Store.miPersona.getsDni();
-            String id = PrincipalFragment.sIdEvento;
+            int id = PrincipalFragment.id;
             String url = "http://proyectogestioneventos.atwebpages.com/php/ins-personaevento.php?dni=" + dni + "&idevento=" + id;
             String sResultado=url.replace(" ","%20");
             Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, sResultado,
@@ -49,8 +62,44 @@ public class InfoEvento extends AppCompatActivity {
 
         });
 
+    }
 
 
+    public void extraerInformacion(){
+        String nombre = PrincipalFragment.sNombre;
+
+        String url = "http://proyectogestioneventos.atwebpages.com/php/select-evento.php?nombre=" + nombre;
+        Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, url,
+                s -> {
+                    try {
+                        JSONObject json = new JSONObject(s);
+                        jsonToEvento(json);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                },
+                r ->{
+
+                }
+
+        ));
+    }
+
+    private void jsonToEvento(JSONObject json) throws JSONException {
+        int id = json.getInt("idEvento");
+        String nombre = json.getString("Nombre");
+        String fechaini = json.getString("FechaIni");
+        String fechafin = json.getString("FechaFin");
+        int aforo = json.getInt("Aforo");
+        String descripcion = json.getString("Descripcion");
+        String direccion = json.getString("Direccion");
+
+
+        Evento jsonEvento = new Evento(id, nombre, fechaini, fechafin, aforo, descripcion, direccion);
+        Store.miEvento = jsonEvento;
+        Log.i("MI EVENTO", Store.miEvento.toString());
     }
 
 

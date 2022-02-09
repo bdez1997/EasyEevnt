@@ -59,7 +59,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onBackPressed(){
 
-
     }
 
     private void jsonToUser(JSONObject json) throws JSONException {

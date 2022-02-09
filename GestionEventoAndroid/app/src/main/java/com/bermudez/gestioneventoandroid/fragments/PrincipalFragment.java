@@ -34,7 +34,8 @@ public class PrincipalFragment extends Fragment {
     RecyclerView rvEventos;
     View view;
 
-    public static String sIdEvento;
+    public static String sNombre = "no";
+    public static int id;
 
 
     @Override
@@ -42,7 +43,7 @@ public class PrincipalFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_principal, container, false);
-        Log.d("Prueba","Entra3");
+
         rvEventos= view.findViewById(R.id.rvEventos);
         rvEventos.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
         EventosAdapter adapter = new EventosAdapter(getActivity().getApplicationContext());
@@ -51,19 +52,15 @@ public class PrincipalFragment extends Fragment {
         String url = "http://proyectogestioneventos.atwebpages.com/php/get-evento.php";
         Volley.newRequestQueue(getContext()).add(new StringRequest(Request.Method.GET, url,
                 s -> {
-
-            Store.lstEventos = new Gson().fromJson(s, new TypeToken<List<Evento>>() {}.getType());
-            adapter.notifyDataSetChanged();
+                    Store.lstEventos = new Gson().fromJson(s, new TypeToken<List<Evento>>() {}.getType());
+                    adapter.notifyDataSetChanged();
 
                 },
                 r ->{
-                    Log.d("Prueba","Entra4");
                 }
 
         ));
-
         showData();
-
         return view;
     }
 
@@ -76,30 +73,13 @@ public class PrincipalFragment extends Fragment {
 
         adaptador.setOnClickListener( view ->{
             Store.iEventoSelected = recyclerView.getChildAdapterPosition(view);
-            sIdEvento = Store.lstEventos.get(Store.iEventoSelected).getIdEvento();
+            sNombre = Store.lstEventos.get(Store.iEventoSelected).getNombre();
+            id = Store.lstEventos.get(Store.iEventoSelected).getIdEvento();
+
 
             Intent intent = new Intent(getActivity(), InfoEvento.class);
             startActivity(intent);
         });
     }
-
-
-    private void jsonToEvent(JSONArray json) throws JSONException {
-        /*nombre = json.getString("Nombre");
-        fechaIni = json.getString("FechaIni");
-        fechaFin = json.getString("FechaFin");
-
-        Evento jsonEvento = new Evento(nombre, fechaIni, fechaFin);
-        Store.lstEventos.add(jsonEvento);*/
-        //Store.miEvento = jsonEvento;
-
-        for(int i = 0; i < json.length(); i++){
-            Log.d("Prueba", json.get(i).toString());
-            Object jsonObject = json.get(i);
-        }
-    }
-
-
-
 
 }
