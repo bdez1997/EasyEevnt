@@ -51,7 +51,7 @@ public class PerfilFragment extends Fragment {
         lblRolBD=view.findViewById(R.id.lblRolDB);
         lblInfoBD=view.findViewById(R.id.lblInfoBD);
 
-        /////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////
 
         lblNombreBD.setText(Store.miPersona.getsNombre());
         lblUserBD.setText(Store.miPersona.getsUsername());
