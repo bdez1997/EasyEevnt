@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
@@ -27,12 +29,14 @@ import org.json.JSONObject;
 public class PerfilFragment extends Fragment {
     View view;
     Button btnEditarProfile;
-    String dni, nombre, apellido, username, password, correo, telefono, rol , informacio;
-
+    String dni, nombre, apellido, username, password, correo, telefono, rol , informacion,sUrl;
+    TextView  lblNombreBD,lblApellidoBD,lblUserBD,lblPasswordBD,lblEmailBD,lblTelefonoBD,lblRolBD,lblInfoBD;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         view = inflater.inflate(R.layout.fragment_perfil, container, false);
+
 
         Button btnEditarProfile = (Button) view.findViewById(R.id.btnEditarProfile);
         btnEditarProfile.setOnClickListener(e ->{
@@ -40,23 +44,28 @@ public class PerfilFragment extends Fragment {
             startActivity(perfilActivity);
         });
 
+        lblNombreBD=view.findViewById(R.id.lblNombreBD);
+        lblUserBD=view.findViewById(R.id.lblUserDB);
+        lblEmailBD=view.findViewById(R.id.lblEmailDB);
+        lblTelefonoBD=view.findViewById(R.id.lblTlfnDB);
+        lblRolBD=view.findViewById(R.id.lblRolDB);
+        lblInfoBD=view.findViewById(R.id.lblInfoBD);
+
+        /////////////////////////////////////////////////
+
+        lblNombreBD.setText(Store.miPersona.getsNombre());
+        lblUserBD.setText(Store.miPersona.getsUsername());
+        lblEmailBD.setText(Store.miPersona.getsCorreo());
+        lblTelefonoBD.setText(Store.miPersona.getsTelefono());
+        lblRolBD.setText(Store.miPersona.getsRol());
+        lblInfoBD.setText(Store.miPersona.getsInformacion());
+
 
         return view;
     }
 
-    private void jsonToUser(JSONObject json) throws JSONException {
-        String dni = json.getString("DNI");
-        String nombre = json.getString("Nombre");
-        String apellidos = json.getString("Apellidos");
-        String username = json.getString("Username");
-        String password = json.getString("Contrasena");
-        String correo = json.getString("Correo");
-        String telefono = json.getString("Telefono");
-        String rol = json.getString("Rol");
-        String informacion = json.getString("Informacion");
-        Persona jsonPersona = new Persona(dni, nombre, apellidos, username, password, correo, telefono, informacion);
-        Store.miPersona = jsonPersona;
-        Log.i("MI USUARIO", Store.miPersona.toString());
-    }
+
+
+
 
 }

@@ -58,8 +58,12 @@ public class LoginActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed(){
+<<<<<<< Updated upstream
 
     }
+=======
+     }
+>>>>>>> Stashed changes
 
     private void jsonToUser(JSONObject json) throws JSONException {
         String dni = json.getString("DNI");
@@ -71,7 +75,8 @@ public class LoginActivity extends AppCompatActivity {
         String telefono = json.getString("Telefono");
         String rol = json.getString("Rol");
         String informacion = json.getString("Informacion");
-        Persona jsonPersona = new Persona(dni, nombre, apellidos, username, password, correo, telefono, informacion);
+
+        Persona jsonPersona = new Persona(dni, nombre, apellidos, username, password, correo, telefono, informacion,rol);
         Store.miPersona = jsonPersona;
         Log.i("MI USUARIO", Store.miPersona.toString());
     }

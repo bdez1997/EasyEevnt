@@ -43,21 +43,35 @@ public class RegistroActivity extends AppCompatActivity {
 
     private void registrarUsuario() {
 
-
         String sUrl = "http://proyectogestioneventos.atwebpages.com/php/ins-persona.php?dni="+txtDni.getText()+"&nombre="+txtNombre.getText()+
                 "&apellidos="+txtApellidos.getText()+"&username="+txtUser.getText()+"&password="+txtPass.getText()+"&correo="+txtEmail.getText()+"&telefono="+txtTelefono.getText()+
                 "&rol="+sPinnerRoles.getSelectedItem().toString() +"&informacion="+txtInformacion.getText();
         String sResultado=sUrl.replace(" ","%20");
-        Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, sResultado,
-                s -> {
-                    Toast.makeText(getApplicationContext(), "Usuraio registrado con éxito", Toast.LENGTH_SHORT).show();
-                    finish();
-                },
 
-                r-> {
-                    Toast.makeText(getApplicationContext(), "Algo ha ido mal", Toast.LENGTH_SHORT).show();
-                }
-        ));
+        if(txtDni.getText().equals("")
+                &&txtNombre.getText().equals("")
+                &&txtApellidos.getText().equals("")
+                &&txtUser.getText().equals("")
+                &&txtDni.getText().equals("")
+                &&txtPass.getText().equals("")
+                &&txtEmail.getText().equals("")
+                &&txtTelefono.getText().equals("")
+                ){
+            Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, sResultado,
+                    s -> {
+                        Toast.makeText(getApplicationContext(), "Usuraio registrado con éxito", Toast.LENGTH_SHORT).show();
+                        finish();
+                    },
+
+                    r-> {
+                        Toast.makeText(getApplicationContext(), "Algo ha ido mal", Toast.LENGTH_SHORT).show();
+                    }
+            ));
+        }else{
+            Toast.makeText(getApplicationContext(), "Todo excepto la info es un campo obligatorio", Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 
 

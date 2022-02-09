@@ -4,27 +4,32 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
-public class Persona implements IMaxCaracteres{
-    private String sDni, sNombre, sApellido, sUsername,sPassword, sCorreo, sTelefono, sInformacion;
-    private static ArrayList<String> arrayRol = new ArrayList<String>();
+public class Persona implements IMaxCaracteres {
+    private String sDni, sNombre, sApellido, sUsername, sPassword, sCorreo, sTelefono, sInformacion, sRol;
+
 
     public Persona(String sDni) {
         getsDni();
     }
 
-    public Persona(String sDni, String sNombre, String sApellido, String sUsername, String sPassword, String sCorreo, String sTelefono, String sInformacion) {
-        this.sDni = sDni;
-        this.sNombre = sNombre;
-        this.sApellido = sApellido;
-        this.sUsername = sUsername;
-        this.sPassword = sPassword;
-        this.sCorreo = sCorreo;
-        this.sTelefono = sTelefono;
-        this.sInformacion = sInformacion;
+
+    public Persona(String sNombre, String sApellido, String sUsername, String sPassword,
+                   String sCorreo, String sTelefono, String sInformacion, String sRol) {
+
+        setsNombre(sNombre);
+        setsApellido(sApellido);
+        setsUsername(sUsername);
+        setsPassword(sPassword);
+        setsCorreo(sCorreo);
+        setsTelefono(sTelefono);
+        setsRol(sRol);
+        setsInformacion(sInformacion);
+
     }
 
     public Persona(String sDni, String sNombre, String sApellido, String sUsername, String sPassword,
-                   String sCorreo, String sTelefono, String sInformacion, ArrayList<String> arrayRol) {
+                   String sCorreo, String sTelefono, String sRol, String sInformacion) {
+
         setsDni(sDni);
         setsNombre(sNombre);
         setsApellido(sApellido);
@@ -32,19 +37,9 @@ public class Persona implements IMaxCaracteres{
         setsPassword(sPassword);
         setsCorreo(sCorreo);
         setsTelefono(sTelefono);
+        setsRol(sRol);
         setsInformacion(sInformacion);
-        setArrayRol();
-    }
 
-    public Persona(String dni, String nombre, String apellidos, String username, String password, String correo, String telefono, String rol, String informacion) {
-    }
-
-    private void setArrayRol() {
-    }
-
-
-    public ArrayList<String> getArrayRol() {
-        return arrayRol;
     }
 
     public String getsDni() {
@@ -66,7 +61,7 @@ public class Persona implements IMaxCaracteres{
 
 
     public void setsNombre(String sNombre) {
-        if (sNombre != null && sNombre.length() > IMINIMO && sNombre.length() < IMAXNOMBRE)  {
+        if (sNombre != null && sNombre.length() > IMINIMO && sNombre.length() < IMAXNOMBRE) {
             this.sNombre = sNombre;
         }
     }
@@ -76,7 +71,7 @@ public class Persona implements IMaxCaracteres{
     }
 
     public void setsApellido(String sApellido) {
-        if (sApellido != null && sApellido.length() > IMINIMO && sApellido.length() < IMAXAPELLIDOS)  {
+        if (sApellido != null && sApellido.length() > IMINIMO && sApellido.length() < IMAXAPELLIDOS) {
             this.sApellido = sApellido;
         }
     }
@@ -97,7 +92,7 @@ public class Persona implements IMaxCaracteres{
 
 
     public void setsPassword(String sPassword) {
-        if(sPassword != null && sPassword.length() < IMAXPASS && sPassword.length() > IMINIMO){
+        if (sPassword != null && sPassword.length() < IMAXPASS && sPassword.length() > IMINIMO) {
             this.sPassword = sPassword;
         }
     }
@@ -109,50 +104,37 @@ public class Persona implements IMaxCaracteres{
 
 
     public void setsCorreo(String sCorreo) {
-        String emailRegexp = "\\b[A-Z0-9._%-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b";
-        if (Pattern.matches(emailRegexp, sCorreo)) {
-            this.sCorreo = sCorreo;
-        }
-    }
 
+        if(sCorreo.length()<=35) {this.sCorreo = sCorreo;}
+
+    }
 
     public String getsTelefono() {
         return sTelefono;
     }
 
     public void setsTelefono(String sTelefono) {
-        String tlfnRegexp = "(\\d{3})\\d{9}";
-        if (Pattern.matches(tlfnRegexp, sTelefono)) {
-            this.sTelefono = sTelefono;
-        }
+
+        if(sTelefono.length()==9){this.sTelefono = sTelefono;}
+
+     }
+
+    public String getsRol() {
+        return sRol;
     }
 
+    public void setsRol(String sRol) {
+        this.sRol = sRol;
+    }
 
     public String getsInformacion() {
         return sInformacion;
     }
 
     public void setsInformacion(String sInformacion) {
-        if(sInformacion.length() < IMAXDESCRIPCION && sInformacion.length() > IMINIMO) {
+        if (sInformacion.length() < IMAXDESCRIPCION && sInformacion.length() > IMINIMO) {
             this.sInformacion = sInformacion;
         }
-    }
-
-    @Override
-    public String toString() {
-        String sResultado = "";
-
-        sResultado += "DNI: " + getsDni() + "\n";
-        sResultado += "Nombre : " + getsNombre() + " " + getsApellido() + "\n";
-        sResultado += "Username: " + getsUsername() + "\n";
-        sResultado += "Pass: " + "*********" + "\n";
-        sResultado += "Correo: " + getsCorreo() + "\n";
-        sResultado += "Telefono: " + getsTelefono() + "\n";
-
-        if(sInformacion != null) {
-            sResultado += "Informacion adiccional: " + getsInformacion();
-        }
-        return sResultado;
     }
 
     @Override
@@ -170,6 +152,24 @@ public class Persona implements IMaxCaracteres{
         return bExito;
     }
 
+
+    @Override
+    public String toString() {
+        String sResultado = "";
+
+        sResultado += "DNI: " + getsDni() + "\n";
+        sResultado += "Nombre : " + getsNombre() + " " + getsApellido() + "\n";
+        sResultado += "Username: " + getsUsername() + "\n";
+        sResultado += "Pass: " + "*********" + "\n";
+        sResultado += "Correo: " + getsCorreo() + "\n";
+        sResultado += "Rol: " + getsRol() + "\n";
+        sResultado += "Telefono: " + getsTelefono() + "\n";
+
+        if (sInformacion != null) {
+            sResultado += "Informacion adiccional: " + getsInformacion();
+        }
+        return sResultado;
+    }
 
 
 }
