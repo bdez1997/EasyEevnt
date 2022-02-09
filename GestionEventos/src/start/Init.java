@@ -12,6 +12,5 @@ public class Init {
 	new FrmPrincipal();
 
 		
-		
 	}
 }

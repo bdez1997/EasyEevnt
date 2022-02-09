@@ -5,66 +5,78 @@ import java.util.regex.Pattern;
 
 public class Empresa {
 
-	private String sNif;
-	private String sTelefono;
-	private String sCorreo;
+	private String nif;
+	private String nombre;
+	
 
-	public Empresa(String sNif, String sTelefono, String sCorreo) {
+	private String telefono;
+	private String correo;
 
-		setsNif(sNif);
-		setsTelefono(sTelefono);
-		setsCorreo(sCorreo);
+	public Empresa(String nif, String nombre, String telefono, String correo) {
+
+		
+		setNif(nif);
+		setNombre(nombre);
+		setTelefono(telefono);
+		setCorreo(correo);
+	}
+	public String getNombre() {
+		return nombre;
 	}
 
-	public Empresa(String sNif) {
-		this.sNif = sNif;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
-	public String getsNif() {
-		return sNif;
+	public Empresa(String nif) {
+		this.nif = nif;
 	}
 
-	public void setsNif(String sNif) {
+	public String getNif() {
+		return nif;
+	}
+
+	public void setNif(String nif) {
 
 		String nifRegeXp = "[[A-H][J-N][P-S]UVW][0-9]{7}[0-9A-J]";
 
-		if (Pattern.matches(nifRegeXp, sNif)) {
-			this.sNif = sNif;
+		if (Pattern.matches(nifRegeXp, nif)) {
+			this.nif = nif;
 		}
 	}
 
-	public String getsTelefono() {
-		return sTelefono;
+	public String getTelefono() {
+		return telefono;
 	}
 
-	public void setsTelefono(String sTelefono) {
+	public void setTelefono(String telefono) {
 
 		String tlfnRegexp = "(\\d{3})\\d{9}";
-		if (Pattern.matches(tlfnRegexp, sTelefono)) {
-			this.sTelefono = sTelefono;
+		if (Pattern.matches(tlfnRegexp, telefono)) {
+			this.telefono = telefono;
 		}
 	}
 
-	public String getsCorreo() {
-		return sCorreo;
+	public String getCorreo() {
+		return correo;
 	}
 
-	public void setsCorreo(String sCorreo) {
+	public void setCorreo(String correo) {
 
 		String emailRegexp = "\\b[A-Z0-9._%-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b";
-		if (Pattern.matches(emailRegexp, sCorreo)) {
-			this.sCorreo = sCorreo;
+		if (Pattern.matches(emailRegexp, correo)) {
+			this.correo = correo;
 		}
 	}
 
 	public int hashCode() {
-		return Objects.hash(sNif);
+		return Objects.hash(nif);
 	}
 
 	public boolean equals(Object obj) {
 		boolean boEquals = false;
 		Empresa eEmpresa = (Empresa) obj;
-		if (this.getsNif().equals(eEmpresa.getsNif())) {
+		if (this.getNif().equals(eEmpresa.getNif())) {
 			boEquals = true;
 		}
 		return boEquals;
@@ -74,9 +86,10 @@ public class Empresa {
 
 		String sResultado;
 
-		sResultado = "NIF: " + getsNif() + "\n";
-		sResultado += "Teléfono: " + getsTelefono() + "\n";
-		sResultado += "Correo: " + getsCorreo();
+		sResultado = "NIF: " + getNif() + "\n";
+		sResultado = "Nombre: " + getNombre() + "\n";
+		sResultado += "Teléfono: " + getTelefono() + "\n";
+		sResultado += "Correo: " + getCorreo();
 
 		return sResultado;
 	}
