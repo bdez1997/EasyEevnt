@@ -93,4 +93,10 @@ public class LoginActivity extends AppCompatActivity {
         Store.miPersona = jsonPersona;
         Log.i("MI USUARIO", Store.miPersona.toString());
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        login  = true;
+    }
 }

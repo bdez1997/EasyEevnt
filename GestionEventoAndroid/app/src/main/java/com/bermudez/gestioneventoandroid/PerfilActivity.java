@@ -18,7 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class PerfilActivity extends AppCompatActivity {
 
     Button btnGuardar;
-    int id;
+    String id;
     EditText txtUserProfile,txtPassProfile,txtEmailProfile,txtTlfnProfile;
 
 
@@ -51,17 +51,22 @@ public class PerfilActivity extends AppCompatActivity {
 
     public void updateProfile(){
 
-        id=Store.miEvento.getIdEvento();
+        id=Store.miPersona.getsDni();
         txtUserProfile.getText();
         txtPassProfile.getText();
         txtEmailProfile.getText();
         txtTlfnProfile.getText();
 
-        String sUrl = "proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?username="+txtUserProfile+
-                "&password="+txtPassProfile+"&correo="+txtEmailProfile+"&telefono="+txtTlfnProfile+"&dni="+id;
+        if(txtUserProfile.getText().equals("")){
 
-        Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET,sUrl,
+
+        }
+        String sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?username="+txtUserProfile.getText()+
+                "&password="+txtPassProfile.getText()+"&correo="+txtEmailProfile.getText()+"&telefono="+txtTlfnProfile.getText()+"&dni="+id;
+        String sResult =sUrl.replace(" ","%20");
+        Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET,sResult,
                 s-> {
+
                     Toast.makeText(this, "Perfil Actualizado",Toast.LENGTH_SHORT).show();
                 },r->{
                     Toast.makeText(this, "Error al modificar el perfil",Toast.LENGTH_SHORT).show();
