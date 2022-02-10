@@ -15,6 +15,8 @@ public class Store {
     public static List<Evento> lstEventos = new ArrayList<Evento>();
     public static int iEventoSelected;
 
+    public static List<Evento> lstEventosAsistidos = new ArrayList<Evento>();
+
     //View login
     public static LoginActivity loginView;
 

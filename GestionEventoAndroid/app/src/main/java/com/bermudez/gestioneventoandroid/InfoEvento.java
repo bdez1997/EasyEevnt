@@ -126,7 +126,7 @@ public class InfoEvento extends AppCompatActivity {
 
         Log.i("MI EVENTO", Store.miEvento.toString());
 
-        Store.lstEventosAcudidos.add(jsonEvento);
+        Store.lstEventosAsistidos.add(jsonEvento);
 
     }
 
