@@ -39,7 +39,7 @@ public class PerfilActivity extends AppCompatActivity {
 
 
         findViewById(R.id.btnGuardar).setOnClickListener(e -> {
-
+            updateProfile();
         });
 
 
@@ -62,9 +62,9 @@ public class PerfilActivity extends AppCompatActivity {
 
         Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET,sUrl,
                 s-> {
-
+                    Toast.makeText(this, "Perfil Actualizado",Toast.LENGTH_SHORT).show();
                 },r->{
-
+                    Toast.makeText(this, "Error al modificar el perfil",Toast.LENGTH_SHORT).show();
         }));
     }
 
