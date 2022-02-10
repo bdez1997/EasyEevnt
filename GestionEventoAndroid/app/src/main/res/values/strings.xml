@@ -3,12 +3,46 @@
 
     <string name="btnRegistro">Resgistrarse</string>
     <string name="txtRegistro">REGISTRO</string>
-    <string name="editText"> </string>
+
+    <string name="enBlanco"> </string>
     <string name="valoracion">VALORACIÓN</string>
     <string name="comentario">Pon su comentario: </string>
 
+    <!-- INFORMACION EVENTO -->
+    <string name="fechaInicio">Fecha de inicio:</string>
+    <string name="fechaFin">Fecha de fin:</string>
+    <string name="direccion">Direccion:</string>
+    <string name="btnAlta">Darse de alta</string>
+    <string name="btnBaja">Darse de baja</string>
 
 
+
+    <!-- INFORMACION PERSONA -->
+    <string name="lblNombre">Nombre:</string>
+    <string name="lblUser">Username:</string>
+    <string name="lblEmail">Email:</string>
+    <string name="lblTlfn">Telefono:</string>
+    <string name="lblRol">Rol:</string>
+    <string name="lblInformacion">Informacion adiccional:</string>
+    <string name="btnEditar">Editar</string>
+
+    <!-- EDITAR PERFIL -->
+    <string name="txtUser">New Username...</string>
+    <string name="txtPass">New Password...</string>
+    <string name="txtEmail">New Email...</string>
+    <string name="txtTlfn">New Telefono...</string>
+    <string name="btnGuardar">Guardar</string>
+
+    <!-- EDITAR PERFIL -->
+    <string name="txtNombre">Nombre</string>
+    <string name="txtDni">DNI</string>
+    <string name="txtApellidos">Apellidos</string>
+    <string name="txtUsername">Username</string>
+    <string name="txtPassword">Password</string>
+    <string name="txtEmailRegistro">Email</string>
+    <string name="txtTlfnRegistro">Telefono</string>
+
+    <!-- ARRAY ROLES -->
     <string-array name="roles">
         <item>Trabajador</item>
         <item>Voluntario</item>

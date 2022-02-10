@@ -21,6 +21,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bermudez.gestioneventoandroid.controller.*;
 import com.bermudez.gestioneventoandroid.fragments.*;
@@ -33,6 +34,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
+    TextView lblName;
 
     @SuppressLint("ResourceType")
     @Override
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         actionBarDrawerToggle.syncState();
+
 
 
     }

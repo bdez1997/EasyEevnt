@@ -20,18 +20,21 @@
         android:id="@+id/btnAsistirEvento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Obtener Plaza"
+        android:layout_marginTop="48dp"
+        android:text="@string/btnAlta"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblFechaIniEvent" />
+        app:layout_constraintTop_toBottomOf="@+id/lblFechaIniEvent4" />
 
     <Button
         android:id="@+id/btnBajaEvento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Darse de baja"
+        android:text="@string/btnBaja"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAsistirEvento" />
@@ -39,9 +42,9 @@
     <TextView
         android:id="@+id/lblInformacionEvent"
         android:layout_width="317dp"
-        android:layout_height="220dp"
+        android:layout_height="87dp"
         android:layout_marginTop="32dp"
-        android:text="INFORMACIÓN"
+        android:text="@string/enBlanco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgInfoEvento" />
@@ -50,21 +53,67 @@
         android:id="@+id/lblFechaIniEvent"
         android:layout_width="130dp"
         android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="48dp"
+        android:text="@string/enBlanco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblInformacionEvent" />
+
+    <TextView
+        android:id="@+id/lblFechaIniEvent2"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:text="INICIO"
+        android:layout_marginTop="32dp"
+        android:text="@string/fechaInicio"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblInformacionEvent" />
+
+    <TextView
+        android:id="@+id/lblFechaIniEvent3"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/fechaFin"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblFechaIniEvent2" />
+
+    <TextView
+        android:id="@+id/lblFechaIniEvent4"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/direccion"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblFechaIniEvent3" />
 
     <TextView
         android:id="@+id/lblFechaFinEvent"
         android:layout_width="130dp"
         android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:text="FIN"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="48dp"
+        android:text="@string/enBlanco"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblInformacionEvent" />
+        app:layout_constraintTop_toBottomOf="@+id/lblFechaIniEvent" />
+
+    <TextView
+        android:id="@+id/lblFechaFinEvent2"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="48dp"
+        android:text="@string/enBlanco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblFechaFinEvent" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
