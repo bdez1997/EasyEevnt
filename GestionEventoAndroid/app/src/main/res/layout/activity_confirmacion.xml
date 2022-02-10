@@ -16,9 +16,9 @@
 
     <Button
         android:id="@+id/btnCancelar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
         android:layout_marginBottom="70dp"
         android:text="@android:string/cancel"
         app:cornerRadius="10dp"
@@ -27,15 +27,13 @@
 
     <Button
         android:id="@+id/btnAceptar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="80dp"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="70dp"
         android:text="Aceptar"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnCancelar" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
