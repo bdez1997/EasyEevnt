@@ -1,5 +1,8 @@
 package com.bermudez.gestioneventoandroid.controller;
 
+import android.view.View;
+
+import com.bermudez.gestioneventoandroid.LoginActivity;
 import com.bermudez.gestioneventoandroid.models.Evento;
 import com.bermudez.gestioneventoandroid.models.Persona;
 
@@ -12,7 +15,8 @@ public class Store {
     public static List<Evento> lstEventos = new ArrayList<Evento>();
     public static int iEventoSelected;
 
-
+    //View login
+    public static LoginActivity loginView;
 
     //Historial asistencia
     public static List<Evento> lstAsistencia = new ArrayList<Evento>();

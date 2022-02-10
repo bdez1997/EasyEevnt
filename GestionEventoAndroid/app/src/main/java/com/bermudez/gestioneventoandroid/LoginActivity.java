@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -18,19 +19,29 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
 
+        public static boolean login = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Store.loginView = this;
         TextView txtUser = findViewById(R.id.txtUsernameLogin);
         TextView txtPassword = findViewById(R.id.txtPasswordLogin);
 
 
         findViewById(R.id.btnRegistrarse).setOnClickListener(e ->{
             Intent RegistroActivity = new Intent(LoginActivity.this, RegistroActivity.class);
+
             startActivity(RegistroActivity);
         });
 
+        login(txtUser, txtPassword);
+
+
+
+    }
+
+    private void login(TextView txtUser, TextView txtPassword) {
         findViewById(R.id.btnLogin).setOnClickListener(l -> {
             String username = txtUser.getText() + "";
             String password = txtPassword.getText() + "";
@@ -41,6 +52,10 @@ public class LoginActivity extends AppCompatActivity {
                         try {
                             JSONObject json = new JSONObject(s);
                             jsonToUser(json);
+                            Intent i = new Intent(this, MainActivity.class);
+                            i.putExtra("UserName",Store.miPersona.getsUsername());
+                            startActivity(i);
+                            login = true;
                             finish();
 
                         } catch (JSONException e) {
@@ -53,9 +68,8 @@ public class LoginActivity extends AppCompatActivity {
 
             ));
         });
-
-
     }
+
     @Override
     public void onBackPressed(){
 

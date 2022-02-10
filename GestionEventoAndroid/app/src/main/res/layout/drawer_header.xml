@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/user" />
 
     <TextView
-        android:id="@+id/txtUsername"
+        android:id="@+id/txtUsernameHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
