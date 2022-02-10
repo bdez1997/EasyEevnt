@@ -42,7 +42,7 @@ public class CtrlEmpresa {
 
 		try {
 			String resultado;
-			String url = URI + "del-empresa.php?nif=" + NIF;
+			String url = URI + "del-empresa.php?NIF=" + NIF;
 
 			resultado = url.replace(" ", "%20");
 
@@ -60,7 +60,7 @@ public class CtrlEmpresa {
 
 		try {
 
-			url = URI + "upd-empresa.php?NIF=" + view.DlgDescripcionEmpresa.nif + "&nombre="
+			url = URI + "upd-empresa.php?NIF=" + view.DlgDescripcionEmpresa.nif + "&nombreEmpresa="
 					+ view.DlgDescripcionEmpresa.nombre + "&telefono=" + view.DlgDescripcionEmpresa.telefono
 					+ "&correo=" + view.DlgDescripcionEmpresa.correo;
 			resultado = url.replace(" ", "%20");
@@ -102,7 +102,7 @@ public class CtrlEmpresa {
 			int numCampos = numColumn;
 
 			tableQuery.addColumn("NIF");
-			tableQuery.addColumn("Nombre");
+			tableQuery.addColumn("NombreEmpresa");
 			tableQuery.addColumn("Telefono");
 			tableQuery.addColumn("Correo");
 
@@ -172,7 +172,7 @@ public class CtrlEmpresa {
 		Empresa p = null;
 		try {
 			String NIF = jsonObjct.getString("NIF");
-			String nombre = jsonObjct.getString("Nombre");
+			String nombre = jsonObjct.getString("NombreEmpresa");
 			String correo = jsonObjct.getString("Correo");
 			String telefono = jsonObjct.getString("Telefono");
 

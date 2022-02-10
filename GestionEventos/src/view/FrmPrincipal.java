@@ -17,6 +17,8 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JSeparator;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class FrmPrincipal extends JFrame {
 
@@ -84,8 +86,15 @@ public class FrmPrincipal extends JFrame {
 			});
 		
 			JMenuItem mntmEmpresas = new JMenuItem("Empresas");
+			mntmEmpresas.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					new DlgDescripcionEmpresa();
+				}
+			});
 			mntmEmpresas.setFont(new Font("Arial", Font.PLAIN, 12));
 			mnListar.add(mntmEmpresas);
+			
+		
 		
 		JMenu mnUsuario = new JMenu("Usuario");
 		mnUsuario.setFont(new Font("Arial", Font.PLAIN, 12));

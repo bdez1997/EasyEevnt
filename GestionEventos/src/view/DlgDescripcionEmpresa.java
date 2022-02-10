@@ -115,6 +115,7 @@ public class DlgDescripcionEmpresa extends JDialog {
 				}
 			}
 		});
+		/*
 
 		mntmUpdate.addActionListener(e -> {
 
@@ -125,6 +126,7 @@ public class DlgDescripcionEmpresa extends JDialog {
 
 			controller.CtrlEmpresa.updateEmpresa();
 		});
+		*/
 
 	}
 }
