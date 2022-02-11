@@ -2,6 +2,7 @@ package com.bermudez.gestioneventoandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -49,6 +50,7 @@ public class InfoEvento extends AppCompatActivity {
 
 
         findViewById(R.id.btnAsistirEvento).setOnClickListener(e -> {
+
             String dni = Store.miPersona.getsDni();
             int id = PrincipalFragment.id;
             String url = "http://proyectogestioneventos.atwebpages.com/php/ins-personaevento.php?dni=" + dni + "&idevento=" + id;
@@ -62,6 +64,7 @@ public class InfoEvento extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "No se ha podido completar el registro", Toast.LENGTH_SHORT).show();
                     }
             ));
+
         });
 
 
