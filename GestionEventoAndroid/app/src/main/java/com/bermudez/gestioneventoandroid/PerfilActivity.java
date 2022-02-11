@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,17 +57,49 @@ public class PerfilActivity extends AppCompatActivity {
         txtPassProfile.getText();
         txtEmailProfile.getText();
         txtTlfnProfile.getText();
+        String sUrl="";
 
         if(txtUserProfile.getText().equals("")){
+            sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?username="+
+                    Store.miPersona.getsUsername()+
+                    "&password="+txtPassProfile.getText()+
+                    "&correo="+txtEmailProfile.getText()+
+                    "&telefono="+txtTlfnProfile.getText()+
+                    "&dni="+id;
 
+        }else if(txtPassProfile.getText().equals("")){
+            sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?username="+
+                    txtUserProfile.getText()+
+                    "&password="+Store.miPersona.getsPassword()+
+                    "&correo="+txtEmailProfile.getText()+
+                    "&telefono="+txtTlfnProfile.getText()+
+                    "&dni="+id;
+        }else if(txtEmailProfile.getText().equals("")){
 
+            sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?username="+
+                    txtUserProfile.getText()+
+                    "&password="+txtPassProfile.getText()+
+                    "&correo="+Store.miPersona.getsCorreo()+
+                    "&telefono="+txtTlfnProfile.getText()+
+                    "&dni="+id;
+
+        }else if(txtTlfnProfile.getText().equals("")){
+            sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?username="+
+                    txtUserProfile.getText()+
+                    "&password="+txtPassProfile.getText()+
+                    "&correo="+txtEmailProfile.getText()+
+                    "&telefono="+Store.miPersona.getsTelefono()+
+                    "&dni="+id;
+        }else{
+            sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?username="+txtUserProfile.getText()+
+                    "&password="+txtPassProfile.getText()+"&correo="+txtEmailProfile.getText()+"&telefono="+txtTlfnProfile.getText()+"&dni="+id;
         }
-        String sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?username="+txtUserProfile.getText()+
-                "&password="+txtPassProfile.getText()+"&correo="+txtEmailProfile.getText()+"&telefono="+txtTlfnProfile.getText()+"&dni="+id;
+
+
+
         String sResult =sUrl.replace(" ","%20");
         Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET,sResult,
                 s-> {
-
                     Toast.makeText(this, "Perfil Actualizado",Toast.LENGTH_SHORT).show();
                 },r->{
                     Toast.makeText(this, "Error al modificar el perfil",Toast.LENGTH_SHORT).show();
