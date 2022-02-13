@@ -52,7 +52,10 @@ public class InfoEvento extends AppCompatActivity {
         findViewById(R.id.btnAsistirEvento).setOnClickListener(e -> {
 
             String dni = Store.miPersona.getsDni();
+            String fecha = Store.miEvento.getFechaIni();
+
             int id = PrincipalFragment.id;
+
             String url = "http://proyectogestioneventos.atwebpages.com/php/ins-personaevento.php?dni=" + dni + "&idevento=" + id;
             String sResultado = url.replace(" ", "%20");
             Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, sResultado,
