@@ -18,10 +18,15 @@
                 android:id="@+id/opEventos">
 
             </item>
+
         </menu>
     </item>
 
+    <item
+        android:title="Desconectarse"
+        android:id="@+id/logout">
 
+    </item>
     <item
         android:title="SALIR"
         android:id="@+id/salir"

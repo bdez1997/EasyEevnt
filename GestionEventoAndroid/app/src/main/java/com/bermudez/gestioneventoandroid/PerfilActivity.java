@@ -40,7 +40,16 @@ public class PerfilActivity extends AppCompatActivity {
 
 
         findViewById(R.id.btnGuardar).setOnClickListener(e -> {
-            updateProfile();
+            if(txtUserProfile.getText().equals("")||
+                    txtPassProfile.getText().equals("")||
+                    txtEmailProfile.getText().equals("")||
+                    txtTlfnProfile.getText().equals("")
+            ){
+                Toast.makeText(this,"Todos los campos son obligatorios",Toast.LENGTH_SHORT).show();
+            }else{
+                updateProfile();
+            }
+
         });
 
 
@@ -50,62 +59,32 @@ public class PerfilActivity extends AppCompatActivity {
 
     }
 
-    public void updateProfile(){
+    public void updateProfile() {
 
-        id=Store.miPersona.getsDni();
+        id = Store.miPersona.getsDni();
         txtUserProfile.getText();
         txtPassProfile.getText();
         txtEmailProfile.getText();
         txtTlfnProfile.getText();
-        String sUrl="";
-
-        if(txtUserProfile.getText().equals("")){
-            sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?username="+
-                    Store.miPersona.getsUsername()+
-                    "&password="+txtPassProfile.getText()+
-                    "&correo="+txtEmailProfile.getText()+
-                    "&telefono="+txtTlfnProfile.getText()+
-                    "&dni="+id;
-
-        }else if(txtPassProfile.getText().equals("")){
-            sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?username="+
-                    txtUserProfile.getText()+
-                    "&password="+Store.miPersona.getsPassword()+
-                    "&correo="+txtEmailProfile.getText()+
-                    "&telefono="+txtTlfnProfile.getText()+
-                    "&dni="+id;
-        }else if(txtEmailProfile.getText().equals("")){
-
-            sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?username="+
-                    txtUserProfile.getText()+
-                    "&password="+txtPassProfile.getText()+
-                    "&correo="+Store.miPersona.getsCorreo()+
-                    "&telefono="+txtTlfnProfile.getText()+
-                    "&dni="+id;
-
-        }else if(txtTlfnProfile.getText().equals("")){
-            sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?username="+
-                    txtUserProfile.getText()+
-                    "&password="+txtPassProfile.getText()+
-                    "&correo="+txtEmailProfile.getText()+
-                    "&telefono="+Store.miPersona.getsTelefono()+
-                    "&dni="+id;
-        }else{
-            sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?username="+txtUserProfile.getText()+
-                    "&password="+txtPassProfile.getText()+"&correo="+txtEmailProfile.getText()+"&telefono="+txtTlfnProfile.getText()+"&dni="+id;
-        }
+        String sUrl = "";
 
 
+        sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?" +
+                "username=" + txtUserProfile.getText() +
+                "&password=" + txtPassProfile.getText() +
+                "&correo=" + txtEmailProfile.getText() +
+                "&telefono=" + txtTlfnProfile.getText() +
+                "&dni=" + id;
 
-        String sResult =sUrl.replace(" ","%20");
-        Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET,sResult,
-                s-> {
-                    Toast.makeText(this, "Perfil Actualizado",Toast.LENGTH_SHORT).show();
-                },r->{
-                    Toast.makeText(this, "Error al modificar el perfil",Toast.LENGTH_SHORT).show();
+
+        String sResult = sUrl.replace(" ", "%20");
+        Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, sResult,
+                s -> {
+                    Toast.makeText(this, "Perfil Actualizado", Toast.LENGTH_SHORT).show();
+                }, r -> {
+            Toast.makeText(this, "Error al modificar el perfil", Toast.LENGTH_SHORT).show();
         }));
+
+
     }
-
-
-
 }
