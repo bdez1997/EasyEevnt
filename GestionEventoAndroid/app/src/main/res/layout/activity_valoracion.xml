@@ -35,14 +35,14 @@
         android:id="@+id/txtComentario"
         android:layout_width="346dp"
         android:layout_height="423dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/comentario"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/btnEnviar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button

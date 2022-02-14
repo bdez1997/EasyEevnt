@@ -2,8 +2,11 @@ package com.bermudez.gestioneventoandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -23,11 +26,9 @@ public class ConfirmacionActivity extends AppCompatActivity {
 
         View cldConfir = findViewById(R.id.cldConfir);
 
-        cldConfir.setOnClickListener(view -> {
+        EditText etPlannedDate = (EditText) view.findViewById(R.id.cldConfir);
+        cldConfir.setOnClickListener(this);
 
-
-
-        });
 
         findViewById(R.id.btnAceptar).setOnClickListener(e -> {
             String dni = Store.miPersona.getsDni();
@@ -43,6 +44,10 @@ public class ConfirmacionActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "No se ha podido completar el registro", Toast.LENGTH_SHORT).show();
                     }
             ));
+        });
+
+        findViewById(R.id.btnCancelar).setOnClickListener(e ->{
+            onDestroy();
         });
 
     }
