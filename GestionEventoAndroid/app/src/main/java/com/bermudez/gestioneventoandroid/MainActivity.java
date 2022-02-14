@@ -101,6 +101,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.opPerfil: openFragment(new PerfilFragment()); setTitle("Perfil");; break;
             case R.id.opEventos: openFragment(new PrincipalFragment()); setTitle("Eventos"); break;
             case R.id.opHistorial: openFragment(new AsistenciaFragment()); setTitle("Asistencia"); break;
+            case R.id.logout:
+                Intent i = new Intent(this, LoginActivity.class);
+                startActivity(i);
+                break;
             case R.id.salir: salir(); break;
         }
         return false;

@@ -22,22 +22,16 @@ public class PerfilActivity extends AppCompatActivity {
     String id;
     EditText txtUserProfile,txtPassProfile,txtEmailProfile,txtTlfnProfile;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
         setTitle("Perfil");
 
-
         txtUserProfile =findViewById(R.id.txtUserProfile);
         txtPassProfile=findViewById(R.id.txtPassProfile);
         txtEmailProfile=findViewById(R.id.txtEmailProfile);
         txtTlfnProfile=findViewById(R.id.txtTlfnProfile);
-
-
-
-
 
         findViewById(R.id.btnGuardar).setOnClickListener(e -> {
             if(txtUserProfile.getText().equals("")||
@@ -67,7 +61,6 @@ public class PerfilActivity extends AppCompatActivity {
         txtEmailProfile.getText();
         txtTlfnProfile.getText();
         String sUrl = "";
-
 
         sUrl = "http://proyectogestioneventos.atwebpages.com/php/upd-personaAndroid.php?" +
                 "username=" + txtUserProfile.getText() +
