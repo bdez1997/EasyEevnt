@@ -41,7 +41,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setTitle("Eventos");
         Log.d("Prueba","Entra1");
+
         openFragment(new PrincipalFragment());
+
         if(login){
             Toast.makeText(this,"Usuario logueado con éxito",Toast.LENGTH_SHORT).show();
         }else{
@@ -86,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction fragmentTransaction = manager.beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment);
         fragmentTransaction.addToBackStack(null);
-        Log.d("Prueba","Entra2");
+
         fragmentTransaction.commit();
     }
 

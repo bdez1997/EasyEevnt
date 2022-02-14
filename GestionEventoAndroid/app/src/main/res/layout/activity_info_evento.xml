@@ -8,18 +8,18 @@
 
     <ImageView
         android:id="@+id/imgInfoEvento"
-        android:layout_width="89dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="119dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user" />
+        app:srcCompat="@drawable/eventscardview" />
 
     <Button
         android:id="@+id/btnAsistirEvento"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
         android:layout_marginTop="24dp"
         android:text="@string/btnAlta"
         app:cornerRadius="10dp"
@@ -30,8 +30,8 @@
 
     <Button
         android:id="@+id/btnBajaEvento"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
         android:layout_marginTop="12dp"
         android:text="@string/btnBaja"
         app:cornerRadius="10dp"

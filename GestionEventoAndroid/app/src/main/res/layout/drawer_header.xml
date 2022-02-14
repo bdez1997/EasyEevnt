@@ -10,22 +10,23 @@
 
     <ImageView
         android:id="@+id/imageViewUser"
-        android:layout_width="91dp"
-        android:layout_height="88dp"
-        android:layout_marginStart="24dp"
+        android:layout_width="87dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user" />
+        app:srcCompat="@drawable/userm" />
 
     <TextView
         android:id="@+id/txtUsernameHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
-        android:text="NombreUser"
-        android:textSize="16sp"
+        android:text="@string/enBlanco"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/imageViewUser"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

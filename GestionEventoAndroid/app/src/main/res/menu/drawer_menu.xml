@@ -15,7 +15,8 @@
             </item>
             <item
                 android:title="Eventos"
-                android:id="@+id/opEventos">
+                android:id="@+id/opEventos"
+                android:icon="@drawable/evento">
 
             </item>
 
