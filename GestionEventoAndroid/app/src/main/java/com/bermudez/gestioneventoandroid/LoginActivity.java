@@ -19,7 +19,7 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
 
-        public static boolean login = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                             Intent i = new Intent(this, MainActivity.class);
                             i.putExtra("UserName",Store.miPersona.getsUsername());
                             startActivity(i);
-                            login = true;
+                            Store.login = true;
                             finish();
 
                         } catch (JSONException e) {
@@ -95,6 +95,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        login  = true;
+        Store.login  = true;
     }
 }

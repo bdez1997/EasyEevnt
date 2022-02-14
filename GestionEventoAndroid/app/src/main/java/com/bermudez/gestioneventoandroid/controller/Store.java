@@ -32,5 +32,7 @@ public class Store {
 
     //Evento
     public static Evento miEvento;
+    //boolean registrado
+    public static boolean login=false;
 
 }

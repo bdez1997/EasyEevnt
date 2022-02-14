@@ -1,6 +1,5 @@
 package com.bermudez.gestioneventoandroid;
 
-import static com.bermudez.gestioneventoandroid.LoginActivity.login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -28,9 +27,9 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    EditText txtUsernameLogin;
+
     DrawerLayout drawerLayout;
-    TextView lblName,txtUsername;
+    TextView txtUsername;
     String sUserHeader;
 
     @SuppressLint("ResourceType")
@@ -44,9 +43,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         openFragment(new PrincipalFragment());
 
-        if(login){
+        if(Store.login){
             Toast.makeText(this,"Usuario logueado con éxito",Toast.LENGTH_SHORT).show();
         }else{
+            Log.i("HOLA","VAYA por dios");
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
@@ -98,9 +98,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawer(GravityCompat.START);
 
         switch(item.getItemId()) {
-            case R.id.opPerfil: openFragment(new PerfilFragment()); setTitle("Perfil");; break;
+            case R.id.opPerfil: openFragment(new PerfilFragment()); setTitle("Perfil"); break;
             case R.id.opEventos: openFragment(new PrincipalFragment()); setTitle("Eventos"); break;
-            case R.id.opHistorial: openFragment(new AsistenciaFragment()); setTitle("Asistencia"); break;
+            case R.id.opHistorial: Store.login=true;openFragment(new AsistenciaFragment());setTitle("Asistencia"); break;
             case R.id.logout:Intent i = new Intent(this, LoginActivity.class);
                 startActivity(i);break;
             case R.id.salir: salir(); break;

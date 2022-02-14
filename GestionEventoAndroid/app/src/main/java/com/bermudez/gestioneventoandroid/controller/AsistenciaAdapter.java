@@ -17,7 +17,6 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.Vi
     LayoutInflater inflater;
     Context context;
     private View.OnClickListener listener;
-    public static String nombreEvento;
     //public static String fechaIni ;
 
 
@@ -57,7 +56,7 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.Vi
 
     @Override
     public int getItemCount() {
-        return Store.lstEventos.size();
+        return Store.lstEventosAsistidos.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
