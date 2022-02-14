@@ -52,7 +52,7 @@ public class InfoEvento extends AppCompatActivity {
         findViewById(R.id.btnAsistirEvento).setOnClickListener(e -> {
 
             String dni = Store.miPersona.getsDni();
-            String fecha = Store.miEvento.getFechaIni();
+            //String fecha = Store.miEvento.getFechaIni();
 
             int id = PrincipalFragment.id;
 

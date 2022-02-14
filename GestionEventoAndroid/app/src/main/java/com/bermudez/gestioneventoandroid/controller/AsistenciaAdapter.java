@@ -47,8 +47,8 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull AsistenciaAdapter.ViewHolder holder, int position) {
-        holder.imgEvento.setImageResource(R.drawable.eventscardview);
-        holder.lblNombreEvento.setText(Store.lstEventos.get(position).getNombre());
+        holder.imgAsistencia.setImageResource(R.drawable.eventscardview);
+        holder.lblNombreEventoAsistencia.setText(Store.lstEventosAsistidos.get(position).getNombre());
         /*holder.lblFechaInit.setText(Store.lstEventos.get(position).getFechaIni());
         holder.lblFechaFin.setText(Store.lstEventos.get(position).getFechaFin());*/
 
@@ -62,15 +62,15 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView lblNombreEvento;
+        TextView lblNombreEventoAsistencia;
         //TextView lblFechaInit;
 
-        ImageView imgEvento;
+        ImageView imgAsistencia;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgEvento = itemView.findViewById(R.id.imageViewEvento);
-            lblNombreEvento = itemView.findViewById(R.id.lblNombreEvento);
+            imgAsistencia = itemView.findViewById(R.id.imgAsistencia);
+            lblNombreEventoAsistencia = itemView.findViewById(R.id.txtNombreAsistencia);
             //lblFechaInit = itemView.findViewById(R.id.lblFechaInicio);
         }
     }

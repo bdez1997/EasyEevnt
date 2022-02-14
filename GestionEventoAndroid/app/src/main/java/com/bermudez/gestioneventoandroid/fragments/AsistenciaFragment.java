@@ -12,13 +12,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bermudez.gestioneventoandroid.R;
+import com.bermudez.gestioneventoandroid.controller.AsistenciaAdapter;
 import com.bermudez.gestioneventoandroid.controller.EventosAdapter;
 import com.bermudez.gestioneventoandroid.controller.Store;
 
 
 public class AsistenciaFragment extends Fragment {
 
-    ImageView imgEvento;
+
     RecyclerView rvHistorial;
 
     public AsistenciaFragment() {
@@ -38,8 +39,8 @@ public class AsistenciaFragment extends Fragment {
 
         rvHistorial= vista.findViewById(R.id.rvHistorial);
         rvHistorial.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
-        EventosAdapter adapter = new EventosAdapter(getActivity().getApplicationContext());
-        rvHistorial.setAdapter(adapter);
+        AsistenciaAdapter AsistenciaAdapter = new AsistenciaAdapter(getActivity().getApplicationContext());
+        rvHistorial.setAdapter(AsistenciaAdapter);
 
         return vista;
     }

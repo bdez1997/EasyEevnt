@@ -64,6 +64,8 @@ public class PrincipalFragment extends Fragment {
         return view;
     }
 
+
+
     public void showData(){
         RecyclerView recyclerView = view.findViewById(R.id.rvEventos);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
