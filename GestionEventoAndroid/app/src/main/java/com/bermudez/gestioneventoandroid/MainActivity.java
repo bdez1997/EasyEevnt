@@ -112,7 +112,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     private void salir() {
-        finish();
+        MainActivity.this.finishAffinity();
+        System.exit(0);
     }
 
 }
