@@ -25,7 +25,8 @@
 
     <item
         android:title="Desconectarse"
-        android:id="@+id/logout">
+        android:id="@+id/logout"
+        android:icon="@drawable/userleft">
 
     </item>
     <item
