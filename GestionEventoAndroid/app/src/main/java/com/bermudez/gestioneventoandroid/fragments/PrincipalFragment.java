@@ -76,9 +76,9 @@ public class PrincipalFragment extends Fragment {
         adaptador.setOnClickListener( view ->{
             Store.iEventoSelected = recyclerView.getChildAdapterPosition(view);
             sNombre = Store.lstEventos.get(Store.iEventoSelected).getNombre();
-            Log.i("PRUEBA",Store.lstEventos.get(Store.iEventoSelected).getNombre());
-            id = Store.lstEventos.get(Store.iEventoSelected).getIdEvento();
 
+            id = Store.lstEventos.get(Store.iEventoSelected).getIdEvento();
+            Log.i("PRUEBA","" + Store.lstEventos.get(Store.iEventoSelected).getIdEvento());
 
             Intent intent = new Intent(getActivity(), InfoEvento.class);
             startActivity(intent);
