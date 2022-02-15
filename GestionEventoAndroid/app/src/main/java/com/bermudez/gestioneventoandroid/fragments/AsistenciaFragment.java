@@ -11,10 +11,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.android.volley.Request;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.bermudez.gestioneventoandroid.R;
 import com.bermudez.gestioneventoandroid.controller.AsistenciaAdapter;
 import com.bermudez.gestioneventoandroid.controller.EventosAdapter;
 import com.bermudez.gestioneventoandroid.controller.Store;
+import com.bermudez.gestioneventoandroid.models.Evento;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.List;
 
 
 public class AsistenciaFragment extends Fragment {
@@ -41,6 +49,19 @@ public class AsistenciaFragment extends Fragment {
         rvHistorial.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
         AsistenciaAdapter AsistenciaAdapter = new AsistenciaAdapter(getActivity().getApplicationContext());
         rvHistorial.setAdapter(AsistenciaAdapter);
+
+        String url = "http://proyectogestioneventos.atwebpages.com/php/get-eventosasistidos.php?dnipersona="+Store.miPersona.getsDni();
+        Volley.newRequestQueue(getContext()).add(new StringRequest(Request.Method.GET, url,
+                s -> {
+                    Store.lstEventosAsistidos = new Gson().fromJson(s, new TypeToken<List<Evento>>() {}.getType());
+                    AsistenciaAdapter.notifyDataSetChanged();
+
+                },
+                r ->{
+                }
+
+        ));
+
 
         return vista;
     }

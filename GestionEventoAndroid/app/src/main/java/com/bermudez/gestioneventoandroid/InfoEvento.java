@@ -74,7 +74,7 @@ public class InfoEvento extends AppCompatActivity {
         findViewById(R.id.btnBajaEvento).setOnClickListener(e -> {
 
             String dni = Store.miPersona.getsDni();
-            String url = "http://proyectogestioneventos.atwebpages.com/php/baja.php?dni=" + dni;
+            String url = "http://proyectogestioneventos.atwebpages.com/php/baja.php?eventoid="+Store.miEvento.getIdEvento();
             String sResultado = url.replace(" ", "%20");
             Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, sResultado,
                     s -> {
