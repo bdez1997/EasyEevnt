@@ -52,7 +52,6 @@ public class PerfilActivity extends AppCompatActivity {
         });
 
     }
-
     public void updateProfile() {
 
         id = Store.miPersona.getsDni();

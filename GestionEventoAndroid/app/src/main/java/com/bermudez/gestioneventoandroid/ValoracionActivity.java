@@ -29,6 +29,7 @@ public class ValoracionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_valoracion);
 
         RatingBar ratingBar = (RatingBar) findViewById(R.id.rtValoracion);
+        ratingBar.getOnRatingBarChangeListener().onRatingChanged(ratingBar, 0, true);
         ratingBar.getRating();
 
         EditText txtComentario = findViewById(R.id.txtComentario);

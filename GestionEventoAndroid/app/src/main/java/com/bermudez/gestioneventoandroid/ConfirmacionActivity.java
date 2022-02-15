@@ -2,6 +2,8 @@ package com.bermudez.gestioneventoandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
@@ -19,15 +21,17 @@ import java.util.Calendar;
 
 public class ConfirmacionActivity extends AppCompatActivity {
 
+    private Activity view;
+
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmacion);
 
         View cldConfir = findViewById(R.id.cldConfir);
+        getString(cldConfir.getId()).toString();
 
-        //EditText etPlannedDate = (EditText) view.findViewById(R.id.cldConfir);
-        //cldConfir.setOnClickListener(this);
 
 
         findViewById(R.id.btnAceptar).setOnClickListener(e -> {
