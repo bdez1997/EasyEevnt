@@ -26,8 +26,8 @@ public class ConfirmacionActivity extends AppCompatActivity {
 
         View cldConfir = findViewById(R.id.cldConfir);
 
-        EditText etPlannedDate = (EditText) view.findViewById(R.id.cldConfir);
-        cldConfir.setOnClickListener(this);
+        //EditText etPlannedDate = (EditText) view.findViewById(R.id.cldConfir);
+        //cldConfir.setOnClickListener(this);
 
 
         findViewById(R.id.btnAceptar).setOnClickListener(e -> {
