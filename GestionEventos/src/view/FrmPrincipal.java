@@ -102,6 +102,11 @@ public class FrmPrincipal extends JFrame {
 		menuBar.add(mnUsuario);
 		
 		JMenuItem mntmPerfil = new JMenuItem("Mi Perfil");
+		mntmPerfil.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new DlgPerfil();
+			}
+		});
 		mntmPerfil.setFont(new Font("Arial", Font.PLAIN, 12));
 		mnUsuario.add(mntmPerfil);
 		

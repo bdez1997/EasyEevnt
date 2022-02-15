@@ -17,7 +17,7 @@ import model.Persona;
 public class CtrlLogin {
 	
 	static String pass = new String(view.FrmLogin.passwordField.getPassword());
-	private static final String URI = "http://proyectogestioneventos.atwebpages.com/php/login.php?username=%22" + view.FrmLogin.txtUser.getText() + "%22&password=%22" + pass + "%22";
+	private static final String URI = "http://proyectogestioneventos.atwebpages.com/php/sel-user.php?user="+view.FrmLogin.txtUser.getText()+"&contrasena="+pass;
 	
 	private static String readAll(Reader rd) throws IOException {
 	    StringBuilder sb = new StringBuilder();
@@ -28,7 +28,7 @@ public class CtrlLogin {
 	    return sb.toString();
 	  }
 	
-	private static boolean Login() {
+	public static boolean Login() {
        boolean login = false; 
        
        	JSONObject jsonObj = new JSONObject();
@@ -40,6 +40,7 @@ public class CtrlLogin {
 			jsonObj=readJsonFromUrl(URI);
 			sUser = jsonObj.getString("Username");
 			sContrasena = jsonObj.getString("Contrasena");
+			System.out.println(sUser);
 		} catch (JSONException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class FrmLogin extends JFrame {
 
@@ -57,6 +59,14 @@ public class FrmLogin extends JFrame {
 		contentPane.add(lblNewLabel);
 
 		JButton btnLogin = new JButton("LOGGIN");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(controller.CtrlLogin.Login()) {					
+					new FrmPrincipal();
+					dispose();
+				}
+			}
+		});
 		btnLogin.setForeground(new Color(255, 255, 255));
 		btnLogin.setBackground(new Color(65, 105, 225));
 		btnLogin.setFont(new Font("Arial", Font.BOLD, 12));
@@ -69,6 +79,8 @@ public class FrmLogin extends JFrame {
 		btnExit.setFont(new Font("Arial", Font.BOLD, 12));
 		btnExit.setBounds(206, 157, 97, 38);
 		contentPane.add(btnExit);
+		
+		
 
 	}
 }

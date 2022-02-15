@@ -27,19 +27,6 @@ public class DlgPerfil extends JDialog {
 	private JTextField txtRol;
  
 	
-	public static void main(String[] args) {
-		try {
-			DlgPerfil dialog = new DlgPerfil();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * Create the dialog.
-	 */
 	public DlgPerfil() {
 		setBounds(100, 100, 582, 498);
 		getContentPane().setLayout(new BorderLayout());
@@ -197,6 +184,6 @@ public class DlgPerfil extends JDialog {
 			btnGuardar.setVisible(true);
 		});
 		
-		
+		setVisible(true);
 	}
 }

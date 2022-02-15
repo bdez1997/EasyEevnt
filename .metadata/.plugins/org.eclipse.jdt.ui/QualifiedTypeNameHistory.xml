@@ -7,4 +7,7 @@
     <fullyQualifiedTypeName name="view.DlgDescripcionEventos"/>
     <fullyQualifiedTypeName name="view.DlgDescripcionPersonas"/>
     <fullyQualifiedTypeName name="view.DlgEditarPersona"/>
+    <fullyQualifiedTypeName name="controller.CtrlLogin"/>
+    <fullyQualifiedTypeName name="view.FrmLogin"/>
+    <fullyQualifiedTypeName name="view.DlgPerfil"/>
 </qualifiedTypeNameHistroy>
