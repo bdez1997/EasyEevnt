@@ -8,6 +8,8 @@
     <fullyQualifiedTypeName name="view.DlgDescripcionPersonas"/>
     <fullyQualifiedTypeName name="view.DlgEditarPersona"/>
     <fullyQualifiedTypeName name="view.FrmLogin"/>
+    <fullyQualifiedTypeName name="controller.CtrlPersonas"/>
+    <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
     <fullyQualifiedTypeName name="view.DlgPerfil"/>
     <fullyQualifiedTypeName name="controller.CtrlLogin"/>
 </qualifiedTypeNameHistroy>
