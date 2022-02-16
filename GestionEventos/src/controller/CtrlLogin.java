@@ -18,7 +18,7 @@ public class CtrlLogin {
 	
 	static String pass = new String(view.FrmLogin.passwordField.getPassword());
 	private static final String URI = "http://proyectogestioneventos.atwebpages.com/php/sel-user.php?user="+view.FrmLogin.txtUser.getText()+"&contrasena="+pass;
-	
+	public static String sDni;
 	private static String readAll(Reader rd) throws IOException {
 	    StringBuilder sb = new StringBuilder();
 	    int cp;
@@ -33,6 +33,7 @@ public class CtrlLogin {
        
        	JSONObject jsonObj = new JSONObject();
         String sUser = null ;
+        
         String sContrasena = null;
         
         
@@ -40,6 +41,7 @@ public class CtrlLogin {
 			jsonObj=readJsonFromUrl(URI);
 			sUser = jsonObj.getString("Username");
 			sContrasena = jsonObj.getString("Contrasena");
+			sDni=jsonObj.getString("DNI");
 			System.out.println(sUser);
 		} catch (JSONException | IOException e) {
 			// TODO Auto-generated catch block
