@@ -53,7 +53,7 @@ public class CtrlPerfil {
 			url = URI + "upd-persona.php?dni=" + controller.CtrlLogin.sDni + "&nombre="
 					+ view.DlgPerfil.txtNombreP.getText() + "&apellidos="
 					+ view.DlgPerfil.txtApellidosP.getText() + "&username="
-					+ view.DlgPerfil.txtUserP.getText() + "&contrasena=" + view.DlgPerfil.txtPassP.getText()
+					+ view.DlgPerfil.txtUserP.getText() + "&password=" + view.DlgPerfil.txtPassP.getText()
 					+ "&correo=" + view.DlgPerfil.txtCorreoP.getText() + "&telefono="
 					+ view.DlgPerfil.txtTelefonoP.getText() + "&rol=" + view.DlgPerfil.txtRolP.getText()
 					+ "&informacion=" + view.DlgPerfil.txtInfoP.getText();
