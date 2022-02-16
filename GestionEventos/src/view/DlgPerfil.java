@@ -17,14 +17,17 @@ import javax.swing.JTextArea;
 public class DlgPerfil extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JTextField txtNombre;
-	private JTextField txtApellidos;
-	private JTextField txtTelefono;
-	private JTextField txtUser;
-	private JTextField txtPass;
-	private JTextField txtCorreo;
-	private JTextField txtDni;
-	private JTextField txtRol;
+	public static JTextField txtNombreP;
+	public static  JTextField txtApellidosP;
+	public static  JTextField txtTelefonoP;
+	public static  JTextField txtUserP;
+	public static  JTextField txtPassP;
+	public static  JTextField txtCorreoP;
+	public static  JTextField txtDniP;
+	public static  JTextField txtRolP;
+	public static JTextArea txtInfoP = new JTextArea();
+	
+	
  
 	
 	public DlgPerfil() {
@@ -40,30 +43,30 @@ public class DlgPerfil extends JDialog {
 		lblNombre.setBounds(33, 74, 57, 17);
 		contentPanel.add(lblNombre);
 		
-		txtNombre = new JTextField();
-		txtNombre.setColumns(10);
-		txtNombre.setBounds(128, 73, 122, 21);
-		contentPanel.add(txtNombre);
+		txtNombreP = new JTextField();
+		txtNombreP.setColumns(10);
+		txtNombreP.setBounds(128, 73, 122, 21);
+		contentPanel.add(txtNombreP);
 		
 		JLabel lblApellidos = new JLabel("Apellidos");
 		lblApellidos.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblApellidos.setBounds(33, 112, 68, 17);
 		contentPanel.add(lblApellidos);
 		
-		txtApellidos = new JTextField();
-		txtApellidos.setColumns(10);
-		txtApellidos.setBounds(128, 111, 122, 21);
-		contentPanel.add(txtApellidos);
+		txtApellidosP = new JTextField();
+		txtApellidosP.setColumns(10);
+		txtApellidosP.setBounds(128, 111, 122, 21);
+		contentPanel.add(txtApellidosP);
 		
 		JLabel lblTelefono = new JLabel("Telefono");
 		lblTelefono.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblTelefono.setBounds(33, 154, 57, 17);
 		contentPanel.add(lblTelefono);
 		
-		txtTelefono = new JTextField();
-		txtTelefono.setColumns(10);
-		txtTelefono.setBounds(128, 153, 122, 21);
-		contentPanel.add(txtTelefono);
+		txtTelefonoP = new JTextField();
+		txtTelefonoP.setColumns(10);
+		txtTelefonoP.setBounds(128, 153, 122, 21);
+		contentPanel.add(txtTelefonoP);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.BLACK);
@@ -80,35 +83,35 @@ public class DlgPerfil extends JDialog {
 		lblUser.setBounds(307, 74, 68, 17);
 		contentPanel.add(lblUser);
 		
-		txtUser = new JTextField();
-		txtUser.setColumns(10);
-		txtUser.setBounds(414, 73, 122, 21);
-		contentPanel.add(txtUser);
+		txtUserP = new JTextField();
+		txtUserP.setColumns(10);
+		txtUserP.setBounds(414, 73, 122, 21);
+		contentPanel.add(txtUserP);
 		
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblPassword.setBounds(307, 112, 68, 17);
 		contentPanel.add(lblPassword);
 		
-		txtPass = new JTextField();
-		txtPass.setColumns(10);
-		txtPass.setBounds(414, 111, 122, 21);
-		contentPanel.add(txtPass);
+		txtPassP = new JTextField();
+		txtPassP.setColumns(10);
+		txtPassP.setBounds(414, 111, 122, 21);
+		contentPanel.add(txtPassP);
 		
 		JLabel lblCorreo = new JLabel("Correo");
 		lblCorreo.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblCorreo.setBounds(307, 154, 68, 17);
 		contentPanel.add(lblCorreo);
 		
-		txtCorreo = new JTextField();
-		txtCorreo.setColumns(10);
-		txtCorreo.setBounds(414, 153, 122, 21);
-		contentPanel.add(txtCorreo);
+		txtCorreoP = new JTextField();
+		txtCorreoP.setColumns(10);
+		txtCorreoP.setBounds(414, 153, 122, 21);
+		contentPanel.add(txtCorreoP);
 		
-		txtDni = new JTextField();
-		txtDni.setColumns(10);
-		txtDni.setBounds(128, 205, 122, 21);
-		contentPanel.add(txtDni);
+		txtDniP = new JTextField();
+		txtDniP.setColumns(10);
+		txtDniP.setBounds(128, 205, 122, 21);
+		contentPanel.add(txtDniP);
 		
 		JLabel lblDni = new JLabel("DNI");
 		lblDni.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -120,19 +123,19 @@ public class DlgPerfil extends JDialog {
 		lblRol.setBounds(307, 206, 57, 17);
 		contentPanel.add(lblRol);
 		
-		txtRol = new JTextField();
-		txtRol.setColumns(10);
-		txtRol.setBounds(414, 205, 122, 21);
-		contentPanel.add(txtRol);
+		txtRolP = new JTextField();
+		txtRolP.setColumns(10);
+		txtRolP.setBounds(414, 205, 122, 21);
+		contentPanel.add(txtRolP);
 		
-		JLabel lblInformacion = new JLabel("Informaci\u00F3n Adiccional");
+		JLabel lblInformacion = new JLabel("Informacion Adiccional");
 		lblInformacion.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblInformacion.setBounds(33, 263, 171, 17);
 		contentPanel.add(lblInformacion);
 		
-		JTextArea txtInformacion = new JTextArea();
-		txtInformacion.setBounds(33, 290, 503, 81);
-		contentPanel.add(txtInformacion);
+		
+		txtInfoP.setBounds(33, 290, 503, 81);
+		contentPanel.add(txtInfoP);
 		
 		JButton btnCancelar = new JButton("CANCELAR");
 		btnCancelar.setForeground(new Color(255, 255, 255));
@@ -141,6 +144,10 @@ public class DlgPerfil extends JDialog {
 		btnCancelar.setBounds(381, 406, 122, 33);
 		contentPanel.add(btnCancelar);
 		
+		btnCancelar.addActionListener(e -> {
+			dispose();
+		});
+		
 		JButton btnEditar = new JButton("EDITAR");
 		btnEditar.setForeground(new Color(255, 255, 255));
 		btnEditar.setBackground(new Color(65, 105, 225));
@@ -148,15 +155,15 @@ public class DlgPerfil extends JDialog {
 		btnEditar.setBounds(62, 406, 122, 33);
 		contentPanel.add(btnEditar);
 		
-		txtNombre.setEditable(false);
-		txtApellidos.setEditable(false);
-		txtDni.setEditable(false);
-		txtTelefono.setEditable(false);
-		txtCorreo.setEditable(false);
-		txtUser.setEditable(false);
-		txtPass.setEditable(false);
-		txtInformacion.setEditable(false);
-		txtRol.setEditable(false);
+		txtNombreP.setEditable(false);
+		txtApellidosP.setEditable(false);
+		txtDniP.setEditable(false);
+		txtTelefonoP.setEditable(false);
+		txtCorreoP.setEditable(false);
+		txtUserP.setEditable(false);
+		txtPassP.setEditable(false);
+txtInfoP.setEditable(false);
+		txtRolP.setEditable(false);
 		
 		JButton btnGuardar = new JButton("GUARDAR");
 		btnGuardar.setForeground(new Color(255, 255, 255));
@@ -169,18 +176,20 @@ public class DlgPerfil extends JDialog {
 		
 		btnGuardar.addActionListener(e -> {
 			
+			controller.CtrlPerfil.updPersona();
+			dispose();
 		});
 		
 		btnEditar.addActionListener(e -> {
-			txtNombre.setEditable(true);
-			txtApellidos.setEditable(true);
-			txtDni.setEditable(true);
-			txtTelefono.setEditable(true);
-			txtCorreo.setEditable(true);
-			txtUser.setEditable(true);
-			txtPass.setEditable(true);
-			txtInformacion.setEditable(true);
-			txtRol.setEditable(true);
+			txtNombreP.setEditable(true);
+			txtApellidosP.setEditable(true);
+			txtDniP.setEditable(true);
+			txtTelefonoP.setEditable(true);
+			txtCorreoP.setEditable(true);
+			txtUserP.setEditable(true);
+			txtPassP.setEditable(true);
+			txtInfoP.setEditable(true);
+			txtRolP.setEditable(true);
 			btnGuardar.setVisible(true);
 		});
 		

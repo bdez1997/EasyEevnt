@@ -40,7 +40,7 @@ public class CtrlLogin {
 			jsonObj=readJsonFromUrl(URI);
 			sUser = jsonObj.getString("Username");
 			sContrasena = jsonObj.getString("Contrasena");
-			System.out.println(sUser);
+			
 		} catch (JSONException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
