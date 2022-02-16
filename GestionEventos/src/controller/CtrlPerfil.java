@@ -59,6 +59,7 @@ public class CtrlPerfil {
 					+ "&informacion=" + view.DlgPerfil.txtInfoP.getText();
 
 			sResultado = url.replace(" ", "%20");
+			System.out.println(sResultado);
 			persona = peticionhttp(sResultado);
 
 		} catch (Exception e) {
