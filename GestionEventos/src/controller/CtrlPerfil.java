@@ -50,7 +50,7 @@ public class CtrlPerfil {
 
 		try {
 
-			url = URI + "upd-persona.php?dni=" + view.DlgPerfil.txtDniP.getText() + "&nombre="
+			url = URI + "upd-persona.php?dni=" + controller.CtrlLogin.sDni + "&nombre="
 					+ view.DlgPerfil.txtNombreP.getText() + "&apellidos="
 					+ view.DlgPerfil.txtApellidosP.getText() + "&username="
 					+ view.DlgPerfil.txtUserP.getText() + "&contrasena=" + view.DlgPerfil.txtPassP.getText()
@@ -59,6 +59,7 @@ public class CtrlPerfil {
 					+ "&informacion=" + view.DlgPerfil.txtInfoP.getText();
 
 			sResultado = url.replace(" ", "%20");
+			System.out.println(sResultado);
 			persona = peticionhttp(sResultado);
 
 		} catch (Exception e) {
