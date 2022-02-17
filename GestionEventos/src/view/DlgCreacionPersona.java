@@ -43,6 +43,7 @@ public class DlgCreacionPersona extends JDialog {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		setIconImage(Toolkit.getDefaultToolkit().createImage("img/easyeventgrande.png"));
+		setTitle("Añadir usuario");
 		contentPanel.setLayout(null);
 		crearComponentes();
 		setVisible(true);

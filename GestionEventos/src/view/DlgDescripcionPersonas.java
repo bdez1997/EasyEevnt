@@ -114,7 +114,9 @@ public class DlgDescripcionPersonas extends JDialog {
 				btnAddUsuario.setBackground(new Color(65, 105, 225));
 				btnAddUsuario.setFont(new Font("Arial", Font.BOLD, 12));
 				
-			
+				btnAddUsuario.addActionListener( e -> {
+					new DlgCreacionPersona();
+				});
 		
 				
 		tablePersona.addMouseListener(new MouseAdapter() {
