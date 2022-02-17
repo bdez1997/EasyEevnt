@@ -40,7 +40,8 @@ public class ValoracionActivity extends AppCompatActivity {
         btnEnviar.setOnClickListener(view -> {
 
             String dni = Store.miPersona.getsDni();
-            String url = "http://proyectogestioneventos.atwebpages.com/php/upd-personaevento.php?dni=" + dni;
+            String url = "http://proyectogestioneventos.atwebpages.com/php/upd-personaevento.php?dni="  +
+            "$valoracion=" + txtComentario.getText() + dni;
             String sResultado = url.replace(" ", "%20");
             Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, sResultado,
                     s -> {

@@ -89,7 +89,7 @@ public class DlgDescripcionEmpresa extends JDialog {
 		mntmUpdate = new JMenuItem("Actualizar");
 
 		mntmUpdate.addActionListener(e -> {
-			new DlgEditarPersona();
+			new DlgEditarEmpresa();
 		});
 
 		popupMenu.add(mntmUpdate);
@@ -115,7 +115,7 @@ public class DlgDescripcionEmpresa extends JDialog {
 				}
 			}
 		});
-		/*
+		
 
 		mntmUpdate.addActionListener(e -> {
 
@@ -126,7 +126,7 @@ public class DlgDescripcionEmpresa extends JDialog {
 
 			controller.CtrlEmpresa.updateEmpresa();
 		});
-		*/
+		
 
 	}
 }

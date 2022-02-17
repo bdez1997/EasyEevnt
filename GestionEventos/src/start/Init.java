@@ -10,7 +10,8 @@ public class Init {
 
 	public static void main(String[] args) {
 		
-	new FrmLogin();
+	//new FrmLogin();
+		new FrmPrincipal();
 
 		
 	}
