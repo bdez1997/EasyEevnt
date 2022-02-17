@@ -8,6 +8,8 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Font;
+import java.awt.Toolkit;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Color;
@@ -41,6 +43,7 @@ public class DlgEditarPersona extends JDialog {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
+		setIconImage(Toolkit.getDefaultToolkit().createImage("img/easyeventgrande.png"));
 		crearComponentes();
 		setVisible(true);
 		

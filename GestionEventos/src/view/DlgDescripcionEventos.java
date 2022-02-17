@@ -2,7 +2,7 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.Image;
-
+import java.awt.Toolkit;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -48,6 +48,7 @@ public class DlgDescripcionEventos extends JDialog {
 
 	public DlgDescripcionEventos() {
 		setBackground(new Color(230, 230, 250));
+		setIconImage(Toolkit.getDefaultToolkit().createImage("img/easyeventgrande.png"));
 		setBounds(500, 200, 300, 200);
 		setTitle("Eventos");
 		getContentPane().setLayout(null);

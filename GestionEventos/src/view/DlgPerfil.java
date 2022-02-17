@@ -10,6 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import java.awt.Font;
+import java.awt.Toolkit;
+
 import javax.swing.JSeparator;
 import java.awt.Color;
 import javax.swing.JTextArea;
@@ -36,6 +38,7 @@ public class DlgPerfil extends JDialog {
 		contentPanel.setBackground(new Color(230, 230, 250));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		setIconImage(Toolkit.getDefaultToolkit().createImage("img/easyeventgrande.png"));
 		contentPanel.setLayout(null);
 		
 		JLabel lblNombre = new JLabel("Nombre");
