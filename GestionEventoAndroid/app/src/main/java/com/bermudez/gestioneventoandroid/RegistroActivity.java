@@ -49,14 +49,16 @@ public class RegistroActivity extends AppCompatActivity {
         String sResultado=sUrl.replace(" ","%20");
 
         if(txtDni.getText().equals("")
-                &&txtNombre.getText().equals("")
-                &&txtApellidos.getText().equals("")
-                &&txtUser.getText().equals("")
-                &&txtDni.getText().equals("")
-                &&txtPass.getText().equals("")
-                &&txtEmail.getText().equals("")
-                &&txtTelefono.getText().equals("")
+                ||txtNombre.getText().equals("")
+                ||txtApellidos.getText().equals("")
+                ||txtUser.getText().equals("")
+                ||txtPass.getText().equals("")
+                ||txtEmail.getText().equals("")
+                ||txtTelefono.getText().equals("")
                 ){
+                Toast.makeText(getApplicationContext(), "Todo excepto la info es un campo obligatorio", Toast.LENGTH_SHORT).show();
+
+        }else{
             Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, sResultado,
                     s -> {
                         Toast.makeText(getApplicationContext(), "Usuraio registrado con éxito", Toast.LENGTH_SHORT).show();
@@ -67,8 +69,6 @@ public class RegistroActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Algo ha ido mal", Toast.LENGTH_SHORT).show();
                     }
             ));
-        }else{
-            Toast.makeText(getApplicationContext(), "Todo excepto la info es un campo obligatorio", Toast.LENGTH_SHORT).show();
         }
 
 
