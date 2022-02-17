@@ -28,7 +28,7 @@ public class ValoracionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_valoracion);
 
-        RatingBar ratingBar = (RatingBar) findViewById(R.id.rtValoracion);
+        RatingBar ratingBar = findViewById(R.id.rtValoracion);
         ratingBar.getOnRatingBarChangeListener().onRatingChanged(ratingBar, 0, true);
         ratingBar.getRating();
 
@@ -56,7 +56,7 @@ public class ValoracionActivity extends AppCompatActivity {
 
 
         Toast.makeText(getApplicationContext(), "Gracias por su valoración", Toast.LENGTH_LONG).show();
-        onDestroy();
+        finish();
     }
 
 }
