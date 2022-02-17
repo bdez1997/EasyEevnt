@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -46,6 +47,7 @@ public class DlgCreacionEventos extends JDialog {
 		contentPanel.setBackground(new Color(230, 230, 250));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		setIconImage(Toolkit.getDefaultToolkit().createImage("img/easyeventgrande.png"));
 		contentPanel.setLayout(null);
 		crearComponentes();
 		setVisible(true);

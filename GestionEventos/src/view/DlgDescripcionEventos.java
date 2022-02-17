@@ -2,7 +2,7 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.Image;
-
+import java.awt.Toolkit;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -29,7 +29,7 @@ import javax.swing.JPopupMenu;
 public class DlgDescripcionEventos extends JDialog {
 
 	private JPanel contentPane;
-	private JButton btnAnnadirUsuario;
+	private JButton btnAddEvento;
 	private JScrollPane scrollPane;
 	public static JTable tableEventos;
 	private JPopupMenu popupMenu;
@@ -48,6 +48,7 @@ public class DlgDescripcionEventos extends JDialog {
 
 	public DlgDescripcionEventos() {
 		setBackground(new Color(230, 230, 250));
+		setIconImage(Toolkit.getDefaultToolkit().createImage("img/easyeventgrande.png"));
 		setBounds(500, 200, 300, 200);
 		setTitle("Eventos");
 		getContentPane().setLayout(null);
@@ -70,11 +71,15 @@ public class DlgDescripcionEventos extends JDialog {
 		contentPane.add(panel, BorderLayout.SOUTH);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
-		btnAnnadirUsuario = new JButton("A\u00D1ADIR");
-		btnAnnadirUsuario.setForeground(new Color(255, 255, 255));
-		btnAnnadirUsuario.setBackground(new Color(65, 105, 225));
-		btnAnnadirUsuario.setFont(new Font("Arial", Font.BOLD, 12));
-		panel.add(btnAnnadirUsuario);
+		btnAddEvento = new JButton("Add");
+		btnAddEvento.setForeground(new Color(255, 255, 255));
+		btnAddEvento.setBackground(new Color(65, 105, 225));
+		btnAddEvento.setFont(new Font("Arial", Font.BOLD, 12));
+		panel.add(btnAddEvento);
+		
+		btnAddEvento.addActionListener( e -> {
+			new DlgCreacionEventos();
+		});
 
 		tableEventos = new JTable();
 

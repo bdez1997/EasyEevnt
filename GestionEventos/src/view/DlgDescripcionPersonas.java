@@ -12,6 +12,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.Toolkit;
+
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JList;
@@ -49,6 +51,7 @@ public class DlgDescripcionPersonas extends JDialog {
 
 	public DlgDescripcionPersonas() {
 		setBackground(new Color(230, 230, 250));
+		setIconImage(Toolkit.getDefaultToolkit().createImage("img/easyeventgrande.png"));
 		setBounds(100, 100, 582, 498);
 		setTitle("Usuarios");
 		getContentPane().setLayout(null);
@@ -111,7 +114,9 @@ public class DlgDescripcionPersonas extends JDialog {
 				btnAddUsuario.setBackground(new Color(65, 105, 225));
 				btnAddUsuario.setFont(new Font("Arial", Font.BOLD, 12));
 				
-			
+				btnAddUsuario.addActionListener( e -> {
+					new DlgCreacionPersona();
+				});
 		
 				
 		tablePersona.addMouseListener(new MouseAdapter() {

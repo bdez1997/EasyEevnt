@@ -14,6 +14,8 @@ import javax.swing.JDialog;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.Toolkit;
+
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
 import javax.swing.ListSelectionModel;
@@ -39,6 +41,7 @@ public class FrmUsuariosRegistrados extends JDialog {
 		setTitle("Lista de usuarios");
 		getContentPane().setLayout(null);	
 		crearComponentes();
+		setIconImage(Toolkit.getDefaultToolkit().createImage("img/easyeventgrande.png"));
 		setVisible(true);
 	}
 
