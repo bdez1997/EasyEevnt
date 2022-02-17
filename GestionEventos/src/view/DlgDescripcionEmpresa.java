@@ -43,6 +43,9 @@ public class DlgDescripcionEmpresa extends JDialog {
 	public static String correo;
 
 	public DlgDescripcionEmpresa() {
+		this.setResizable(false);
+		setModal(true);
+
 		setBackground(new Color(230, 230, 250));
 		setBounds(100, 100, 582, 498);
 		setTitle("Usuarios");

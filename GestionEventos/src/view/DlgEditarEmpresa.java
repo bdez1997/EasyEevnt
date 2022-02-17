@@ -29,7 +29,8 @@ public class DlgEditarEmpresa extends JDialog {
 
 
 	public DlgEditarEmpresa() {
-		
+		setModal(true);
+		setResizable(false);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 421, 428);
 		getContentPane().setLayout(new BorderLayout());

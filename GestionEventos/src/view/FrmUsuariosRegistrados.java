@@ -37,6 +37,9 @@ public class FrmUsuariosRegistrados extends JDialog {
 
 	
 	public FrmUsuariosRegistrados() {
+		this.setResizable(false);
+		setModal(true);
+
 		setBounds (500,200,600,500);
 		setTitle("Lista de usuarios");
 		getContentPane().setLayout(null);	

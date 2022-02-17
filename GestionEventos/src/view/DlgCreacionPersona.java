@@ -37,6 +37,9 @@ public class DlgCreacionPersona extends JDialog {
 	
 	
 	public DlgCreacionPersona() {
+		this.setResizable(false);
+		setModal(true);
+
 		setBounds(100, 100, 582, 498);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(230, 230, 250));

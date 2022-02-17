@@ -41,6 +41,8 @@ public class DlgCreacionEventos extends JDialog {
 	String sRuta="";
 
 	public DlgCreacionEventos() {
+		this.setResizable(false);
+		setModal(true);
 		setTitle("Creación de eventos");
 		setBounds(100, 100, 611, 626);
 		getContentPane().setLayout(new BorderLayout());

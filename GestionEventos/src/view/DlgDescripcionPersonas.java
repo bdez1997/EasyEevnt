@@ -50,6 +50,9 @@ public class DlgDescripcionPersonas extends JDialog {
 	public static String sInformacion;
 
 	public DlgDescripcionPersonas() {
+		this.setResizable(false);
+		setModal(true);
+
 		setBackground(new Color(230, 230, 250));
 		setIconImage(Toolkit.getDefaultToolkit().createImage("img/easyeventgrande.png"));
 		setBounds(100, 100, 582, 498);

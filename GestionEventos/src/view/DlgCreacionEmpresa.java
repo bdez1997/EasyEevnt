@@ -29,7 +29,8 @@ public class DlgCreacionEmpresa extends JDialog {
 
 
 	public DlgCreacionEmpresa() {
-		
+		this.setResizable(false);
+		setModal(true);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 421, 428);
 		getContentPane().setLayout(new BorderLayout());

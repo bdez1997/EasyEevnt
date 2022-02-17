@@ -45,6 +45,9 @@ public class DlgEditarEventos extends JDialog {
 	String sRuta="";
 
 	public DlgEditarEventos() {
+		setModal(true);
+
+		this.setResizable(false);
 		setTitle("Editar eventos");
 		setBounds(100, 100, 611, 626);
 		getContentPane().setLayout(new BorderLayout());

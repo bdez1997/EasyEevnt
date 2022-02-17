@@ -23,6 +23,7 @@ public class FrmLogin extends JFrame {
 	public static JPasswordField passwordField;
 
 	public FrmLogin() {
+		this.setResizable(false);
 		setTitle("Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 357, 360);

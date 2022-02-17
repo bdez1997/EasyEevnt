@@ -26,6 +26,7 @@ public class FrmPrincipal extends JFrame {
 	
 
 	public FrmPrincipal() {
+		this.setResizable(false);
 		setTitle("EasyEvents");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
