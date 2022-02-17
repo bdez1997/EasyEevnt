@@ -24,50 +24,50 @@ import com.bermudez.gestioneventoandroid.fragments.PrincipalFragment;
 
 public class ValoracionActivity extends AppCompatActivity {
 
-    Button btnEnviar;
-    RatingBar rtValoracion;
 
+    RatingBar rtValoracion;
+    float iValoracion;
+    EditText txtComentario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_valoracion);
 
-<<<<<<< Updated upstream
-        RatingBar ratingBar = findViewById(R.id.rtValoracion);
-        ratingBar.getOnRatingBarChangeListener().onRatingChanged(ratingBar, 0, true);
-        ratingBar.getRating();
-=======
-        RatingBar simpleRatingBar = findViewById(R.id.rtValoracion);
-        Float ratingNumber = simpleRatingBar.getRating();
->>>>>>> Stashed changes
-
-        EditText txtComentario = findViewById(R.id.txtComentario);
-        txtComentario.getText();
+        rtValoracion = findViewById(R.id.rtValoracion);
+        rtValoracion.setOnClickListener(e -> {
 
 
-        findViewById(R.id.btnEnviar);
-        btnEnviar.setOnClickListener(view -> {
+        });
 
-            String dni = Store.miPersona.getsDni();
-            String url = "http://proyectogestioneventos.atwebpages.com/php/upd-personaevento.php?dni=" +
-                    "$puntuacion=" + rtValoracion.getRating()+
-                    "$valoracion=" + txtComentario.getText() + dni;
+
+        txtComentario = findViewById(R.id.txtComentario);
+
+        findViewById(R.id.btnEnviar).setOnClickListener(view -> {
+
+            int eventoID = Store.lstEventosAsistidos.get(Store.iEventoSelected).getIdEvento();
+            String url = "http://proyectogestioneventos.atwebpages.com/php/ins-valoracion.php?eventoid="
+                    + eventoID +
+                    "&puntuacion=" + rtValoracion.getRating() +
+                    "&valoracion=" + txtComentario.getText() +
+                    "&personadni=" + Store.miPersona.getsDni();
             String sResultado = url.replace(" ", "%20");
             Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, sResultado,
                     s -> {
+                        Log.i("Valoracion", rtValoracion.getRating() + "");
                         Toast.makeText(getApplicationContext(), "Se ha enviado su valoracion", Toast.LENGTH_SHORT).show();
                     },
 
                     n -> {
+
                         Toast.makeText(getApplicationContext(), "No se ha podido podido registrar su valoracion", Toast.LENGTH_SHORT).show();
                     }
             ));
+            Toast.makeText(getApplicationContext(), "Gracias por su valoración", Toast.LENGTH_LONG).show();
+            finish();
         });
 
 
-        Toast.makeText(getApplicationContext(), "Gracias por su valoración", Toast.LENGTH_LONG).show();
-        finish();
     }
-    
+
 }

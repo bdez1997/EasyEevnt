@@ -16,6 +16,7 @@ public class Evento implements IMaxCaracteres{
     private String Direccion;
 
 
+
     public Evento(String Nombre){
         setNombre(Nombre);
     }

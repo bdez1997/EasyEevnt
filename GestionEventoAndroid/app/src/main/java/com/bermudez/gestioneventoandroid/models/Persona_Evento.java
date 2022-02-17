@@ -7,6 +7,7 @@ public class Persona_Evento implements IMaxCaracteres{
     private Persona oPersona;
     private Evento oEvento;
     private String sValoracion;
+    private int iPuntuacion;
 
     public String getsValoracion() {
         return sValoracion;
@@ -27,6 +28,31 @@ public class Persona_Evento implements IMaxCaracteres{
         oPersona.setsDni(null);
         oEvento.setIdEvento(0);
         setsValoracion(sValoracion);
+    }
+
+
+    public Persona getoPersona() {
+        return oPersona;
+    }
+
+    public void setoPersona(Persona oPersona) {
+        this.oPersona = oPersona;
+    }
+
+    public Evento getoEvento() {
+        return oEvento;
+    }
+
+    public void setoEvento(Evento oEvento) {
+        this.oEvento = oEvento;
+    }
+
+    public int getiPuntuacion() {
+        return iPuntuacion;
+    }
+
+    public void setiPuntuacion(int iPuntuacion) {
+        this.iPuntuacion = iPuntuacion;
     }
 
     @Override

@@ -26,7 +26,9 @@
         </activity>
 
 
-
+        <activity
+            android:name=".ValoracionActivity"
+            android:exported="true"/>
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
