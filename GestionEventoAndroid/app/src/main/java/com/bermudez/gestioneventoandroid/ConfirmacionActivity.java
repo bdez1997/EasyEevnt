@@ -32,8 +32,6 @@ public class ConfirmacionActivity extends AppCompatActivity {
         View cldConfir = findViewById(R.id.cldConfir);
         getString(cldConfir.getId()).toString();
 
-
-
         findViewById(R.id.btnAceptar).setOnClickListener(e -> {
             String dni = Store.miPersona.getsDni();
             int id = PrincipalFragment.id;
@@ -51,7 +49,7 @@ public class ConfirmacionActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.btnCancelar).setOnClickListener(e ->{
-            onDestroy();
+            finish();
         });
 
     }
