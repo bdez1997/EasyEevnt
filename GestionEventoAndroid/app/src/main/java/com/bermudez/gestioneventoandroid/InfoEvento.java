@@ -61,6 +61,7 @@ public class InfoEvento extends AppCompatActivity {
             Volley.newRequestQueue(this).add(new StringRequest(Request.Method.GET, sResultado,
                     s -> {
                         Toast.makeText(getApplicationContext(), "Se ha dado de alta correctamente", Toast.LENGTH_SHORT).show();
+
                        /*
                         Intent i = new Intent(this, ConfirmacionActivity.class);
                         startActivity(i);
