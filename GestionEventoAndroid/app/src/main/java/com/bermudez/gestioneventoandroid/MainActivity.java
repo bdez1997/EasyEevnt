@@ -43,16 +43,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         openFragment(new PrincipalFragment());
 
-        if(Store.login){
-            Toast.makeText(this,"Usuario logueado con éxito",Toast.LENGTH_SHORT).show();
-        }else{
-            Log.i("HOLA","VAYA por dios");
+        if(!Store.login){
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
 
-
-          sUserHeader = getIntent().getStringExtra("UserName");
+        sUserHeader = getIntent().getStringExtra("UserName");
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
