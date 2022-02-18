@@ -5,11 +5,14 @@
     <fullyQualifiedTypeName name="javax.net.ssl.HttpsURLConnection"/>
     <fullyQualifiedTypeName name="org.json.JSONObject"/>
     <fullyQualifiedTypeName name="view.DlgDescripcionEventos"/>
-    <fullyQualifiedTypeName name="view.DlgDescripcionPersonas"/>
     <fullyQualifiedTypeName name="view.DlgEditarPersona"/>
     <fullyQualifiedTypeName name="view.FrmLogin"/>
     <fullyQualifiedTypeName name="controller.CtrlPersonas"/>
     <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
     <fullyQualifiedTypeName name="view.DlgPerfil"/>
     <fullyQualifiedTypeName name="controller.CtrlLogin"/>
+    <fullyQualifiedTypeName name="view.DlgPersonaEvento"/>
+    <fullyQualifiedTypeName name="controller.CtrlPersonaEvento"/>
+    <fullyQualifiedTypeName name="model.PersonaEvento"/>
+    <fullyQualifiedTypeName name="view.DlgDescripcionPersonas"/>
 </qualifiedTypeNameHistroy>

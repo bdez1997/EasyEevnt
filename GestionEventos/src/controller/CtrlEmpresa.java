@@ -43,8 +43,7 @@ public class CtrlEmpresa {
 
 	}
 
-	
-	
+
 
 	private static String peticionhttp(String urlWebService) throws Exception {
 		String sLinea;

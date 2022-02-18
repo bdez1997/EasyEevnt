@@ -95,6 +95,14 @@ public class FrmPrincipal extends JFrame {
 			mntmEmpresas.setFont(new Font("Arial", Font.PLAIN, 12));
 			mnListar.add(mntmEmpresas);
 			
+			JMenuItem mntmValoraciones = new JMenuItem("Valoraciones");
+			mntmValoraciones.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					new DlgPersonaEvento();
+				}
+			});
+			mnListar.add(mntmValoraciones);
+			
 		
 		
 		JMenu mnUsuario = new JMenu("Usuario");

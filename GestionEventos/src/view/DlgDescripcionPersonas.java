@@ -118,7 +118,7 @@ public class DlgDescripcionPersonas extends JDialog {
 				btnAddUsuario.setFont(new Font("Arial", Font.BOLD, 12));
 				
 				btnAddUsuario.addActionListener( e -> {
-					new DlgCreacionPersona();
+					new DlgEditarPersona();
 				});
 		
 				
@@ -137,7 +137,7 @@ public class DlgDescripcionPersonas extends JDialog {
 			}
 		});
 
-		/*
+		
 		mntmUpdate.addActionListener(e ->{
 				
 				sDni = tablePersona.getValueAt(tablePersona.getSelectedRow(), 0).toString();
@@ -153,7 +153,7 @@ public class DlgDescripcionPersonas extends JDialog {
 				controller.CtrlPersonas.updPersona();
 		});
 		
-		*/
+		
 		
 		
 	}

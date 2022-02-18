@@ -64,7 +64,7 @@ public class FrmLogin extends JFrame {
 		lblNewLabel.setBounds(49, 169, 79, 14);
 		contentPane.add(lblNewLabel);
 
-		JButton btnLogin = new JButton("LOGGIN");
+		JButton btnLogin = new JButton("LOGIN");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(controller.CtrlLogin.Login()) {					

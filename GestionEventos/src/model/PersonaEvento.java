@@ -6,9 +6,66 @@ public class PersonaEvento implements IMaxCaracteres{
     private Persona oPersona;
     private Evento oEvento;
     private String sValoracion;
+    private float fPuntuacion;
+    private String sDni;
+    private int iEventoId;
+    
+    
+    
+    public PersonaEvento() {
+    	
+	}
+    
+    public PersonaEvento(String sDni, int iEventoId, String sValoracion, float fPuntuacion ) {
+    	
+    	setsDni(sDni);   
+    	setiEventoId(iEventoId);
+    	setsValoracion(sValoracion);
+    	setfPuntuacion(fPuntuacion);
+   	}
 
+	
+	public String getsDni() {
+		return sDni;
+	}
 
-    public String getsValoracion() {
+	public void setsDni(String sDni) {
+		this.sDni = sDni;
+	}
+
+	public int getiEventoId() {
+		return iEventoId;
+	}
+
+	public void setiEventoId(int iEventoId) {
+		this.iEventoId = iEventoId;
+	}
+
+	public Persona getoPersona() {
+		return oPersona;
+	}
+
+	public void setoPersona(Persona oPersona) {
+		this.oPersona = oPersona;
+	}
+
+	public Evento getoEvento() {
+		return oEvento;
+	}
+
+	public void setoEvento(Evento oEvento) {
+		this.oEvento = oEvento;
+	}
+
+	public float getfPuntuacion() {
+		return fPuntuacion;
+	}
+
+	public void setfPuntuacion(float fPuntuacion) {
+		this.fPuntuacion = fPuntuacion;
+	}
+
+	public String getsValoracion() {
         return sValoracion;
     }
 
@@ -18,16 +75,7 @@ public class PersonaEvento implements IMaxCaracteres{
         }
     }
     
-    public PersonaEvento(Persona oPersona, Evento oEvento) {
-    	oPersona.setsDni(null);
-    	oEvento.setIdEvento(0);
-    }
-    
-    public PersonaEvento(Persona oPersona, Evento oEvento, String sValoracion) {
-    	oPersona.setsDni(null);
-    	oEvento.setIdEvento(0);
-    	setsValoracion(sValoracion);
-    }
+   
 
 	@Override
 	public int hashCode() {
@@ -46,5 +94,14 @@ public class PersonaEvento implements IMaxCaracteres{
 		return Objects.equals(oEvento, other.oEvento) && Objects.equals(oPersona, other.oPersona)
 				&& Objects.equals(sValoracion, other.sValoracion);
 	}
+
+	@Override
+	public String toString() {
+		return "PersonaEvento [sValoracion=" + sValoracion
+				+ ", fPuntuacion=" + fPuntuacion + ", sDni=" + sDni + ", iEventoId=" + iEventoId + "]";
+	}
+
+	
+	
     
 }

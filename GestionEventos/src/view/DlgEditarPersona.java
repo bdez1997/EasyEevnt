@@ -124,6 +124,7 @@ public class DlgEditarPersona extends JDialog {
 		txtTelf = new JTextField();
 		txtTelf.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtTelf.setColumns(10);
+		txtTelf.setText(view.DlgDescripcionPersonas.sTelefono);
 		txtTelf.setBounds(106, 135, 106, 24);
 		panelDatos.add(txtTelf);
 		
@@ -140,11 +141,13 @@ public class DlgEditarPersona extends JDialog {
 		txtApellido = new JTextField();
 		txtApellido.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtApellido.setColumns(10);
+		txtApellido.setText(view.DlgDescripcionPersonas.sApellidosPersona);
 		txtApellido.setBounds(106, 94, 106, 24);
 		panelDatos.add(txtApellido);
 		
 		txtNombre = new JTextField();
 		txtNombre.setFont(new Font("Arial", Font.PLAIN, 12));
+		txtNombre.setText(view.DlgDescripcionPersonas.sNombrePersona);
 		txtNombre.setColumns(10);
 		txtNombre.setBounds(106, 57, 106, 24);
 		panelDatos.add(txtNombre);
@@ -152,18 +155,21 @@ public class DlgEditarPersona extends JDialog {
 		txtUsername = new JTextField();
 		txtUsername.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtUsername.setColumns(10);
+		txtUsername.setText(view.DlgDescripcionPersonas.sUsername);
 		txtUsername.setBounds(403, 56, 106, 24);
 		panelDatos.add(txtUsername);
 		
 		txtPass = new JPasswordField();
 		txtPass.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtPass.setColumns(10);
+		txtPass.setText(view.DlgDescripcionPersonas.sPass);
 		txtPass.setBounds(403, 93, 106, 24);
 		panelDatos.add(txtPass);
 		
 		txtCorreo = new JTextField();
 		txtCorreo.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtCorreo.setColumns(10);
+		txtCorreo.setText(view.DlgDescripcionPersonas.sCorreo);
 		txtCorreo.setBounds(403, 134, 106, 24);
 		panelDatos.add(txtCorreo);
 		
@@ -180,6 +186,7 @@ public class DlgEditarPersona extends JDialog {
 		txtRol = new JTextField();
 		txtRol.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtRol.setColumns(10);
+		txtRol.setText(view.DlgDescripcionPersonas.sRol);
 		txtRol.setBounds(403, 175, 106, 24);
 		panelDatos.add(txtRol);
 		
@@ -201,6 +208,7 @@ public class DlgEditarPersona extends JDialog {
 		txtDni = new JTextField();
 		txtDni.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtDni.setColumns(10);
+		txtDni.setText(view.DlgDescripcionPersonas.sDni);
 		txtDni.setBounds(106, 178, 106, 24);
 		panelDatos.add(txtDni);
 		

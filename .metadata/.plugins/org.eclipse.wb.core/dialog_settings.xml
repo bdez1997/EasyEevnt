@@ -33,4 +33,10 @@
 		<item key="width" value="682"/>
 		<item key="height" value="473"/>
 	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.models.table.TableModelDialog">
+		<item key="x" value="296"/>
+		<item key="y" value="88"/>
+		<item key="width" value="774"/>
+		<item key="height" value="551"/>
+	</section>
 </section>
