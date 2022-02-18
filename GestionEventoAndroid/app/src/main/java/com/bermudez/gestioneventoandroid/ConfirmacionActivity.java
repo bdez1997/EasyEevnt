@@ -29,10 +29,9 @@ public class ConfirmacionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmacion);
 
-        View cldConfir = findViewById(R.id.cldConfir);
-        getString(cldConfir.getId()).toString();
+        findViewById(R.id.cldConfir);
 
-        findViewById(R.id.btnAceptar).setOnClickListener(e -> {
+            findViewById(R.id.btnAceptar).setOnClickListener(e -> {
             String dni = Store.miPersona.getsDni();
             int id = PrincipalFragment.id;
             String url = "http://proyectogestioneventos.atwebpages.com/php/ins-personaevento.php?dni=" + dni + "&idevento=" + id;

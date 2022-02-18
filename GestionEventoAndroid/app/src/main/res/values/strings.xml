@@ -15,6 +15,14 @@
     <string name="btnAlta">Darse de alta</string>
     <string name="btnBaja">Darse de baja</string>
 
+    <!-- EMPRESA -->
+    <string name="nombreEmpresa">Nombre:</string>
+    <string name="nif">NIF:</string>
+    <string name="tlfnEmpresa">Telefono:</string>
+    <string name="emailEmpresa">Email:</string>
+    <string name="btnAddEmpresa">Registrar</string>
+
+
 
     <!-- INFORMACION PERSONA -->
     <string name="lblNombre">Nombre:</string>

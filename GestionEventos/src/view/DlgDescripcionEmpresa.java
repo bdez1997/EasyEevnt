@@ -103,6 +103,11 @@ public class DlgDescripcionEmpresa extends JDialog {
 		btnAddEmpresa.setForeground(new Color(255, 255, 255));
 		btnAddEmpresa.setBackground(new Color(65, 105, 225));
 		btnAddEmpresa.setFont(new Font("Arial", Font.BOLD, 12));
+		
+		btnAddEmpresa.addActionListener( e -> {
+			new DlgCreacionEmpresa();
+		});
+
 
 		tableEmpresa.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
