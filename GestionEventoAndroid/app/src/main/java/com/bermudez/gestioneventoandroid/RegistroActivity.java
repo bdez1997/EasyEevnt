@@ -48,13 +48,15 @@ public class RegistroActivity extends AppCompatActivity {
                 "&rol="+sPinnerRoles.getSelectedItem().toString() +"&informacion="+txtInformacion.getText();
         String sResultado=sUrl.replace(" ","%20");
 
-        if(txtDni.getText().equals("")
-                ||txtNombre.getText().equals("")
-                ||txtApellidos.getText().equals("")
-                ||txtUser.getText().equals("")
-                ||txtPass.getText().equals("")
-                ||txtEmail.getText().equals("")
-                ||txtTelefono.getText().equals("")
+
+        Log.i("QUE?", String.valueOf(txtApellidos.getText()));
+        if(String.valueOf(txtDni.getText()).equals("")
+                ||String.valueOf(txtNombre.getText()).equals("")
+                ||String.valueOf(txtApellidos.getText()).equals("")
+                ||String.valueOf(txtUser.getText()).equals("")
+                ||String.valueOf(txtPass.getText()).equals("")
+                ||String.valueOf(txtEmail.getText()).equals("")
+                ||String.valueOf(txtTelefono.getText()).equals("")
                 ){
                 Toast.makeText(getApplicationContext(), "Todo excepto la info es un campo obligatorio", Toast.LENGTH_SHORT).show();
 
