@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GestionEventoAndroid</string>
+    <string name="btnRegistro">Register</string>
+    <string name="txtRegistro">REGISTER</string>
+    <string name="valoracion">ASSESSMENT</string>
+    <string name="comentario">"Post a comment "</string>
+    <string name="fechaInicio">Start date:</string>
+    <string name="fechaFin">Ending date:</string>
+    <string name="direccion">Direction:</string>
+    <string name="btnAlta">report fit</string>
+    <string name="btnBaja">Drop out</string>
+    <string name="nombreEmpresa">Name:</string>
+    <string name="nif">NIF:</string>
+    <string name="tlfnEmpresa">Phone:</string>
+    <string name="emailEmpresa">E-mail:</string>
+    <string name="btnAddEmpresa">Register</string>
+    <string name="lblNombre">Name:</string>
+    <string name="lblUser">Username:</string>
+    <string name="lblEmail">E-mail:</string>
+    <string name="lblTlfn">Number:</string>
+    <string name="lblRol">Rol:</string>
+    <string name="lblInformacion">Additional Information:</string>
+    <string name="btnEditar">Edit</string>
+    <string name="txtPass">New Password...</string>
+    <string name="txtEmail">New Email...</string>
+    <string name="txtUser">New Username...</string>
+    <string name="txtTlfn">New Number...</string>
+    <string name="btnGuardar">Save</string>
+    <string name="txtNombre">Name</string>
+    <string name="txtDni">DNI</string>
+    <string name="txtApellidos">Surnames</string>
+    <string name="txtUsername">Username</string>
+    <string name="txtPassword">Password</string>
+    <string name="txtEmailRegistro">Email</string>
+    <string name="txtTlfnRegistro">Number</string>
+    <string name="btnCancelar">Cancel</string>
+    <string-array name="roles">
+        <item>Worker</item>
+        <item>Voluntary</item>
+        <item>Associated</item>
+        <item>Company</item>
+    </string-array>
+</resources>

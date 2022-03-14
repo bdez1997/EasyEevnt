@@ -27,6 +27,9 @@
 
 
         <activity
+            android:name=".ConfirmacionActivity"
+            android:exported="true"/>
+         <activity
             android:name=".ValoracionActivity"
             android:exported="true"/>
         <activity

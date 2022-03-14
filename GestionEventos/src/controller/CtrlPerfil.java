@@ -20,8 +20,6 @@ public class CtrlPerfil {
 	private static int numColumn;
 	private static final String URI = "http://proyectogestioneventos.atwebpages.com/php/";
 
-	
-
 	private static String peticionhttp(String urlWebService) throws Exception {
 		String sLinea;
 
@@ -40,9 +38,6 @@ public class CtrlPerfil {
 
 	}
 
-
-
-
 	public static void updPersona() {
 		String sResultado = "";
 		String persona;
@@ -51,11 +46,10 @@ public class CtrlPerfil {
 		try {
 
 			url = URI + "upd-persona.php?dni=" + controller.CtrlLogin.sDni + "&nombre="
-					+ view.DlgPerfil.txtNombreP.getText() + "&apellidos="
-					+ view.DlgPerfil.txtApellidosP.getText() + "&username="
-					+ view.DlgPerfil.txtUserP.getText() + "&password=" + view.DlgPerfil.txtPassP.getText()
-					+ "&correo=" + view.DlgPerfil.txtCorreoP.getText() + "&telefono="
-					+ view.DlgPerfil.txtTelefonoP.getText() + "&rol=" + view.DlgPerfil.txtRolP.getText()
+					+ view.DlgPerfil.txtNombreP.getText() + "&apellidos=" + view.DlgPerfil.txtApellidosP.getText()
+					+ "&username=" + view.DlgPerfil.txtUserP.getText() + "&password="
+					+ view.DlgPerfil.txtPassP.getText() + "&correo=" + view.DlgPerfil.txtCorreoP.getText()
+					+ "&telefono=" + view.DlgPerfil.txtTelefonoP.getText() + "&rol=" + view.DlgPerfil.txtRolP.getText()
 					+ "&informacion=" + view.DlgPerfil.txtInfoP.getText();
 
 			sResultado = url.replace(" ", "%20");
@@ -67,7 +61,5 @@ public class CtrlPerfil {
 		}
 
 	}
-
-
 
 }

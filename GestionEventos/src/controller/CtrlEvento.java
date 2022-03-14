@@ -147,6 +147,7 @@ public class CtrlEvento {
 			}
 
 			view.DlgDescripcionEventos.tableEventos.setModel(tableQuery);
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();

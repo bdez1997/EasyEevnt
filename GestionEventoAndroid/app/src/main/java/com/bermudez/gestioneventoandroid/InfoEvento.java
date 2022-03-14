@@ -66,7 +66,7 @@ public class InfoEvento extends AppCompatActivity {
                         Intent i = new Intent(this, ConfirmacionActivity.class);
                         startActivity(i);
 
-                        
+
                     },
 
                     n -> {
