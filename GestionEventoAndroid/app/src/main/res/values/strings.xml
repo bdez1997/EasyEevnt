@@ -12,7 +12,7 @@
     <string name="fechaInicio">Fecha de inicio:</string>
     <string name="fechaFin">Fecha de fin:</string>
     <string name="direccion">Direccion:</string>
-    <string name="btnAlta">Darse de alta</string>
+    <string name="btnAlta">Apuntarse</string>
     <string name="btnBaja">Darse de baja</string>
 
     <!-- EMPRESA -->
