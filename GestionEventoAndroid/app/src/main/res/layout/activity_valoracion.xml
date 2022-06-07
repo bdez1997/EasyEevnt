@@ -7,38 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".ValoracionActivity">
 
-    <TextView
-        android:id="@+id/txtRValoracion"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
-        android:paddingLeft="140dp"
-        android:text="@string/valoracion"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/rtValoracion"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
-
     <RatingBar
         android:id="@+id/rtValoracion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toTopOf="@+id/txtComentario"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txtComentario"
-        android:layout_width="346dp"
-        android:layout_height="423dp"
+        android:layout_width="364dp"
+        android:layout_height="310dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="@string/comentario"
+        android:hint="      Escriba su experiencia..."
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/btnEnviar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,5 +42,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="VALORACIÓN"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

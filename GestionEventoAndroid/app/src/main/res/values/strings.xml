@@ -55,8 +55,8 @@
     <string-array name="roles">
         <item>Trabajador</item>
         <item>Voluntario</item>
-        <item>Asociado</item>
-        <item>Empresa</item>
+        <item>Invitado</item>
+        <item>Usuario</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

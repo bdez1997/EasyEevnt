@@ -105,7 +105,7 @@ public class CtrlPersonaEvento {
 				tableQuery.addRow(dataColumn);
 
 			}
-			view.DlgPersonaEvento.tblPersonaEvento.setModel(tableQuery);
+			//view.DlgPersonaEvento.tblPersonaEvento.setModel(tableQuery);
 		} catch (Exception e) {
 
 			e.printStackTrace();

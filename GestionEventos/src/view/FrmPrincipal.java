@@ -40,14 +40,14 @@ public class FrmPrincipal extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 
-		JMenu mnEditar = new JMenu("Editar");
-		mnEditar.setFont(new Font("Arial", Font.PLAIN, 12));
-		mnEditar.setForeground(new Color(0, 0, 0));
-		menuBar.add(mnEditar);
+		JMenu mnAnnadir = new JMenu("A\u00F1adir");
+		mnAnnadir.setFont(new Font("Arial", Font.PLAIN, 12));
+		mnAnnadir.setForeground(new Color(0, 0, 0));
+		menuBar.add(mnAnnadir);
 
 		JMenuItem mntEvento = new JMenuItem("Evento");
 		mntEvento.setFont(new Font("Arial", Font.PLAIN, 12));
-		mnEditar.add(mntEvento);
+		mnAnnadir.add(mntEvento);
 
 		mntEvento.addActionListener(e -> {
 			new DlgDescripcionEventos();
@@ -55,7 +55,7 @@ public class FrmPrincipal extends JFrame {
 
 		JMenuItem mntmPersonas = new JMenuItem("Personas");
 		mntmPersonas.setFont(new Font("Arial", Font.PLAIN, 12));
-		mnEditar.add(mntmPersonas);
+		mnAnnadir.add(mntmPersonas);
 
 		mntEvento.addActionListener(e -> {
 			new DlgDescripcionPersonas();
@@ -63,18 +63,18 @@ public class FrmPrincipal extends JFrame {
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("Empresa");
 		mntmNewMenuItem.setFont(new Font("Arial", Font.PLAIN, 12));
-		mnEditar.add(mntmNewMenuItem);
+		mnAnnadir.add(mntmNewMenuItem);
 		
 		mntEvento.addActionListener(e -> {
 			new DlgDescripcionEmpresa();
 		});
 
 		JSeparator separator = new JSeparator();
-		mnEditar.add(separator);
+		mnAnnadir.add(separator);
 
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Salir");
 		mntmNewMenuItem_1.setFont(new Font("Arial", Font.PLAIN, 12));
-		mnEditar.add(mntmNewMenuItem_1);
+		mnAnnadir.add(mntmNewMenuItem_1);
 
 		mntmNewMenuItem_1.addActionListener(e -> {
 			System.exit(0);

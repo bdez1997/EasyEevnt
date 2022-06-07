@@ -207,7 +207,85 @@ public class DlgCreacionPersona extends JDialog {
 		panelDatos.add(txtInformacion);
 		
 		
+		/////////////////////////////////////////////////
+		////ETIQUETAS OBLIGATORIO////
+		////////////////////////////////////////////////
+		JLabel lblObligatorio_1 = new JLabel("*Obligatorio");
+		lblObligatorio_1.setVisible(false);
+		lblObligatorio_1.setForeground(Color.RED);
+		lblObligatorio_1.setFont(new Font("Arial", Font.BOLD, 8));
+		lblObligatorio_1.setBounds(129, 45, 56, 13);
+		panelDatos.add(lblObligatorio_1);
+		
+		JLabel lblObligatorio_2 = new JLabel("*Obligatorio");
+		lblObligatorio_2.setVisible(false);
+		lblObligatorio_2.setForeground(Color.RED);
+		lblObligatorio_2.setFont(new Font("Arial", Font.BOLD, 8));
+		lblObligatorio_2.setBounds(412, 45, 56, 13);
+		panelDatos.add(lblObligatorio_2);
+		
+		JLabel lblObligatorio_3 = new JLabel("*Obligatorio");
+		lblObligatorio_3.setVisible(false);
+		lblObligatorio_3.setForeground(Color.RED);
+		lblObligatorio_3.setFont(new Font("Arial", Font.BOLD, 8));
+		lblObligatorio_3.setBounds(129, 81, 56, 13);
+		panelDatos.add(lblObligatorio_3);
+		
+		JLabel lblObligatorio_4 = new JLabel("*Obligatorio");
+		lblObligatorio_4.setVisible(false);
+		lblObligatorio_4.setForeground(Color.RED);
+		lblObligatorio_4.setFont(new Font("Arial", Font.BOLD, 8));
+		lblObligatorio_4.setBounds(412, 81, 56, 13);
+		panelDatos.add(lblObligatorio_4);
+		
+		JLabel lblObligatorio_5 = new JLabel("*Obligatorio");
+		lblObligatorio_5.setVisible(false);
+		lblObligatorio_5.setForeground(Color.RED);
+		lblObligatorio_5.setFont(new Font("Arial", Font.BOLD, 8));
+		lblObligatorio_5.setBounds(129, 122, 56, 13);
+		panelDatos.add(lblObligatorio_5);
+		
+		JLabel lblObligatorio_6 = new JLabel("*Obligatorio");
+		lblObligatorio_6.setVisible(false);
+		lblObligatorio_6.setForeground(Color.RED);
+		lblObligatorio_6.setFont(new Font("Arial", Font.BOLD, 8));
+		lblObligatorio_6.setBounds(412, 122, 56, 13);
+		panelDatos.add(lblObligatorio_6);
+		
+		JLabel lblObligatorio_7 = new JLabel("*Obligatorio");
+		lblObligatorio_7.setVisible(false);
+		lblObligatorio_7.setForeground(Color.RED);
+		lblObligatorio_7.setFont(new Font("Arial", Font.BOLD, 8));
+		lblObligatorio_7.setBounds(129, 163, 56, 13);
+		panelDatos.add(lblObligatorio_7);
+		
+		JLabel lblObligatorio_8 = new JLabel("*Obligatorio");
+		lblObligatorio_8.setVisible(false);
+		lblObligatorio_8.setForeground(Color.RED);
+		lblObligatorio_8.setFont(new Font("Arial", Font.BOLD, 8));
+		lblObligatorio_8.setBounds(412, 163, 56, 13);
+		panelDatos.add(lblObligatorio_8);
+		
+		
+		
+		btnGuardar.addActionListener(e -> {
+			if(txtTelf.getText() == null ||
+					txtApellido.getText() == null || 
+					txtNombre.getText() == null ||
+					txtDni.getText() == null  ||
+					txtUsername.getText() == null  ||
+					txtPass.getPassword() == null  ||
+					txtCorreo.getText() == null  ||
+					txtRol.getText() == null  ||
+					txtInformacion.getText() == null ) {
+				
+				lblObligatorio_1.setVisible(true);
+			}
+		});
+		
+		
 		btnGuardar.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				try {
 					controller.CtrlPersonas.insPersonas();
@@ -216,6 +294,7 @@ public class DlgCreacionPersona extends JDialog {
 					e1.printStackTrace();
 				}
 			}
+			
 		});
 		
 	}

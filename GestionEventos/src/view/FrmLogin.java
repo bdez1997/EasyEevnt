@@ -76,15 +76,15 @@ public class FrmLogin extends JFrame {
 		btnLogin.setForeground(new Color(255, 255, 255));
 		btnLogin.setBackground(new Color(65, 105, 225));
 		btnLogin.setFont(new Font("Arial", Font.BOLD, 12));
-		btnLogin.setBounds(49, 247, 101, 30);
+		btnLogin.setBounds(35, 247, 115, 30);
 		contentPane.add(btnLogin);
 
-		JButton btnExit = new JButton("CANCELAR");
-		btnExit.setBackground(new Color(65, 105, 225));
-		btnExit.setForeground(new Color(255, 255, 255));
-		btnExit.setFont(new Font("Arial", Font.BOLD, 12));
-		btnExit.setBounds(188, 247, 101, 30);
-		contentPane.add(btnExit);
+		JButton btnRegistrarse = new JButton("REGISTRARSE");
+		btnRegistrarse.setBackground(new Color(65, 105, 225));
+		btnRegistrarse.setForeground(new Color(255, 255, 255));
+		btnRegistrarse.setFont(new Font("Arial", Font.BOLD, 12));
+		btnRegistrarse.setBounds(179, 247, 124, 30);
+		contentPane.add(btnRegistrarse);
 		
 		JLabel lblimg = new JLabel(new ImageIcon("img/easyevents.png"));
 		lblimg.setBounds(105, 10, 115, 101);
